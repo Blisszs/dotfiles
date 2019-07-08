@@ -1,0 +1,10 @@
+# GIMP gimp-vector-tool options
+
+(foreground (color-rgb 1.000000 0.611765 0.611765))
+(brush "Untitled")
+(dynamics "Dynamics Off")
+(pattern "3D Green")
+(gradient "FG to BG (RGB)")
+(palette "Color History")
+
+# end of gimp-vector-tool options

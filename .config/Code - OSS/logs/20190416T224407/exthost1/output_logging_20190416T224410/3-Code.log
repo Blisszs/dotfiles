@@ -1,0 +1,42 @@
+[Running] cd "/home/bliss/dev/opengl/" && gcc teste.c -o teste && "/home/bliss/dev/opengl/"teste
+teste.c:1:9: fatal error: iostream: No such file or directory
+ #include<iostream>
+         ^~~~~~~~~~
+compilation terminated.
+
+[Done] exited with code=1 in 0.032 seconds
+
+[Running] cd "/home/bliss/dev/opengl/" && gcc teste.c -o teste && "/home/bliss/dev/opengl/"teste
+teste.c:1:9: fatal error: iostream: No such file or directory
+ #include<iostream>
+         ^~~~~~~~~~
+compilation terminated.
+
+[Done] exited with code=1 in 0.024 seconds
+
+[Running] cd "/home/bliss/dev/opengl/" && g++ teste.cpp -o teste && "/home/bliss/dev/opengl/"teste
+/bin/ld: /tmp/ccmEMoff.o: in function `open_gl()':
+teste.cpp:(.text+0x3b): undefined reference to `dlopen'
+/bin/ld: teste.cpp:(.text+0x64): undefined reference to `dlsym'
+/bin/ld: /tmp/ccmEMoff.o: in function `close_gl()':
+teste.cpp:(.text+0xa9): undefined reference to `dlclose'
+/bin/ld: /tmp/ccmEMoff.o: in function `get_proc(char const*)':
+teste.cpp:(.text+0x11b): undefined reference to `dlsym'
+/bin/ld: /tmp/ccmEMoff.o: in function `main':
+teste.cpp:(.text+0x43e5): undefined reference to `glfwInit'
+/bin/ld: teste.cpp:(.text+0x43f4): undefined reference to `glfwWindowHint'
+/bin/ld: teste.cpp:(.text+0x4403): undefined reference to `glfwWindowHint'
+/bin/ld: teste.cpp:(.text+0x4412): undefined reference to `glfwWindowHint'
+/bin/ld: teste.cpp:(.text+0x4433): undefined reference to `glfwCreateWindow'
+/bin/ld: teste.cpp:(.text+0x446b): undefined reference to `glfwTerminate'
+/bin/ld: teste.cpp:(.text+0x4481): undefined reference to `glfwMakeContextCurrent'
+/bin/ld: teste.cpp:(.text+0x4488): undefined reference to `glfwGetProcAddress'
+/bin/ld: teste.cpp:(.text+0x44f8): undefined reference to `glfwSetFramebufferSizeCallback'
+/bin/ld: teste.cpp:(.text+0x4504): undefined reference to `glfwWindowShouldClose'
+/bin/ld: teste.cpp:(.text+0x4519): undefined reference to `glfwSwapBuffers'
+/bin/ld: teste.cpp:(.text+0x451e): undefined reference to `glfwPollEvents'
+/bin/ld: teste.cpp:(.text+0x4525): undefined reference to `glfwTerminate'
+collect2: error: ld returned 1 exit status
+
+[Done] exited with code=1 in 0.673 seconds
+

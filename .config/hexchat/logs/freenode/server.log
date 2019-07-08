@@ -1,0 +1,32 @@
+**** BEGIN LOGGING AT Sat May  4 00:01:01 2019
+
+May 04 00:01:01 *	Looking up chat.freenode.net
+May 04 00:01:02 *	Connecting to chat.freenode.net (130.185.232.126:6697)
+May 04 00:01:02 *	* Subject: /O=Digital Signature Trust Co./CN=DST Root CA X3
+May 04 00:01:02 *	* Issuer: /O=Digital Signature Trust Co./CN=DST Root CA X3
+May 04 00:01:02 *	* Subject: /C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X3
+May 04 00:01:02 *	* Issuer: /O=Digital Signature Trust Co./CN=DST Root CA X3
+May 04 00:01:02 *	* Subject: /CN=hitchcock.freenode.net
+May 04 00:01:02 *	* Issuer: /C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X3
+May 04 00:01:03 *	* Certification info:
+May 04 00:01:03 *	  Subject:
+May 04 00:01:03 *	    CN=hitchcock.freenode.net
+May 04 00:01:03 *	  Issuer:
+May 04 00:01:03 *	    C=US
+May 04 00:01:03 *	    O=Let's Encrypt
+May 04 00:01:03 *	    CN=Let's Encrypt Authority X3
+May 04 00:01:03 *	  Public key algorithm: rsaEncryption (4096 bits)
+May 04 00:01:03 *	  Sign algorithm sha256WithRSAEncryption
+May 04 00:01:03 *	  Valid since Mar 18 05:01:32 2019 GM to Jun 16 05:01:32 2019 GM
+May 04 00:01:03 *	* Cipher info:
+May 04 00:01:03 *	  Version: TLSv1/SSLv3, cipher ECDHE-RSA-AES256-GCM-SHA384 (256 bits)
+May 04 00:01:03 *	Connected. Now logging in.
+May 04 00:01:03 *	*** Looking up your hostname...
+May 04 00:01:03 *	*** Checking Ident
+May 04 00:01:03 *	*** Found your hostname
+May 04 00:01:09 *	*** No Ident response
+May 04 00:01:09 *	Capabilities supported: account-notify extended-join identify-msg multi-prefix sasl
+May 04 00:01:09 *	Capabilities requested: account-notify extended-join identify-msg multi-prefix 
+May 04 00:01:09 *	Capabilities acknowledged: account-notify extended-join identify-msg multi-prefix 
+**** ENDING LOGGING AT Sat May  4 00:01:09 2019
+

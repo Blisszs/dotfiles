@@ -1,0 +1,6 @@
+2019/04/21-20:08:51.502 25224 Reusing MANIFEST /home/bliss/.config/Riot/IndexedDB/vector_vector_0.indexeddb.leveldb/MANIFEST-000001
+2019/04/21-20:08:51.502 25224 Recovering log #29
+2019/04/21-20:08:51.508 25224 Reusing old log /home/bliss/.config/Riot/IndexedDB/vector_vector_0.indexeddb.leveldb/000029.log 
+2019/04/21-20:10:51.987 27190 Level-0 table #34: started
+2019/04/21-20:10:52.228 27190 Level-0 table #34: 2207896 bytes OK
+2019/04/21-20:10:52.538 27190 Delete type=0 #29

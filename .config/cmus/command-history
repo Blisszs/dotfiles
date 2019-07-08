@@ -1,0 +1,16 @@
+help
+shuffle 
+colorscheme gruvbox
+colorscheme cyan
+colorscheme gray-88
+colorscheme dracula
+q
+Q
+player-play 
+add Music/
+cd
+add
+ls
+cd Music/
+cd Downloads/
+lqueue

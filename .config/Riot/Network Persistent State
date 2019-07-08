@@ -1,0 +1,1 @@
+{"net":{"http_server_properties":{"servers":[{"https://scalar.vector.im":{"supports_spdy":true}},{"https://matrix.org":{"supports_spdy":true}}],"version":5}}}

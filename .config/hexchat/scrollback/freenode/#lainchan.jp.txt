@@ -1,0 +1,5 @@
+T 1556977654 19*	Now talking on 22#lainchan.jp
+T 1556977654 22*	Topic for 22#lainchan.jp is: The new site has launched - https://arisuchan.jp - This channel is now deprecated. Join #arisuchan!
+T 1556977654 22*	Topic for 22#lainchan.jp set by 26Salaryman (24Tue Sep  5 23:28:53 2017)
+T 1556977654 -18ChanServ-	[#lainchan.jp] Let's all love lambda! Show /λ/ some love! https://lainchan.jp/prog/
+T 1556977654 22*	Channel 22#lainchan.jp url: 24lainchan.jp

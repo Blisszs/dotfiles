@@ -1,0 +1,8 @@
+[2019-06-30 20:16:10.105] [cli] [info] main {"_":[],"diff":false,"add":false,"goto":false,"new-window":false,"reuse-window":false,"wait":false,"version":false,"help":false,"list-extensions":false,"show-versions":false,"verbose":false,"status":false,"prof-modules":false,"prof-startup":false,"disable-extensions":false,"disable-gpu":false,"logExtensionHostCommunication":false,"skip-getting-started":false,"skip-release-notes":false,"sticky-quickopen":false,"disable-restore-windows":false,"disable-telemetry":false,"disable-updates":false,"disable-crash-reporter":false,"skip-add-to-recently-opened":false,"unity-launch":false,"open-url":false,"nolazy":false,"issue":false,"file-write":false,"file-chmod":false,"driver-verbose":false,"force":true,"prof-code-loading":false,"install-extension":"/tmp/tmp-24293ryuPShQKvnNe.vsix"}
+[2019-06-30 20:16:10.284] [cli] [info] Scanned user extensions: 4
+[2019-06-30 20:16:10.382] [cli] [info] Scanned user extensions: 4
+[2019-06-30 20:16:10.383] [cli] [info] Installing the extension: ms-vscode.cpptools
+[2019-06-30 20:16:13.077] [cli] [info] Extracted extension to /home/bliss/.vscode-oss/extensions/.ms-vscode.cpptools-0.24.0-insiders3: ms-vscode.cpptools
+[2019-06-30 20:16:13.077] [cli] [info] Renamed to /home/bliss/.vscode-oss/extensions/ms-vscode.cpptools-0.24.0-insiders3
+[2019-06-30 20:16:13.079] [cli] [info] Installation completed. ms-vscode.cpptools
+[2019-06-30 20:16:13.151] [cli] [info] Successfully installed the extension: ms-vscode.cpptools

@@ -1,0 +1,246 @@
+**** BEGIN LOGGING AT Fri Apr 26 18:25:37 2019
+
+Apr 26 18:25:37 *	*** Looking up your hostname...
+Apr 26 18:25:37 *	*** Checking Ident
+Apr 26 18:25:37 *	*** Found your hostname
+Apr 26 18:25:44 *	*** No Ident response
+Apr 26 18:25:45 *	Capabilities supported: account-notify extended-join identify-msg multi-prefix sasl
+Apr 26 18:25:45 *	Capabilities requested: account-notify extended-join identify-msg multi-prefix 
+Apr 26 18:25:45 *	Capabilities acknowledged: account-notify extended-join identify-msg multi-prefix 
+**** ENDING LOGGING AT Fri Apr 26 18:25:45 2019
+
+**** BEGIN LOGGING AT Fri Apr 26 18:25:45 2019
+
+Apr 26 18:25:45 *	Welcome to the freenode Internet Relay Chat Network bliss
+Apr 26 18:25:45 *	Your host is tepper.freenode.net[192.186.157.43/6667], running version ircd-seven-1.1.7
+Apr 26 18:25:45 *	This server was created Wed Oct 10 2018 at 19:35:28 UTC
+Apr 26 18:25:45 *	tepper.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+Apr 26 18:25:45 *	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+Apr 26 18:25:45 *	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 ETRACE KNOCK WHOX :are supported by this server
+Apr 26 18:25:45 *	CPRIVMSG CNOTICE SAFELIST ELIST=CTU :are supported by this server
+Apr 26 18:25:45 *	There are 104 users and 90174 invisible on 32 servers
+Apr 26 18:25:45 *	36 :IRC Operators online
+Apr 26 18:25:45 *	25 :unknown connection(s)
+Apr 26 18:25:45 *	53484 :channels formed
+Apr 26 18:25:45 *	I have 3773 clients and 1 servers
+Apr 26 18:25:45 *	3773 5342 :Current local users 3773, max 5342
+Apr 26 18:25:45 *	90278 94264 :Current global users 90278, max 94264
+Apr 26 18:25:45 *	Highest connection count: 5343 (5342 clients) (1375031 connections received)
+Apr 26 18:25:45 *	- tepper.freenode.net Message of the Day - 
+Apr 26 18:25:45 *	- Welcome to tepper.freenode.net in Buffalo, NY.
+Apr 26 18:25:45 *	- Thanks to http://www.servermania.com/ for sponsoring
+Apr 26 18:25:45 *	- this server!
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- TEPPER, SHERI S. (1929-), an American science fiction,
+Apr 26 18:25:45 *	- horror and mystery novel author, behind more than thirty
+Apr 26 18:25:45 *	- books, many themed unapologetically eco-feminist. Her
+Apr 26 18:25:45 *	- writing career started composing children's stories, but
+Apr 26 18:25:45 *	- moved to adult fiction in 1982. With the 1991 novel
+Apr 26 18:25:45 *	- 'Beauty' she won the Locus award for Best Fantasy Novel.
+Apr 26 18:25:45 *	- Her other well-known works include 'Grass' (1989, nominated
+Apr 26 18:25:45 *	- for Hugo and Locus Awards in 1990) and 'Gate to Women's
+Apr 26 18:25:45 *	- Country' (1988).
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- Welcome to freenode - supporting the free and open source
+Apr 26 18:25:45 *	- software communities since 1998.
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- By connecting to freenode you indicate that you have read and
+Apr 26 18:25:45 *	- accept our policies and guidelines as set out on https://freenode.net
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- In the event that you observe behaviour that contravenes our policies,
+Apr 26 18:25:45 *	- please notify a volunteer staff member via private message, or send us an
+Apr 26 18:25:45 *	- e-mail to complaints@freenode.net -- we will do our best to address the
+Apr 26 18:25:45 *	- situation within a reasonable period of time, and we may request further
+Apr 26 18:25:45 *	- information or, as appropriate, involve other parties such as channel operators 
+Apr 26 18:25:45 *	- Group Contacts representing an on-topic group.
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- freenode runs an open proxy scanner.
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- If you are looking for assistance, you may be able to find a list of 
+Apr 26 18:25:45 *	- volunteer staff on '/stats p' (shows only on-call staff) or by joining 
+Apr 26 18:25:45 *	- #freenode and using the '/who freenode/staff/*' command. You may message
+Apr 26 18:25:45 *	- any of us at any time. Please note that freenode predominantly provides 
+Apr 26 18:25:45 *	- assistance via private message, and while we have a network channel the 
+Apr 26 18:25:45 *	- primary venue for support requests is via private message to a member 
+Apr 26 18:25:45 *	- of the volunteer staff team.
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- From time to time, volunteer staff may send server-wide notices relating to
+Apr 26 18:25:45 *	- the project, or the communities that we host. The majority of such notices
+Apr 26 18:25:45 *	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+Apr 26 18:25:45 *	- do not miss them. Important messages relating to the freenode project, including
+Apr 26 18:25:45 *	- notices of upcoming maintenance and other scheduled downtime will be issued as
+Apr 26 18:25:45 *	- global notices.
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- Representing an on-topic project? Don't forget to register, more information
+Apr 26 18:25:45 *	- can be found on the https://freenode.net website under "Group Registration".
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- Thank you also to our server sponsors for the sustained support in keeping the
+Apr 26 18:25:45 *	- network going for close to two decades.
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+Apr 26 18:25:45 *	- and everyone else who made this year's freenode #live conference amazing.
+Apr 26 18:25:45 *	- https://freenode.net/news/live-2018
+Apr 26 18:25:45 *	-  
+Apr 26 18:25:45 *	- Thank you for using freenode!
+Apr 26 18:25:45 *	End of /MOTD command.
+Apr 26 18:25:45 *	bliss sets mode +i on bliss
+Apr 26 18:25:45 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+Apr 26 18:25:45 -freenode-connect-	Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+Apr 26 18:25:45 *	Received a CTCP VERSION from freenode-connect
+Apr 26 18:25:51 *	#arisuchan :Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+**** ENDING LOGGING AT Fri Apr 26 18:26:38 2019
+
+**** BEGIN LOGGING AT Fri Apr 26 18:26:38 2019
+
+Apr 26 18:30:11 Sysinfo plugin unloaded
+Apr 26 18:30:11 FiSHLiM plugin unloaded
+Apr 26 18:30:11 Checksum plugin unloaded
+**** ENDING LOGGING AT Fri Apr 26 18:30:11 2019
+
+**** BEGIN LOGGING AT Sat May  4 00:01:09 2019
+
+May 04 00:01:09 *	Welcome to the freenode Internet Relay Chat Network bliss
+May 04 00:01:09 *	Your host is hitchcock.freenode.net[130.185.232.126/6697], running version ircd-seven-1.1.7
+May 04 00:01:09 *	This server was created Sun Aug 19 2018 at 16:38:06 UTC
+May 04 00:01:09 *	hitchcock.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+May 04 00:01:09 *	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+May 04 00:01:09 *	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 WHOX SAFELIST ELIST=CTU :are supported by this server
+May 04 00:01:09 *	ETRACE CPRIVMSG CNOTICE KNOCK :are supported by this server
+May 04 00:01:09 *	There are 101 users and 87830 invisible on 30 servers
+May 04 00:01:09 *	36 :IRC Operators online
+May 04 00:01:09 *	61 :unknown connection(s)
+May 04 00:01:09 *	53234 :channels formed
+May 04 00:01:09 *	I have 4341 clients and 1 servers
+May 04 00:01:09 *	4341 6368 :Current local users 4341, max 6368
+May 04 00:01:09 *	87931 94264 :Current global users 87931, max 94264
+May 04 00:01:09 *	Highest connection count: 6369 (6368 clients) (2479385 connections received)
+May 04 00:01:09 *	- hitchcock.freenode.net Message of the Day - 
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- Welcome to hitchcock.freenode.net in Sofia, Bulgaria, EU, kindly sponsored by
+May 04 00:01:09 *	- Elemental TV (www.elemental.tv)
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- HITCHCOCK, SIR ALFRED [1899 - 1980] Born in Essex,
+May 04 00:01:09 *	- England, Sir Alfred Hitchcock was a noted film director
+May 04 00:01:09 *	- and producer. Over a long career he pioneered many modern
+May 04 00:01:09 *	- techniques in film-making, made more than 50 feature films,
+May 04 00:01:09 *	- and influenced many present-day directors and producers.
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- Welcome to freenode - supporting the free and open source
+May 04 00:01:09 *	- software communities since 1998.
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- By connecting to freenode you indicate that you have read and
+May 04 00:01:09 *	- accept our policies and guidelines as set out on https://freenode.net
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- In the event that you observe behaviour that contravenes our policies,
+May 04 00:01:09 *	- please notify a volunteer staff member via private message, or send us an
+May 04 00:01:09 *	- e-mail to complaints@freenode.net -- we will do our best to address the
+May 04 00:01:09 *	- situation within a reasonable period of time, and we may request further
+May 04 00:01:09 *	- information or, as appropriate, involve other parties such as channel operators 
+May 04 00:01:09 *	- Group Contacts representing an on-topic group.
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- freenode runs an open proxy scanner.
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- If you are looking for assistance, you may be able to find a list of 
+May 04 00:01:09 *	- volunteer staff on '/stats p' (shows only on-call staff) or by joining 
+May 04 00:01:09 *	- #freenode and using the '/who freenode/staff/*' command. You may message
+May 04 00:01:09 *	- any of us at any time. Please note that freenode predominantly provides 
+May 04 00:01:09 *	- assistance via private message, and while we have a network channel the 
+May 04 00:01:09 *	- primary venue for support requests is via private message to a member 
+May 04 00:01:09 *	- of the volunteer staff team.
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- From time to time, volunteer staff may send server-wide notices relating to
+May 04 00:01:09 *	- the project, or the communities that we host. The majority of such notices
+May 04 00:01:09 *	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+May 04 00:01:09 *	- do not miss them. Important messages relating to the freenode project, including
+May 04 00:01:09 *	- notices of upcoming maintenance and other scheduled downtime will be issued as
+May 04 00:01:09 *	- global notices.
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- Representing an on-topic project? Don't forget to register, more information
+May 04 00:01:09 *	- can be found on the https://freenode.net website under "Group Registration".
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- Thank you also to our server sponsors for the sustained support in keeping the
+May 04 00:01:09 *	- network going for close to two decades.
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+May 04 00:01:09 *	- and everyone else who made this year's freenode #live conference amazing.
+May 04 00:01:09 *	- https://freenode.net/news/live-2018
+May 04 00:01:09 *	-  
+May 04 00:01:09 *	- Thank you for using freenode!
+May 04 00:01:09 *	End of /MOTD command.
+May 04 00:01:09 *	bliss sets mode +Z on bliss
+May 04 00:01:09 *	bliss sets mode +i on bliss
+May 04 00:01:09 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+May 04 00:01:10 -freenode-connect-	Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+May 04 00:01:10 *	Received a CTCP VERSION from freenode-connect
+May 04 00:05:17 Sysinfo plugin unloaded
+May 04 00:05:17 Checksum plugin unloaded
+**** ENDING LOGGING AT Sat May  4 00:05:17 2019
+
+**** BEGIN LOGGING AT Sat May  4 14:47:06 2019
+
+May 04 14:47:06 *	Welcome to the freenode Internet Relay Chat Network bliss
+May 04 14:47:06 *	Your host is livingstone.freenode.net[107.182.226.199/6697], running version ircd-seven-1.1.7
+May 04 14:47:06 *	This server was created Thu Aug 23 2018 at 16:12:30 UTC
+May 04 14:47:06 *	livingstone.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+May 04 14:47:06 *	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+May 04 14:47:06 *	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 CPRIVMSG CNOTICE ETRACE :are supported by this server
+May 04 14:47:06 *	KNOCK SAFELIST ELIST=CTU WHOX :are supported by this server
+May 04 14:47:06 *	There are 100 users and 87883 invisible on 32 servers
+May 04 14:47:06 *	37 :IRC Operators online
+May 04 14:47:06 *	23 :unknown connection(s)
+May 04 14:47:06 *	53371 :channels formed
+May 04 14:47:06 *	I have 4272 clients and 1 servers
+May 04 14:47:06 *	4272 6018 :Current local users 4272, max 6018
+May 04 14:47:06 *	87983 94264 :Current global users 87983, max 94264
+May 04 14:47:06 *	Highest connection count: 6019 (6018 clients) (2130155 connections received)
+May 04 14:47:06 *	- livingstone.freenode.net Message of the Day - 
+May 04 14:47:06 *	- Welcome to livingstone.freenode.net in NY, USA.
+May 04 14:47:06 *	- Welcome to freenode - supporting the free and open source
+May 04 14:47:06 *	- software communities since 1998.
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- By connecting to freenode you indicate that you have read and
+May 04 14:47:06 *	- accept our policies and guidelines as set out on https://freenode.net
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- In the event that you observe behaviour that contravenes our policies,
+May 04 14:47:06 *	- please notify a volunteer staff member via private message, or send us an
+May 04 14:47:06 *	- e-mail to complaints@freenode.net -- we will do our best to address the
+May 04 14:47:06 *	- situation within a reasonable period of time, and we may request further
+May 04 14:47:06 *	- information or, as appropriate, involve other parties such as channel operators 
+May 04 14:47:06 *	- Group Contacts representing an on-topic group.
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- freenode runs an open proxy scanner.
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- If you are looking for assistance, you may be able to find a list of 
+May 04 14:47:06 *	- volunteer staff on '/stats p' (shows only on-call staff) or by joining 
+May 04 14:47:06 *	- #freenode and using the '/who freenode/staff/*' command. You may message
+May 04 14:47:06 *	- any of us at any time. Please note that freenode predominantly provides 
+May 04 14:47:06 *	- assistance via private message, and while we have a network channel the 
+May 04 14:47:06 *	- primary venue for support requests is via private message to a member 
+May 04 14:47:06 *	- of the volunteer staff team.
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- From time to time, volunteer staff may send server-wide notices relating to
+May 04 14:47:06 *	- the project, or the communities that we host. The majority of such notices
+May 04 14:47:06 *	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+May 04 14:47:06 *	- do not miss them. Important messages relating to the freenode project, including
+May 04 14:47:06 *	- notices of upcoming maintenance and other scheduled downtime will be issued as
+May 04 14:47:06 *	- global notices.
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- Representing an on-topic project? Don't forget to register, more information
+May 04 14:47:06 *	- can be found on the https://freenode.net website under "Group Registration".
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- Thank you also to our server sponsors for the sustained support in keeping the
+May 04 14:47:06 *	- network going for close to two decades.
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- Thank you to all of our attendees, sponsors, speakers, exhibitors, helpers,
+May 04 14:47:06 *	- and everyone else who made this year's freenode #live conference amazing.
+May 04 14:47:06 *	- https://freenode.net/news/live-2018
+May 04 14:47:06 *	-  
+May 04 14:47:06 *	- Thank you for using freenode!
+May 04 14:47:06 *	End of /MOTD command.
+May 04 14:47:06 *	bliss sets mode +Z on bliss
+May 04 14:47:06 *	bliss sets mode +i on bliss
+May 04 14:47:06 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+May 04 14:47:06 -freenode-connect-	Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+May 04 14:47:06 *	Received a CTCP VERSION from freenode-connect
+May 04 14:48:22 *	#arisuchan :Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration

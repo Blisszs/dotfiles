@@ -1,0 +1,10 @@
+[Running] cd "/home/bliss/dev/opengl/" && gcc teste.c -o teste && "/home/bliss/dev/opengl/"teste
+/bin/ld: /tmp/ccCJ9Qyd.o: in function `main':
+teste.c:(.text+0x5): undefined reference to `glfwInit'
+/bin/ld: teste.c:(.text+0x14): undefined reference to `glfwWindowHint'
+/bin/ld: teste.c:(.text+0x23): undefined reference to `glfwWindowHint'
+/bin/ld: teste.c:(.text+0x32): undefined reference to `glfwWindowHint'
+collect2: error: ld returned 1 exit status
+
+[Done] exited with code=1 in 0.097 seconds
+

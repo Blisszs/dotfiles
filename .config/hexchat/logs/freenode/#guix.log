@@ -1,0 +1,37 @@
+**** BEGIN LOGGING AT Sat May  4 00:01:33 2019
+
+May 04 00:01:33 *	Now talking on #guix
+May 04 00:01:33 *	Topic for #guix is: GNU Guix | 1.0 is out! get it at https://gnu.org/s/guix/ | videos: https://gnu.org/s/guix/blog/tags/talks/ | bugs and patches: https://issues.guix.info/ | paste: https://paste.debian.net | Guix in high-performance computing: https://hpc.guixsd.org | This channel is logged: https://bayfront.guixsd.org/.well-known/logs/
+May 04 00:01:33 *	Topic for #guix set by nckx (Thu May  2 21:34:16 2019)
+May 04 00:01:33 -ChanServ-	[#guix] Welcome to #guix, the channel of the GNU Guix project!  This channel is logged, see <https://bayfront.guixsd.org/.well-known/logs/>.
+May 04 00:02:36 *	gagbo has quit (Ping timeout: 244 seconds)
+May 04 00:05:17 FiSHLiM plugin unloaded
+**** ENDING LOGGING AT Sat May  4 00:05:17 2019
+
+**** BEGIN LOGGING AT Sat May  4 14:48:34 2019
+
+May 04 14:48:34 *	Now talking on #guix
+May 04 14:48:34 *	Topic for #guix is: GNU Guix | 1.0 is out! get it at https://gnu.org/s/guix/ | videos: https://gnu.org/s/guix/blog/tags/talks/ | bugs and patches: https://issues.guix.info/ | paste: https://paste.debian.net | Guix in high-performance computing: https://hpc.guixsd.org | This channel is logged: https://bayfront.guixsd.org/.well-known/logs/
+May 04 14:48:34 *	Topic for #guix set by nckx (Thu May  2 21:34:16 2019)
+May 04 14:48:35 -ChanServ-	[#guix] Welcome to #guix, the channel of the GNU Guix project!  This channel is logged, see <https://bayfront.guixsd.org/.well-known/logs/>.
+May 04 14:52:04 *	dadinn has quit (Ping timeout: 246 seconds)
+May 04 14:52:59 *	catonano2 (062c12f4f9@gateway/shell/jabberfr/x-ojpotpbplysvskkz) has left
+May 04 14:53:02 *	catonano2 (062c12f4f9@gateway/shell/jabberfr/x-ojpotpbplysvskkz) has joined
+May 04 14:55:17 *	catonano2 (062c12f4f9@gateway/shell/jabberfr/x-ojpotpbplysvskkz) has left
+May 04 14:55:19 *	catonano2 (062c12f4f9@gateway/shell/jabberfr/x-ojpotpbplysvskkz) has joined
+May 04 14:57:05 <nckx>	kabo: Did you manage to pull?
+May 04 14:59:46 <civodul>	gnome-shell is crashy on the laptop next to me
+May 04 14:59:54 <civodul>	since the 2.28 upgrade
+May 04 15:00:08 <civodul>	like: gnome-session-binary[1200]: WARNING: Application 'org.gnome.Shell.desktop' killed by signal 11
+May 04 15:00:57 <civodul>	this is putting my relationship at risk :-)
+May 04 15:01:01 <brendyyn>	https://github.com/NixOS/nixpkgs/blob/915ce0f1e1a75adec7079ddb6cd3ffba5036b3fc/pkgs/tools/inputmethods/fcitx/wrapper.nix
+May 04 15:01:13 *	errst (~errst@95.10.4.213) has joined
+May 04 15:01:40 *	jpfkd (~jpfkd@218-251-5-81f1.osk2.eonet.ne.jp) has joined
+May 04 15:01:43 <brendyyn>	I've packaged an fcitx input method, but fcitx looks for them in it's own install directory. I'm wondering how we can fix that
+May 04 15:02:28 <brendyyn>	it doesn't support any environment variable, nixos seemms to wrap it up with the plugins somehow
+May 04 15:04:15 <brendyyn>	civodul: you're relation ship O.o how?
+May 04 15:04:42 *	sirgazil (~sirgazil@181.130.25.222) has joined
+May 04 15:05:08 <nckx>	civodul: Oh dear.  I've been there…
+May 04 15:06:42 *	wxie has quit (Ping timeout: 252 seconds)
+May 04 15:09:14 *	raehik has quit (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+May 04 15:10:42 *	errst has quit (Ping timeout: 252 seconds)

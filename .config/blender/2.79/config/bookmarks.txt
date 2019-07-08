@@ -1,0 +1,5 @@
+[Bookmarks]
+[Recent]
+/home/bliss/
+/home/bliss/Downloads/
+/home/bliss/Pictures/
