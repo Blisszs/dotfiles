@@ -1,5 +1,4 @@
-let mapleader ="."
-
+let mapleader =","
 
 "" Plugins
 call plug#begin()
@@ -13,6 +12,7 @@ Plug 'christianrondeau/vim-base64'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'scrooloose/nerdtree'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -31,14 +31,16 @@ call plug#end()
 	set undolevels=1000	" Number of undo levels
 	syntax on
 	filetype plugin on
+	set nocompatible
+
+"" Automaticly closing paranthesis and similar
+	autocmd FileType cpp inoremap ( ()<Left>
+	autocmd FileType cpp inoremap { {<CR>}<Esc>ko
+
+
 
 "" vim lightline fix
 	set laststatus=2
-
-
-"tab binds
-
-
 
 "" restarts sxhkd when the config file is saved
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
@@ -46,6 +48,6 @@ call plug#end()
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Markdown
-	autocmd FileType markdown,rmd,md nnoremap ,o :foldopen<enter>
-	autocmd FileType markdown,rmd,md nnoremap ,c :foldclose<enter>
+"recognize markdown
+	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
