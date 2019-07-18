@@ -1,8 +1,0 @@
-[Running] cd "/home/bliss/dev/" && g++ 64.cpp -o 64 && "/home/bliss/dev/"64
-
-[Done] exited with code=0 in 0.474 seconds
-
-[Running] cd "/home/bliss/dev/" && g++ 64.cpp -o 64 && "/home/bliss/dev/"64
-reee
-[Done] exited with code=0 in 0.464 seconds
-
