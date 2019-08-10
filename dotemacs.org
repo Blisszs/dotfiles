@@ -1,0 +1,41 @@
+Welcome to my emacs config
+
+* appearance
+** Doom-modeline
+
+#+BEGIN_SRC emacs-lisp
+(use-package doom-modeline
+:config (doom-modeline-mode 1))
+#+END_SRC
+** colortheme
+
+#+BEGIN_SRC emacs-lisp
+(use-package base16-theme
+:config (load-theme 'doom-solarized-dark t))
+#+END_SRC
+** font
+
+#+BEGIN_SRC emacs-lisp
+(set-face-attribute 'default nil :font "terminus-12")
+#+END_SRC
+** org-bullets
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-bullets
+:hook (org-mode . org-bullets-mode))
+;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+END_SRC
+** interface clutter
+
+#+BEGIN_SRC emacs-lisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+#+END_SRC
+* utilities
+** neotree
+
+ #+BEGIN_SRC emacs-lisp
+ (use-package neotree
+:config (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+ #+END_SRC
