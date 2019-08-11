@@ -1,41 +1,81 @@
 Welcome to my emacs config
 
-* appearance
-** Doom-modeline
+Planning to add ivy, swipper, counsel and helm.
 
-#+BEGIN_SRC emacs-lisp
-(use-package doom-modeline
-:config (doom-modeline-mode 1))
-#+END_SRC
-** colortheme
-
+* emacs
+** interface clutter
+ #+BEGIN_SRC emacs-lisp
+ (menu-bar-mode -1)
+ (tool-bar-mode -1)
+ (scroll-bar-mode -1)
+ #+END_SRC
+** line number
+   #+BEGIN_SRC emacs-lisp
+   (global-display-line-numbers-mode 1)
+   #+END_SRC
+** font
+ #+BEGIN_SRC emacs-lisp
+ (set-face-attribute 'default nil :font "terminus-12")
+ #+END_SRC
+* colortheme
 #+BEGIN_SRC emacs-lisp
 (use-package base16-theme
-:config (load-theme 'doom-solarized-dark t))
+:ensure t
+:config (load-theme 'base16-default-dark t))
 #+END_SRC
-** font
-
+* Doom-modeline
 #+BEGIN_SRC emacs-lisp
-(set-face-attribute 'default nil :font "terminus-12")
+(use-package doom-modeline
+:ensure t
+:config (doom-modeline-mode 1))
 #+END_SRC
-** org-bullets
-
+* org-bullets
 #+BEGIN_SRC emacs-lisp
 (use-package org-bullets
+:ensure t
 :hook (org-mode . org-bullets-mode))
 ;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 #+END_SRC
-** interface clutter
-
-#+BEGIN_SRC emacs-lisp
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-#+END_SRC
-* utilities
-** neotree
-
+* neotree
+** init
  #+BEGIN_SRC emacs-lisp
  (use-package neotree
+ :ensure t
 :config (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
  #+END_SRC
+** Neotree evil mode fix
+#+BEGIN_SRC emacs-lisp
+ (add-hook 'neotree-mode-hook
+              (lambda ()
+                (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+                (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-quick-look)
+                (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+                (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
+                (define-key evil-normal-state-local-map (kbd "g") 'neotree-refresh)
+                (define-key evil-normal-state-local-map (kbd "n") 'neotree-next-line)
+                (define-key evil-normal-state-local-map (kbd "p") 'neotree-previous-line)
+                (define-key evil-normal-state-local-map (kbd "A") 'neotree-stretch-toggle)
+                (define-key evil-normal-state-local-map (kbd "H") 'neotree-hidden-file-toggle)))
+#+END_SRC
+* evil mode
+  #+BEGIN_SRC emacs-lisp
+  (use-package evil
+  :ensure t
+  :config (evil-mode 1))
+  #+END_SRC
+* magit
+  #+BEGIN_SRC emacs-lisp
+  (use-package magit
+  :ensure t)
+  #+END_SRC
+* auctex
+#+BEGIN_SRC emacs-lisp
+(use-package auctex
+:defer t
+:ensure t
+:config)
+#+END_SRC
+* helm
+  #+BEGIN_SRC emacs-lisp
+   
+  #+END_SRC
