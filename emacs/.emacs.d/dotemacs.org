@@ -1,6 +1,17 @@
 Welcome to my emacs config
 
+<<<<<<< HEAD
 Planning to add ivy, swipper, counsel and helm.
+=======
+* Doom-modeline
+
+#+BEGIN_SRC emacs-lisp
+(use-package doom-modeline
+:ensure t
+:config (doom-modeline-mode 1))
+#+END_SRC
+* colortheme
+>>>>>>> origin/master
 
 * emacs
 ** interface clutter
@@ -23,19 +34,43 @@ Planning to add ivy, swipper, counsel and helm.
 :ensure t
 :config (load-theme 'base16-default-dark t))
 #+END_SRC
+<<<<<<< HEAD
 * Doom-modeline
+=======
+* font
+
+>>>>>>> origin/master
 #+BEGIN_SRC emacs-lisp
 (use-package doom-modeline
 :ensure t
 :config (doom-modeline-mode 1))
 #+END_SRC
 * org-bullets
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 #+BEGIN_SRC emacs-lisp
 (use-package org-bullets
 :ensure t
 :hook (org-mode . org-bullets-mode))
 ;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 #+END_SRC
+<<<<<<< HEAD
+=======
+* interface clutter
+  
+#+BEGIN_SRC emacs-lisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+#+END_SRC
+* emacs related
+
+  #+BEGIN_SRC emacs-lisp
+  (global-display-line-numbers-mode 1)
+  #+END_SRC
+>>>>>>> origin/master
 * neotree
 ** init
  #+BEGIN_SRC emacs-lisp
@@ -68,6 +103,7 @@ Planning to add ivy, swipper, counsel and helm.
   (use-package magit
   :ensure t)
   #+END_SRC
+<<<<<<< HEAD
 * auctex
 #+BEGIN_SRC emacs-lisp
 (use-package auctex
@@ -75,6 +111,8 @@ Planning to add ivy, swipper, counsel and helm.
 :ensure t
 :config)
 #+END_SRC
+=======
+>>>>>>> origin/master
 * helm
   #+BEGIN_SRC emacs-lisp
    
