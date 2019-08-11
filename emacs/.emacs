@@ -24,6 +24,13 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; fix for elpa bad request
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
+;; open symlink files without the prompt
+(setq vc-follow-symlinks t)
+
+
 (require 'org)
 (org-babel-load-file
  (expand-file-name "dotemacs.org"
