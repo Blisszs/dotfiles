@@ -1,9 +1,9 @@
 Welcome to my emacs config
 
-planning on adding ivy and swiper.
+planning to add centaur bars if needed.
+company and projectile
 
 * Doom-modeline
-
 #+BEGIN_SRC emacs-lisp
 (use-package doom-modeline
 :ensure t
@@ -24,17 +24,15 @@ planning on adding ivy and swiper.
  #+BEGIN_SRC emacs-lisp
  (set-face-attribute 'default nil :font "terminus-12")
  #+END_SRC
+** line wrapping 
+   #+BEGIN_SRC emacs-lisp
+   (global-visual-line-mode 1)
+   #+END_SRC
 * colortheme
 #+BEGIN_SRC emacs-lisp
 (use-package base16-theme
 :ensure t
 :config (load-theme 'base16-default-dark t))
-#+END_SRC
-* font
-#+BEGIN_SRC emacs-lisp
-(use-package doom-modeline
-:ensure t
-:config (doom-modeline-mode 1))
 #+END_SRC
 * org-bullets
 #+BEGIN_SRC emacs-lisp
@@ -42,27 +40,6 @@ planning on adding ivy and swiper.
 :ensure t
 :hook (org-mode . org-bullets-mode))
 ;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-#+END_SRC
-* neotree
-** init
- #+BEGIN_SRC emacs-lisp
- (use-package neotree
- :ensure t
-:config (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
- #+END_SRC
-** Neotree evil mode fix
-#+BEGIN_SRC emacs-lisp
- (add-hook 'neotree-mode-hook
-              (lambda ()
-                (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-                (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-quick-look)
-                (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-                (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
-                (define-key evil-normal-state-local-map (kbd "g") 'neotree-refresh)
-                (define-key evil-normal-state-local-map (kbd "n") 'neotree-next-line)
-                (define-key evil-normal-state-local-map (kbd "p") 'neotree-previous-line)
-                (define-key evil-normal-state-local-map (kbd "A") 'neotree-stretch-toggle)
-                (define-key evil-normal-state-local-map (kbd "H") 'neotree-hidden-file-toggle)))
 #+END_SRC
 * evil mode
   #+BEGIN_SRC emacs-lisp
@@ -81,4 +58,16 @@ planning on adding ivy and swiper.
 :defer t
 :ensure t
 :config)
+#+END_SRC
+* ivy 
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+:ensure t
+:config (ivy-mode 1))
+#+END_SRC
+* counsel
+#+BEGIN_SRC emacs-lisp
+(use-package counsel
+:ensure t
+:config (counsel-mode 1))
 #+END_SRC
