@@ -1,14 +1,28 @@
 Welcome to my emacs config
 
-planning to add centaur bars if needed.
-company and projectile
-
-* Doom-modeline
-#+BEGIN_SRC emacs-lisp
-(use-package doom-modeline
-:ensure t
-:config (doom-modeline-mode 1))
-#+END_SRC
+* visuals
+** Doom-modeline
+ #+BEGIN_SRC emacs-lisp
+ (use-package doom-modeline
+ :ensure t
+ :config 
+ (doom-modeline-mode 1)
+ (use-package minions)
+ (setq doom-modeline-minor-modes (featurep 'minions)))
+ #+END_SRC
+** colortheme
+ #+BEGIN_SRC emacs-lisp
+ (use-package base16-theme
+ :ensure t
+ :config (load-theme 'base16-default-dark t))
+ #+END_SRC
+** org-bullets
+ #+BEGIN_SRC emacs-lisp
+ (use-package org-bullets
+ :ensure t
+ :hook (org-mode . org-bullets-mode))
+ ;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+ #+END_SRC
 * emacs
 ** interface clutter
  #+BEGIN_SRC emacs-lisp
@@ -32,59 +46,50 @@ company and projectile
    #+BEGIN_SRC emacs-lisp
    (show-paren-mode 1)
    #+END_SRC
-* colortheme
-#+BEGIN_SRC emacs-lisp
-(use-package base16-theme
-:ensure t
-:config (load-theme 'base16-default-dark t))
-#+END_SRC
-* org-bullets
-#+BEGIN_SRC emacs-lisp
-(use-package org-bullets
-:ensure t
-:hook (org-mode . org-bullets-mode))
-;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-#+END_SRC
 * evil mode
   #+BEGIN_SRC emacs-lisp
   (use-package evil
   :ensure t
   :config (evil-mode 1))
   #+END_SRC
-* magit
+* git integration
+** magit  
   #+BEGIN_SRC emacs-lisp
   (use-package magit
   :ensure t)
   #+END_SRC
-* auctex
-#+BEGIN_SRC emacs-lisp
-(use-package auctex
-:defer t
-:ensure t
-:config)
-#+END_SRC
-* ivy 
-#+BEGIN_SRC emacs-lisp
-(use-package ivy
-:ensure t
-:config (ivy-mode 1))
-#+END_SRC
-* counsel
-#+BEGIN_SRC emacs-lisp
-(use-package counsel
-:ensure t
-:config (counsel-mode 1))
-#+END_SRC
-* company
-  #+BEGIN_SRC emacs-lisp
-  (use-package company
-  :ensure t
-  :config 
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 3)
-  :hook 
-  ((c++-mode c-mode objc-mode) . company-mode))
-  #+END_SRC
+* LaTeX
+** auctex
+ #+BEGIN_SRC emacs-lisp
+ (use-package auctex
+ :ensure t
+ :defer t)
+ #+END_SRC
+* minibuffers tools
+** ivy 
+ #+BEGIN_SRC emacs-lisp
+ (use-package ivy
+ :ensure t
+ :config (ivy-mode 1))
+ #+END_SRC
+** counsel
+ #+BEGIN_SRC emacs-lisp
+ (use-package counsel
+ :ensure t
+ :config (counsel-mode 1))
+ #+END_SRC
+** swiper
+* completion
+** company
+   #+BEGIN_SRC emacs-lisp
+   (use-package company
+   :ensure t
+   :config 
+   (setq company-idle-delay 0)
+   (setq company-minimum-prefix-length 3)
+   :hook 
+   ((c++-mode c-mode objc-mode) . company-mode))
+   #+END_SRC
 * flycheck
   #+BEGIN_SRC emacs-lisp
   (use-package flycheck
@@ -92,32 +97,39 @@ company and projectile
   :hook
   ((c++-mode) . flycheck-mode))
   #+END_SRC
-* c++
-** company-irony
-   #+BEGIN_SRC emacs-lisp
-   (use-package company-irony
-   :ensure t
-   :requires (company)
-   :config 
-   (add-to-list 'company-backends 'company-irony))
-   #+END_SRC
-** irony
+* YASnippet
   #+BEGIN_SRC emacs-lisp
-  (use-package irony
+  (use-package yasnippet
   :ensure t
-  :defer t
+  :config (use-package yasnippet-snipets :ensure t)
   :hook
-  (((c++-mode c-mode objc-mode) . irony-mode)
-  (irony-mode . irony-cdb-autosetup-compile-options)))
+  ((c++-mode) . yas-minor-mode))
   #+END_SRC
-** flycheck-irony
+* programming
+** c++
+*** company-irony
+    #+BEGIN_SRC emacs-lisp
+    (use-package company-irony
+    :ensure t
+    :requires (company)
+    :config 
+    (add-to-list 'company-backends 'company-irony))
+    #+END_SRC
+*** irony
    #+BEGIN_SRC emacs-lisp
-   (use-package flycheck-irony
+   (use-package irony
    :ensure t
    :hook
-   (flycheck-mode . flycheck-irony-setup))
+   (((c++-mode c-mode objc-mode) . irony-mode)
+   (irony-mode . irony-cdb-autosetup-compile-options)))
    #+END_SRC
-   
+*** flycheck-irony
+    #+BEGIN_SRC emacs-lisp
+    (use-package flycheck-irony
+    :ensure t
+    :hook
+    (flycheck-mode . flycheck-irony-setup))
+    #+END_SRC
 * to be added
 ** multiple cursors 
  #+BEGIN_SRC emacs-lisp
