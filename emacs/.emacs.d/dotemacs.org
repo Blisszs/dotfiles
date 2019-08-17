@@ -7,7 +7,7 @@ Welcome to my emacs config
  :ensure t
  :config 
  (doom-modeline-mode 1)
- (use-package minions)
+ (use-package minions :ensure t)
  (setq doom-modeline-minor-modes (featurep 'minions)))
  #+END_SRC
 ** colortheme
@@ -46,11 +46,22 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (show-paren-mode 1)
    #+END_SRC
+** backup directory and backup settings
+   #+BEGIN_SRC emacs-lisp
+   (setq
+    backup-by-copying t      ; don't clobber symlinks
+    backup-directory-alist
+     '(("." . "~/.backups/"))    ; don't litter my fs tree
+    delete-old-versions t
+    kept-new-versions 6
+    kept-old-versions 2
+    version-control t)       ; use versioned backups
+   #+END_SRC
 * evil mode
   #+BEGIN_SRC emacs-lisp
-  (use-package evil
-  :ensure t
-  :config (evil-mode 1))
+;  (use-package evil
+;  :ensure t
+;  :config (evil-mode 1))
   #+END_SRC
 * git integration
 ** magit  
@@ -101,7 +112,7 @@ Welcome to my emacs config
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
   :ensure t
-  :config (use-package yasnippet-snipets :ensure t)
+  :config (use-package yasnippet-snippets :ensure t)
   :hook
   ((c++-mode) . yas-minor-mode))
   #+END_SRC
@@ -130,13 +141,29 @@ Welcome to my emacs config
     :hook
     (flycheck-mode . flycheck-irony-setup))
     #+END_SRC
+* smartparens
+  #+BEGIN_SRC emacs-lisp
+  (use-package smartparens
+  :ensure t
+  :hook
+  ((c++-mode org-mode) . smartparens-mode))
+  #+END_SRC
+* agressive inndent
+  #+BEGIN_SRC emacs-lisp
+  (use-package aggressive-indent
+  :ensure t
+  :hook
+  ((c++-mode) . aggressive-indent-mode))
+  #+END_SRC
+* hydra
+  #+BEGIN_SRC emacs-lisp
+  (use-package hydra
+  :ensure t
+  :config
+  (hydra-mode 1))
+  #+END_SRC
 * to be added
 ** multiple cursors 
- #+BEGIN_SRC emacs-lisp
-
- #+END_SRC
-** smartparens
    #+BEGIN_SRC emacs-lisp
-   
+
    #+END_SRC
-** agressive inndent
