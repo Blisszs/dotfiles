@@ -155,13 +155,6 @@ Welcome to my emacs config
   :hook
   ((c++-mode) . aggressive-indent-mode))
   #+END_SRC
-* hydra
-  #+BEGIN_SRC emacs-lisp
-  (use-package hydra
-  :ensure t
-  :config
-  (hydra-mode 1))
-  #+END_SRC
 * to be added
 ** multiple cursors 
    #+BEGIN_SRC emacs-lisp
