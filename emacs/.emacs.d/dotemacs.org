@@ -6,9 +6,7 @@ Welcome to my emacs config
  (use-package doom-modeline
  :ensure t
  :config 
- (doom-modeline-mode 1)
- (use-package minions :ensure t)
- (setq doom-modeline-minor-modes (featurep 'minions)))
+ (doom-modeline-mode 1))
  #+END_SRC
 ** colortheme
  #+BEGIN_SRC emacs-lisp
@@ -23,6 +21,10 @@ Welcome to my emacs config
  :hook (org-mode . org-bullets-mode))
  ;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
  #+END_SRC
+** prettify symbols
+   #+BEGIN_SRC emacs-lisp
+   (global-prettify-symbols-mode t)
+   #+END_SRC
 * emacs
 ** interface clutter
  #+BEGIN_SRC emacs-lisp
@@ -30,9 +32,14 @@ Welcome to my emacs config
  (tool-bar-mode -1)
  (scroll-bar-mode -1)
  #+END_SRC
+** modeline configuration
+   #+BEGIN_SRC emacs-lisp
+   (display-time-mode 1)
+   #+END_SRC
 ** line number
    #+BEGIN_SRC emacs-lisp
-   (global-display-line-numbers-mode 1)
+   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+   (add-hook 'text-mode-hook 'display-line-numbers-mode)
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
@@ -42,9 +49,17 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (global-visual-line-mode 1)
    #+END_SRC
+** fullscreen
+   #+BEGIN_SRC emacs-lisp
+   (toggle-frame-fullscreen)
+   #+END_SRC
 ** highlight parentheses
    #+BEGIN_SRC emacs-lisp
    (show-paren-mode 1)
+   #+END_SRC
+** disable start page
+   #+BEGIN_SRC emacs-lisp
+   (setq inhibit-startup-message t)
    #+END_SRC
 ** backup directory and backup settings
    #+BEGIN_SRC emacs-lisp
@@ -57,75 +72,29 @@ Welcome to my emacs config
     kept-old-versions 2
     version-control t)       ; use versioned backups
    #+END_SRC
-* evil mode
-  #+BEGIN_SRC emacs-lisp
-;  (use-package evil
-;  :ensure t
-;  :config (evil-mode 1))
-  #+END_SRC
-* git integration
-** magit  
-  #+BEGIN_SRC emacs-lisp
-  (use-package magit
-  :ensure t)
-  #+END_SRC
-* LaTeX
-** auctex
- #+BEGIN_SRC emacs-lisp
- (use-package auctex
- :ensure t
- :defer t)
- #+END_SRC
-* minibuffers tools
-** ivy 
- #+BEGIN_SRC emacs-lisp
- (use-package ivy
- :ensure t
- :config (ivy-mode 1))
- #+END_SRC
-** counsel
- #+BEGIN_SRC emacs-lisp
- (use-package counsel
- :ensure t
- :config (counsel-mode 1))
- #+END_SRC
-** swiper
-* completion
-** company
-   #+BEGIN_SRC emacs-lisp
-   (use-package company
-   :ensure t
-   :config 
-   (setq company-idle-delay 0)
-   (setq company-minimum-prefix-length 3)
-   :hook 
-   ((c++-mode c-mode objc-mode) . company-mode))
-   #+END_SRC
-* flycheck
-  #+BEGIN_SRC emacs-lisp
-  (use-package flycheck
-  :ensure t
-  :hook
-  ((c++-mode) . flycheck-mode))
-  #+END_SRC
-* YASnippet
-  #+BEGIN_SRC emacs-lisp
-  (use-package yasnippet
-  :ensure t
-  :config (use-package yasnippet-snippets :ensure t)
-  :hook
-  ((c++-mode) . yas-minor-mode))
-  #+END_SRC
 * programming
-** c++
+** c/c++
+*** company-c-headers
+  #+begin_src emacs-lisp :tangle yes
+  (use-package company-c-headers
+  :defer nil
+  :ensure t)
+  #+end_src
 *** company-irony
-    #+BEGIN_SRC emacs-lisp
-    (use-package company-irony
+ #+BEGIN_SRC emacs-lisp
+ (use-package company-irony
+ :ensure t
+ :requires (company)
+ :config 
+ (add-to-list 'company-backends 'company-irony))
+#+END_SRC
+*** eldoc-irony
+    #+begin_src emacs-lisp
+    (use-package irony-eldoc
     :ensure t
-    :requires (company)
-    :config 
-    (add-to-list 'company-backends 'company-irony))
-    #+END_SRC
+    :hook
+    (irony-mode . irony-eldoc))
+    #+end_src
 *** irony
    #+BEGIN_SRC emacs-lisp
    (use-package irony
@@ -141,22 +110,111 @@ Welcome to my emacs config
     :hook
     (flycheck-mode . flycheck-irony-setup))
     #+END_SRC
-* smartparens
-  #+BEGIN_SRC emacs-lisp
-  (use-package smartparens
-  :ensure t
-  :hook
-  ((c++-mode org-mode) . smartparens-mode))
-  #+END_SRC
-* agressive inndent
-  #+BEGIN_SRC emacs-lisp
-  (use-package aggressive-indent
-  :ensure t
-  :hook
-  ((c++-mode) . aggressive-indent-mode))
-  #+END_SRC
-* to be added
-** multiple cursors 
+** emacs-lisp
+** scheme
+   #+begin_src emacs-lisp
+   (add-hook 'scheme-mode-hook #'smartparens-mode)
+   #+end_src
+* navigation
+** evil mode
    #+BEGIN_SRC emacs-lisp
-
+   (use-package evil
+   :ensure t
+   :config (evil-mode 1))
    #+END_SRC
+* IDE stuff
+** completion
+*** company
+    #+BEGIN_SRC emacs-lisp
+    (use-package company
+    :ensure t
+    :config 
+    (setq company-idle-delay 0)
+    (setq company-minimum-prefix-length 3)
+    :hook 
+    ((c++-mode c-mode objc-mode) . company-mode))
+    #+END_SRC
+** flycheck
+   #+BEGIN_SRC emacs-lisp
+   (use-package flycheck
+   :ensure t
+   :hook
+   ((c++-mode) . flycheck-mode))
+   #+END_SRC
+** smartparens
+   #+BEGIN_SRC emacs-lisp
+   (use-package smartparens
+   :ensure t
+   :hook
+   ((c++-mode c-mode objc-mode emacs-lisp-mode org-mode scheme-mode) . smartparens-mode))
+   #+END_SRC
+** agressive inndent
+   #+BEGIN_SRC emacs-lisp
+   (use-package aggressive-indent
+   :ensure t
+   :hook
+   ((c++-mode emacs-lisp-mode scheme-mode) . aggressive-indent-mode))
+   #+END_SRC
+* YASnippet
+  #+BEGIN_SRC emacs-lisp
+  (use-package yasnippet
+  :ensure t
+  :config 
+  (use-package yasnippet-snippets :ensure t)
+  :hook
+  ((c++-mode emacs-lisp-mode org-mode) . yas-minor-mode))
+  #+END_SRC
+* pdf
+  #+begin_src emacs-lisp 
+  (use-package pdf-tools
+  :ensure t
+  :config
+  (pdf-tools-install))
+  #+end_src
+* minibuffers tools
+** ivy 
+ #+BEGIN_SRC emacs-lisp
+ (use-package ivy
+ :ensure t
+ :config 
+ (ivy-mode 1))
+ #+END_SRC
+** counsel
+ #+BEGIN_SRC emacs-lisp
+ (use-package counsel
+ :ensure t
+ :config 
+ (counsel-mode 1))
+ #+END_SRC
+** swiper
+   #+begin_src emacs-lisp
+   (use-package swiper
+   :ensure t
+   :bind ("C-s" . 'swiper))
+   #+end_src
+* git integration
+** magit  
+  #+BEGIN_SRC emacs-lisp
+  (use-package magit
+  :ensure t)
+  #+END_SRC
+* LaTeX
+** auctex
+ #+BEGIN_SRC emacs-lisp
+ (use-package auctex
+ :ensure t
+ :defer t)
+ #+END_SRC
+* to be added
+** ace window
+   #+BEGIN_SRC emacs-lisp
+  
+   #+END_SRC
+** eldoc + c/c++
+   #+begin_src emacs-lisp
+   
+   #+end_src
+** avy
+   #+begin_src emacs-lisp
+
+   #+end_src

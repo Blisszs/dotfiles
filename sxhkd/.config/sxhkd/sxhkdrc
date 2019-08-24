@@ -1,11 +1,5 @@
-super + shift + m
-	mpv -fs "$(xclip -o)"
-
-super + shift + t; {f,t,m,c}
-	st -e {nnn,transmission-remote-cli,ncmpcpp & mpd & ~/gitclone/mpd-rich-presence-discord/release/mpd_discord_richpresence -h=127.0.01 -p=6601 --fork --no-idle --use-multiple-apps,calcurse}
-
-super + f
-	firefox "$(cat .bookmark | dmenu)"
+super + shift + t; {f,t,c}
+	st -e {nnn,transmission-remote-cli,calcurse}
 
 super + F1; {e}
       	zathura {/home/bliss/cheatsheets/emacs.pdf}
@@ -19,5 +13,11 @@ super + shift + g
 super + shift + f
       	firefox
 
-super + shift + d
-      	Discord
+super + Return
+      st
+
+super + d
+      dmenu_run
+
+super + w
+      xfce4-popup-whiskermenu
