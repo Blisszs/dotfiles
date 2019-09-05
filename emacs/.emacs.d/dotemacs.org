@@ -141,6 +141,12 @@ Welcome to my emacs config
    :hook
    ((c++-mode) . flycheck-mode))
    #+END_SRC
+** flycheck-popup
+   #+begin_src emacs-lisp
+   (use-package flycheck-popup-tip
+   :hook
+   ((c++-mode c-mode objc-mode) . flycheck-popup-tip-mode))
+   #+end_src
 ** smartparens
    #+BEGIN_SRC emacs-lisp
    (use-package smartparens
