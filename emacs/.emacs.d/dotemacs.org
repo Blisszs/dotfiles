@@ -72,49 +72,6 @@ Welcome to my emacs config
     kept-old-versions 2
     version-control t)       ; use versioned backups
    #+END_SRC
-* programming
-** c/c++
-*** company-c-headers
-  #+begin_src emacs-lisp :tangle yes
-  (use-package company-c-headers
-  :defer nil
-  :ensure t)
-  #+end_src
-*** company-irony
- #+BEGIN_SRC emacs-lisp
- (use-package company-irony
- :ensure t
- :requires (company)
- :config 
- (add-to-list 'company-backends 'company-irony))
-#+END_SRC
-*** eldoc-irony
-    #+begin_src emacs-lisp
-    (use-package irony-eldoc
-    :ensure t
-    :hook
-    (irony-mode . irony-eldoc))
-    #+end_src
-*** irony
-   #+BEGIN_SRC emacs-lisp
-   (use-package irony
-   :ensure t
-   :hook
-   (((c++-mode c-mode objc-mode) . irony-mode)
-   (irony-mode . irony-cdb-autosetup-compile-options)))
-   #+END_SRC
-*** flycheck-irony
-    #+BEGIN_SRC emacs-lisp
-    (use-package flycheck-irony
-    :ensure t
-    :hook
-    (flycheck-mode . flycheck-irony-setup))
-    #+END_SRC
-** emacs-lisp
-** scheme
-   #+begin_src emacs-lisp
-   (add-hook 'scheme-mode-hook #'smartparens-mode)
-   #+end_src
 * navigation
 ** evil mode
    #+BEGIN_SRC emacs-lisp
@@ -144,6 +101,7 @@ Welcome to my emacs config
 ** flycheck-popup
    #+begin_src emacs-lisp
    (use-package flycheck-popup-tip
+   :ensure t
    :hook
    ((c++-mode c-mode objc-mode) . flycheck-popup-tip-mode))
    #+end_src
@@ -161,6 +119,45 @@ Welcome to my emacs config
    :hook
    ((c++-mode emacs-lisp-mode scheme-mode) . aggressive-indent-mode))
    #+END_SRC
+* programming
+** c/c++
+*** company-irony
+ #+BEGIN_SRC emacs-lisp
+ (use-package company-irony
+ :ensure t
+ :requires (company)
+ :config 
+ (add-to-list 'company-backends 'company-irony))
+#+END_SRC
+*** eldoc-irony
+    #+begin_src emacs-lisp
+    (use-package irony-eldoc
+    :ensure t
+    :hook
+    (irony-mode . irony-eldoc))
+    #+end_src
+*** irony
+   #+BEGIN_SRC emacs-lisp
+   (use-package irony
+   :ensure t
+   :config (setq irony-libclang-additional-flags
+     (append '("-I" "/run/current-system/profile/include/c++/" irony-libclang-additional-flags)))
+   :hook
+   (((c++-mode c-mode objc-mode) . irony-mode)
+   (irony-mode . irony-cdb-autosetup-compile-options)))
+   #+END_SRC
+*** flycheck-irony
+    #+BEGIN_SRC emacs-lisp
+    (use-package flycheck-irony
+    :ensure t
+    :hook
+    (flycheck-mode . flycheck-irony-setup))
+    #+END_SRC
+** emacs-lisp
+** scheme
+   #+begin_src emacs-lisp
+   (add-hook 'scheme-mode-hook #'smartparens-mode)
+   #+end_src
 * YASnippet
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
@@ -170,13 +167,6 @@ Welcome to my emacs config
   :hook
   ((c++-mode emacs-lisp-mode org-mode) . yas-minor-mode))
   #+END_SRC
-* pdf
-  #+begin_src emacs-lisp 
-  (use-package pdf-tools
-  :ensure t
-  :config
-  (pdf-tools-install))
-  #+end_src
 * minibuffers tools
 ** ivy 
  #+BEGIN_SRC emacs-lisp
@@ -211,6 +201,13 @@ Welcome to my emacs config
  :ensure t
  :defer t)
  #+END_SRC
+* pdf
+  #+begin_src emacs-lisp 
+  (use-package pdf-tools
+  :ensure t
+  :config
+  (pdf-tools-install))
+  #+end_src
 * to be added
 ** ace window
    #+BEGIN_SRC emacs-lisp
