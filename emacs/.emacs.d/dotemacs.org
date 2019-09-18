@@ -49,10 +49,6 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (global-visual-line-mode 1)
    #+END_SRC
-** fullscreen
-   #+BEGIN_SRC emacs-lisp
-   (toggle-frame-fullscreen)
-   #+END_SRC
 ** highlight parentheses
    #+BEGIN_SRC emacs-lisp
    (show-paren-mode 1)
@@ -72,6 +68,12 @@ Welcome to my emacs config
     kept-old-versions 2
     version-control t)       ; use versioned backups
    #+END_SRC
+** tabs
+   #+begin_src emacs-lisp
+   (setq-default indent-tabs-mode t)
+   (setq-default tab-width 8) 
+   (defvaralias 'c-basic-offset 'tab-width)
+   #+end_src
 * navigation
 ** evil mode
    #+BEGIN_SRC emacs-lisp
@@ -201,13 +203,6 @@ Welcome to my emacs config
  :ensure t
  :defer t)
  #+END_SRC
-* pdf
-  #+begin_src emacs-lisp 
-  (use-package pdf-tools
-  :ensure t
-  :config
-  (pdf-tools-install))
-  #+end_src
 * to be added
 ** ace window
    #+BEGIN_SRC emacs-lisp
