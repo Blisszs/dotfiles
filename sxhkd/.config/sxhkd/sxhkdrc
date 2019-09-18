@@ -1,23 +1,23 @@
 super + shift + t; {f,t,c}
-	st -e {nnn,transmission-remote-cli,calcurse}
+	st -e {ranger,transmission-remote-cli,calcurse}
 
 super + F1; {e}
-      	zathura {/home/bliss/cheatsheets/emacs.pdf}
-
+	zathura {/home/bliss/cheatsheets/emacs.pdf}
+	
 super + shift + e
-      	emacs
+	emacs
 
 super + shift + g
-      	gimp
+	gimp
 
 super + shift + f
-      	firefox
+	firefox
 
 super + Return
-      st
+	st
 
 super + d
-      dmenu_run
+	dmenu_run
 
-super + w
-      xfce4-popup-whiskermenu
+super + shift + b
+      	blender
