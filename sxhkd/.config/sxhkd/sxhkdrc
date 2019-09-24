@@ -1,5 +1,5 @@
 super + shift + t; {f,t,c}
-	st -e {ranger,transmission-remote-cli,calcurse}
+	st -e {nnn,transmission-remote-cli,calcurse}
 
 super + F1; {e}
 	zathura {/home/bliss/cheatsheets/emacs.pdf}
@@ -17,7 +17,7 @@ super + Return
 	st
 
 super + d
-	dmenu_run
+	dmenu_run -fn dejavusans:pixelsize=12
 
 super + shift + b
       	blender
