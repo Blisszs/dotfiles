@@ -17,7 +17,7 @@ super + Return
 	st
 
 super + d
-	dmenu_run -fn dejavusans:pixelsize=12
+	dmenu_run -fn dejavusans:pixelsize=14
 
 super + shift + b
-      	blender
+	blender
