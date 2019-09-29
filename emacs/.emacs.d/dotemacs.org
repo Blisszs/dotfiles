@@ -10,9 +10,9 @@ Welcome to my emacs config
  #+END_SRC
 ** colortheme
  #+BEGIN_SRC emacs-lisp
- (use-package base16-theme
+ (use-package darktooth-theme
  :ensure t
- :config (load-theme 'base16-default-dark t))
+ :config (load-theme 'darktooth t))
  #+END_SRC
 ** org-bullets
  #+BEGIN_SRC emacs-lisp
@@ -114,13 +114,6 @@ Welcome to my emacs config
    :hook
    ((c++-mode c-mode objc-mode emacs-lisp-mode org-mode scheme-mode) . smartparens-mode))
    #+END_SRC
-** agressive inndent
-   #+BEGIN_SRC emacs-lisp
-   (use-package aggressive-indent
-   :ensure t
-   :hook
-   ((c++-mode emacs-lisp-mode scheme-mode) . aggressive-indent-mode))
-   #+END_SRC
 * programming
 ** c/c++
 *** company-irony
@@ -155,6 +148,18 @@ Welcome to my emacs config
     :hook
     (flycheck-mode . flycheck-irony-setup))
     #+END_SRC
+** rust
+*** rust-mode
+    #+begin_src emacs-lisp 
+    (use-package rust-mode
+    :ensure t)
+    #+end_src
+*** flycheck-rust
+    #+begin_src emacs-lisp 
+    (use-package flycheck-rust
+    :ensure t
+    :hook (flycheck-rust-setup . rust-mode))
+    #+end_src
 ** emacs-lisp
 ** scheme
    #+begin_src emacs-lisp
