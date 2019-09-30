@@ -1,5 +1,5 @@
 super + shift + t; {f,t,c}
-	st -e {nnn,transmission-remote-cli,calcurse}
+	st -e {ranger,transmission-remote-cli,calcurse}
 
 super + F1; {e}
 	zathura {/home/bliss/cheatsheets/emacs.pdf}
