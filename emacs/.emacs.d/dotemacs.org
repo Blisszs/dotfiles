@@ -98,14 +98,14 @@ Welcome to my emacs config
    (use-package flycheck
    :ensure t
    :hook
-   ((c++-mode) . flycheck-mode))
+   ((c++-mode c-mode rust-mode) . flycheck-mode))
    #+END_SRC
 ** flycheck-popup
    #+begin_src emacs-lisp
    (use-package flycheck-popup-tip
    :ensure t
    :hook
-   ((c++-mode c-mode objc-mode) . flycheck-popup-tip-mode))
+   ((c++-mode c-mode rust-mode) . flycheck-popup-tip-mode))
    #+end_src
 ** smartparens
    #+BEGIN_SRC emacs-lisp
