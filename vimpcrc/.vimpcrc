@@ -1,7 +1,0 @@
-highlight status default white
-highlight tab default white
-highlight id default green
-highlight current default white
-highlight progress default white
-highlight pager default white
-highlight error default red
