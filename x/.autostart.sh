@@ -5,7 +5,7 @@
 #done &
 
 # programs
-exec feh --bg-fill -z Downloads/wallpapers &
+exec feh --bg-fill -z wallpapers &
 exec setxkbmap pt &
 exec start-pulseaudio-x11 &
 exec sxhkd
