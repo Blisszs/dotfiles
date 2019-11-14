@@ -43,7 +43,7 @@ Welcome to my emacs config
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
- (set-face-attribute 'default nil :font "terminus-12")
+ (set-face-attribute 'default nil :font "xos4 terminus-12")
  #+END_SRC
 ** line wrapping 
    #+BEGIN_SRC emacs-lisp
@@ -74,6 +74,12 @@ Welcome to my emacs config
    (setq-default tab-width 8) 
    (defvaralias 'c-basic-offset 'tab-width)
    #+end_src
+* navigation
+  #+begin_src emacs-lisp
+  (use-package evil
+  :ensure t
+  :config (evil-mode 1))
+  #+end_src
 * IDE stuff
 ** completion
 *** company

@@ -7,5 +7,5 @@
 # programs
 exec feh --bg-fill -z wallpapers &
 exec setxkbmap pt &
-exec start-pulseaudio-x11 &
+exec pulseaudio &
 exec sxhkd
