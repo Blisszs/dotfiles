@@ -43,7 +43,7 @@ Welcome to my emacs config
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
- (set-face-attribute 'default nil :font "xos4 terminus-12")
+ (set-face-attribute 'default nil :font "terminus-12")
  #+END_SRC
 ** line wrapping 
    #+BEGIN_SRC emacs-lisp
@@ -78,7 +78,10 @@ Welcome to my emacs config
   #+begin_src emacs-lisp
   (use-package evil
   :ensure t
-  :config (evil-mode 1))
+  :config (evil-mode 1)
+  (add-hook 'org-mode-hook                                                                      
+          (lambda ()                                                                          
+        (define-key evil-normal-state-map (kbd "TAB") 'org-cycle))) )
   #+end_src
 * IDE stuff
 ** completion
@@ -202,9 +205,9 @@ Welcome to my emacs config
   #+END_SRC
 * Discord Rich Presence
   #+begin_src emacs-lisp
-  (use-package eldoc
+  (use-package elcord
   :ensure t
-  :config (eldoc-mode 1))
+  :config (elcord-mode 1))
   #+end_src
 * LaTeX
 
