@@ -43,7 +43,7 @@ Welcome to my emacs config
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
- (set-face-attribute 'default nil :font "terminus-12")
+ (set-face-attribute 'default nil :font "terminus-18")
  #+END_SRC
 ** line wrapping 
    #+BEGIN_SRC emacs-lisp
@@ -116,6 +116,18 @@ Welcome to my emacs config
    :hook
    ((c++-mode c-mode objc-mode emacs-lisp-mode org-mode scheme-mode) . smartparens-mode))
    #+END_SRC
+** lisp REPL
+   #+begin_src emacs-lisp
+   (use-package geiser
+   :ensure t)
+   #+end_src
+** snippets
+   #+BEGIN_SRC emacs-lisp
+   (use-package yasnippet
+   :ensure t
+   :hook
+   ((c++-mode emacs-lisp-mode org-mode) . yas-minor-mode))
+   #+END_SRC
 * programming
 ** c/c++
 *** company-irony
@@ -167,15 +179,6 @@ Welcome to my emacs config
    #+begin_src emacs-lisp
    (add-hook 'scheme-mode-hook #'smartparens-mode)
    #+end_src
-* YASnippet
-  #+BEGIN_SRC emacs-lisp
-  (use-package yasnippet
-  :ensure t
-  :config 
-  (use-package yasnippet-snippets :ensure t)
-  :hook
-  ((c++-mode emacs-lisp-mode org-mode) . yas-minor-mode))
-  #+END_SRC
 * minibuffers tools
 ** ivy 
  #+BEGIN_SRC emacs-lisp
@@ -203,15 +206,7 @@ Welcome to my emacs config
   (use-package magit
   :ensure t)
   #+END_SRC
-* Discord Rich Presence
-  #+begin_src emacs-lisp
-  (use-package elcord
-  :ensure t
-  :config (elcord-mode 1))
-  #+end_src
 * LaTeX
-
-
 ** auctex
  #+BEGIN_SRC emacs-lisp
  (use-package auctex
@@ -223,11 +218,3 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
   
    #+END_SRC
-** eldoc + c/c++
-   #+begin_src emacs-lisp
-   
-   #+end_src
-** avy
-   #+begin_src emacs-lisp
-
-   #+end_src
