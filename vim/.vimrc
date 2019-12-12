@@ -5,19 +5,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     endif
+
 "" Plugins
 call plug#begin()
 
-" cosmetic
 Plug 'itchyny/lightline.vim'
 Plug 'Lokaltog/vim-distinguished'
-Plug 'christianrondeau/vim-base64'
-
-" useful
-Plug 'masukomi/vim-markdown-folding'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -38,12 +32,6 @@ call plug#end()
 	filetype plugin on
 	set nocompatible
 
-"" Automaticly closing paranthesis and similar
-	autocmd FileType cpp inoremap ( ()<Left>
-	autocmd FileType cpp inoremap { {<CR>}<Esc>ko
-
-
-
 "" vim lightline fix
 	set laststatus=2
 
@@ -52,7 +40,3 @@ call plug#end()
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-"recognize markdown
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
