@@ -75,14 +75,22 @@ Welcome to my emacs config
    (defvaralias 'c-basic-offset 'tab-width)
    #+end_src
 * navigation
+** evil-mode
   #+begin_src emacs-lisp
   (use-package evil
   :ensure t
-  :config (evil-mode 1)
-  (add-hook 'org-mode-hook                                                                      
-          (lambda ()                                                                          
-        (define-key evil-normal-state-map (kbd "TAB") 'org-cycle))) )
+  :init
+  (setq evil-want-keybinding nil)
+  :config 
+  (evil-mode 1))
   #+end_src
+** evil-collecion
+   #+begin_src emacs-lisp
+   (use-package evil-collection
+   :after evil
+   :ensure t
+   :config (evil-collection-init))
+   #+end_src
 * IDE stuff
 ** completion
 *** company
@@ -107,14 +115,14 @@ Welcome to my emacs config
    (use-package flycheck-popup-tip
    :ensure t
    :hook
-   ((c++-mode c-mode rust-mode) . flycheck-popup-tip-mode))
+   (flycheck-mode . flycheck-popup-tip-mode))
    #+end_src
 ** smartparens
    #+BEGIN_SRC emacs-lisp
    (use-package smartparens
    :ensure t
    :hook
-   ((c++-mode c-mode objc-mode emacs-lisp-mode org-mode scheme-mode) . smartparens-mode))
+   ((c++-mode html-mode css-mode c-mode objc-mode emacs-lisp-mode org-mode scheme-mode) . smartparens-mode))
    #+END_SRC
 ** lisp REPL
    #+begin_src emacs-lisp
@@ -149,8 +157,6 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (use-package irony
    :ensure t
-   :config (setq irony-libclang-additional-flags
-     (append '("-I" "/run/current-system/profile/include/c++/" irony-libclang-additional-flags)))
    :hook
    (((c++-mode c-mode objc-mode) . irony-mode)
    (irony-mode . irony-cdb-autosetup-compile-options)))
@@ -174,11 +180,6 @@ Welcome to my emacs config
     :ensure t
     :hook (flycheck-rust-setup . rust-mode))
     #+end_src
-** emacs-lisp
-** scheme
-   #+begin_src emacs-lisp
-   (add-hook 'scheme-mode-hook #'smartparens-mode)
-   #+end_src
 * minibuffers tools
 ** ivy 
  #+BEGIN_SRC emacs-lisp
@@ -201,11 +202,16 @@ Welcome to my emacs config
    :bind ("C-s" . 'swiper))
    #+end_src
 * git integration
-** magit  
+** magit 
   #+BEGIN_SRC emacs-lisp
   (use-package magit
   :ensure t)
   #+END_SRC
+** magit-evil
+   #+begin_src emacs-lisp
+   (use-package evil-magit
+   :ensure t)
+   #+end_src
 * LaTeX
 ** auctex
  #+BEGIN_SRC emacs-lisp
