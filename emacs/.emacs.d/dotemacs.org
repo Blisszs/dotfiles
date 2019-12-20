@@ -91,6 +91,26 @@ Welcome to my emacs config
    :ensure t
    :config (evil-collection-init))
    #+end_src
+** evil-leader
+   #+begin_src emacs-lisp
+   (use-package evil-leader
+   :ensure t
+   :init (global-evil-leader-mode)
+   :config 
+   (evil-leader/set-leader "<SPC>") 
+   (evil-leader/set-key
+   "s" 'counsel-fzf
+   "f" 'counsel-find-file
+   "x" 'counsel-M-x
+   "k" 'kill-buffer
+   "/" 'swiper))
+   #+end_src
+** evil-snipe
+   #+begin_src emacs-lisp
+   (use-package evil-snipe
+   :ensure t
+   :config (evil-snipe-mode 1))
+   #+end_src
 * IDE stuff
 ** completion
 *** company
