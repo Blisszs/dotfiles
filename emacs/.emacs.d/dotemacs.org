@@ -69,47 +69,55 @@ Welcome to my emacs config
     version-control t)       ; use versioned backups
    #+END_SRC
 ** tabs
-   #+begin_src emacs-lisp
+   +begin_src emacs-lisp
    (setq-default indent-tabs-mode t)
    (setq-default tab-width 8) 
    (defvaralias 'c-basic-offset 'tab-width)
-   #+end_src
+   +end_src
 * navigation
-** evil-mode
-  #+begin_src emacs-lisp
-  (use-package evil
-  :ensure t
-  :init
-  (setq evil-want-keybinding nil)
-  :config 
-  (evil-mode 1))
-  #+end_src
-** evil-collecion
+** evil
+*** evil-mode
    #+begin_src emacs-lisp
-   (use-package evil-collection
-   :after evil
+   (use-package evil
    :ensure t
-   :config (evil-collection-init))
-   #+end_src
-** evil-leader
-   #+begin_src emacs-lisp
-   (use-package evil-leader
-   :ensure t
-   :init (global-evil-leader-mode)
+   :init
+   (setq evil-want-keybinding nil)
    :config 
-   (evil-leader/set-leader "<SPC>") 
-   (evil-leader/set-key
-   "s" 'counsel-fzf
-   "f" 'counsel-find-file
-   "x" 'counsel-M-x
-   "k" 'kill-buffer
-   "/" 'swiper))
+   (evil-mode 1))
    #+end_src
-** evil-snipe
+*** evil-collecion
+    #+begin_src emacs-lisp
+    (use-package evil-collection
+    :after evil
+    :ensure t
+    :config (evil-collection-init))
+    #+end_src
+*** evil-leader
+    #+begin_src emacs-lisp
+    (use-package evil-leader
+    :ensure t
+    :init (global-evil-leader-mode)
+    :config 
+    (evil-leader/set-leader "<SPC>") 
+    (evil-leader/set-key
+    "s" 'counsel-fzf
+    "f" 'counsel-find-file
+    "x" 'counsel-M-x
+    "k" 'kill-buffer
+    "g" 'avy-goto-char-2
+    "j j" 'goto-line
+    "/" 'swiper))
+    #+end_src
+*** evil-avy
+    #+begin_src emacs-lisp
+    (use-package evil-avy
+    :ensure t)
+    #+end_src
+** avy
    #+begin_src emacs-lisp
-   (use-package evil-snipe
+   (use-package avy
    :ensure t
-   :config (evil-snipe-mode 1))
+   :config )
    #+end_src
 * IDE stuff
 ** completion
@@ -239,8 +247,3 @@ Welcome to my emacs config
  :ensure t
  :defer t)
  #+END_SRC
-* to be added
-** ace window
-   #+BEGIN_SRC emacs-lisp
-  
-   #+END_SRC
