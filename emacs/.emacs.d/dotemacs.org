@@ -43,7 +43,7 @@ Welcome to my emacs config
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
- (set-face-attribute 'default nil :font "terminus-18")
+ (set-face-attribute 'default nil :font "terminus-12")
  #+END_SRC
 ** line wrapping 
    #+BEGIN_SRC emacs-lisp
@@ -68,12 +68,6 @@ Welcome to my emacs config
     kept-old-versions 2
     version-control t)       ; use versioned backups
    #+END_SRC
-** tabs
-   +begin_src emacs-lisp
-   (setq-default indent-tabs-mode t)
-   (setq-default tab-width 8) 
-   (defvaralias 'c-basic-offset 'tab-width)
-   +end_src
 * navigation
 ** evil
 *** evil-mode
@@ -100,13 +94,12 @@ Welcome to my emacs config
     :config 
     (evil-leader/set-leader "<SPC>") 
     (evil-leader/set-key
-    "s" 'counsel-fzf
-    "f" 'counsel-find-file
-    "x" 'counsel-M-x
-    "k" 'kill-buffer
-    "g" 'avy-goto-char-2
-    "j j" 'goto-line
-    "/" 'swiper))
+    "f" 'counsel-fzf
+    "x f" 'counsel-find-file
+    "x x" 'counsel-M-x
+    "x k" 'kill-buffer
+    "x g" 'avy-goto-char-2
+    "x s" 'swiper))
     #+end_src
 *** evil-avy
     #+begin_src emacs-lisp
