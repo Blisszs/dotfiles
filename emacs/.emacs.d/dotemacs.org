@@ -99,6 +99,7 @@ Welcome to my emacs config
     "x x" 'counsel-M-x
     "x k" 'kill-buffer
     "x g" 'avy-goto-char-2
+    "g"   'magit
     "x s" 'swiper))
     #+end_src
 *** evil-avy
