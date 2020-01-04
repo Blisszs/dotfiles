@@ -169,6 +169,7 @@ Welcome to my emacs config
 *** company-irony-c-headers
     #+BEGIN_SRC emacs-lisp
     (use-package company-irony-c-headers
+    :ensure t
     :config 
     (eval-after-load 'company '(add-to-list 'company-backends '(company-irony-c-headers company-irony))))
     #+END_SRC
