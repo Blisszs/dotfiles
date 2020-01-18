@@ -3,8 +3,16 @@ Welcome to my emacs config
 * visuals
 ** colortheme
  #+BEGIN_SRC emacs-lisp
- (load-theme 'wombat)
+ (use-package darktooth-theme
+ :ensure t
+ :config (load-theme 'darktooth t))
  #+END_SRC
+** modeline
+   #+BEGIN_SRC emacs-lisp
+   (use-package telephone-line
+   :ensure t
+   :config (telephone-line-mode 1))
+   #+END_SRC
 ** org-bullets
  #+BEGIN_SRC emacs-lisp
  (use-package org-bullets
@@ -34,7 +42,7 @@ Welcome to my emacs config
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
- (set-face-attribute 'default nil :font "terminus-10")
+ (set-face-attribute 'default nil :font "hack-8")
  #+END_SRC
 ** line wrapping 
    #+BEGIN_SRC emacs-lisp
