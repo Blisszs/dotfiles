@@ -93,6 +93,7 @@ Welcome to my emacs config
     :config 
     (evil-leader/set-leader "<SPC>") 
     (evil-leader/set-key
+    "p s" 'persp-switch
     "f" 'counsel-fzf
     "x f" 'counsel-find-file
     "x x" 'counsel-M-x
@@ -106,12 +107,24 @@ Welcome to my emacs config
     (use-package evil-avy
     :ensure t)
     #+end_src
+*** org-mode tab fix
+    #+BEGIN_SRC emacs-lisp
+    (add-hook 'org-mode-hook                                                                      
+          (lambda ()                                                                          
+        (define-key evil-normal-state-map (kbd "TAB") 'org-cycle))) 
+    #+END_SRC
 ** avy
    #+begin_src emacs-lisp
    (use-package avy
    :ensure t
    :config )
    #+end_src
+** workspaces
+   #+BEGIN_SRC emacs-lisp
+   (use-package perspective
+   :ensure t
+   :config (persp-mode 1))
+   #+END_SRC
 * IDE stuff
 ** completion
 *** company
@@ -207,6 +220,12 @@ Welcome to my emacs config
     :ensure t
     :hook (flycheck-rust-setup . rust-mode))
     #+end_src
+** haskell
+*** haskell-mode
+   #+BEGIN_SRC emacs-lisp
+   (use-package haskell-mode
+   :ensure t)
+   #+END_SRC
 * minibuffers tools
 ** ivy 
  #+BEGIN_SRC emacs-lisp
