@@ -6,6 +6,7 @@ Welcome to my emacs config
  (use-package darktooth-theme
  :ensure t
  :config (load-theme 'darktooth t))
+ (set-background-color "#222222")
  #+END_SRC
 ** modeline
    #+BEGIN_SRC emacs-lisp
@@ -42,7 +43,7 @@ Welcome to my emacs config
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
- (set-face-attribute 'default nil :font "hack-8")
+ (set-face-attribute 'default nil :font "hack-10")
  #+END_SRC
 ** line wrapping 
    #+BEGIN_SRC emacs-lisp
