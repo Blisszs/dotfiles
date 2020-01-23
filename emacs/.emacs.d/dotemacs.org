@@ -31,6 +31,7 @@ Welcome to my emacs config
  (menu-bar-mode -1)
  (tool-bar-mode -1)
  (scroll-bar-mode -1)
+ (fringe-mode 0)
  #+END_SRC
 ** modeline configuration
    #+BEGIN_SRC emacs-lisp
