@@ -25,18 +25,13 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (global-prettify-symbols-mode t)
    #+END_SRC
-* emacs
 ** interface clutter
- #+BEGIN_SRC emacs-lisp
- (menu-bar-mode -1)
- (tool-bar-mode -1)
- (scroll-bar-mode -1)
- (fringe-mode 0)
- #+END_SRC
-** modeline configuration
-   #+BEGIN_SRC emacs-lisp
-   (display-time-mode 1)
-   #+END_SRC
+#+BEGIN_SRC emacs-lisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode 0)
+#+END_SRC
 ** line number
    #+BEGIN_SRC emacs-lisp
    (add-hook 'prog-mode-hook 'display-line-numbers-mode)
@@ -58,6 +53,7 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (setq inhibit-startup-message t)
    #+END_SRC
+* file management
 ** backup directory and backup settings
    #+BEGIN_SRC emacs-lisp
    (setq
@@ -139,20 +135,21 @@ Welcome to my emacs config
     :hook 
     ((c++-mode c-mode objc-mode) . company-mode))
     #+END_SRC
-** flycheck
-   #+BEGIN_SRC emacs-lisp
-   (use-package flycheck
-   :ensure t
-   :hook
-   ((c++-mode c-mode rust-mode) . flycheck-mode))
-   #+END_SRC
-** flycheck-popup
-   #+begin_src emacs-lisp
-   (use-package flycheck-popup-tip
-   :ensure t
-   :hook
-   (flycheck-mode . flycheck-popup-tip-mode))
-   #+end_src
+** error checking
+*** flycheck
+    #+BEGIN_SRC emacs-lisp
+    (use-package flycheck
+    :ensure t
+    :hook
+    ((c++-mode c-mode rust-mode) . flycheck-mode))
+    #+END_SRC
+*** flycheck-popup
+    #+begin_src emacs-lisp
+    (use-package flycheck-popup-tip
+    :ensure t
+    :hook
+    (flycheck-mode . flycheck-popup-tip-mode))
+    #+end_src
 ** smartparens
    #+BEGIN_SRC emacs-lisp
    (use-package smartparens
@@ -196,13 +193,6 @@ Welcome to my emacs config
     :config 
     (eval-after-load 'company '(add-to-list 'company-backends '(company-irony-c-headers company-irony))))
     #+END_SRC
-*** eldoc-irony
-    #+begin_src emacs-lisp
-    (use-package irony-eldoc
-    :ensure t
-    :hook
-    (irony-mode . irony-eldoc))
-    #+end_src
 *** flycheck-irony
     #+BEGIN_SRC emacs-lisp
     (use-package flycheck-irony
@@ -210,6 +200,13 @@ Welcome to my emacs config
     :hook
     (flycheck-mode . flycheck-irony-setup))
     #+END_SRC
+*** eldoc-irony
+    #+begin_src emacs-lisp
+    (use-package irony-eldoc
+    :ensure t
+    :hook
+    (irony-mode . irony-eldoc))
+    #+end_src
 ** rust
 *** rust-mode
     #+begin_src emacs-lisp 
@@ -260,10 +257,3 @@ Welcome to my emacs config
    (use-package evil-magit
    :ensure t)
    #+end_src
-* LaTeX
-** auctex
- #+BEGIN_SRC emacs-lisp
- (use-package auctex
- :ensure t
- :defer t)
- #+END_SRC
