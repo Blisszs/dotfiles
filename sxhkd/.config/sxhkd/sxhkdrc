@@ -1,14 +1,8 @@
-super + shift + t; {f,t,c}
-	st -e {ranger,transmission-remote-cli,calcurse}
+super + shift + t; {f,c}
+	st -e {ranger,calcurse}
 
-super + F1; {e}
-	zathura {/home/bliss/cheatsheets/emacs.pdf}
-	
 super + shift + e
 	emacs
-
-super + shift + g
-	gimp
 
 super + shift + f
 	firefox
@@ -17,7 +11,4 @@ super + Return
 	st
 
 super + d
-	dmenu_run -fn dejavusans:pixelsize=14
-
-super + shift + b
-	blender
+        rofi -show run
