@@ -117,12 +117,6 @@ Welcome to my emacs config
    :ensure t
    :config )
    #+end_src
-** workspaces
-   #+BEGIN_SRC emacs-lisp
-   (use-package perspective
-   :ensure t
-   :config (persp-mode 1))
-   #+END_SRC
 * IDE stuff
 ** completion
 *** company
