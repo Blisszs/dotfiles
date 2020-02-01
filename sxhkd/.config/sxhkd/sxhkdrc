@@ -4,8 +4,10 @@ super + d
 
 # keybinds
 
+## close
+
 super + shift + q
-      xdo kill 
+      xdotool getactivewindow windowclose
 
 #apps
 
