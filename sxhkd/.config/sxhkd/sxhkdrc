@@ -5,7 +5,7 @@ super + shift + e
 	emacs
 
 super + shift + f
-	firefox
+	brave
 
 super + Return
 	st
