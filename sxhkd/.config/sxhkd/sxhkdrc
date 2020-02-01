@@ -1,14 +1,30 @@
+# program launcher
+super + d
+      rofi -show run
+
+# keybinds
+
+super + shift + q
+      xdo kill 
+
+#apps
+
+## terminal apps
+
 super + shift + t; {f,c}
-	st -e {ranger,calcurse}
+      st -e {ranger,calcurse}
+
+## text editor
 
 super + shift + e
-	emacs
+      emacs
+
+## browser
 
 super + shift + f
-	brave
+      brave
+
+## terminal
 
 super + Return
-	st
-
-super + d
-        rofi -show run
+      st
