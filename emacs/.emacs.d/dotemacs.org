@@ -92,6 +92,7 @@ Welcome to my emacs config
     (evil-leader/set-leader "<SPC>") 
     (evil-leader/set-key
     "p s" 'persp-switch
+    "<SPC>" 'counsel-M-x
     "f" 'counsel-fzf
     "x f" 'counsel-find-file
     "x x" 'counsel-M-x
