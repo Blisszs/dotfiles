@@ -175,6 +175,11 @@ Welcome to my emacs config
    :ensure t
    :config (yas-global-mode 1))
    #+END_SRC
+** multi-term
+   #+BEGIN_SRC emacs-lisp
+   (use-package multi-term
+   :ensure t)
+   #+END_SRC
 * programming
 ** c/c++
 *** irony
