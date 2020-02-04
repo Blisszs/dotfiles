@@ -8,12 +8,6 @@ Welcome to my emacs config
  :config (load-theme 'darktooth t))
  (set-background-color "#222222")
  #+END_SRC
-** modeline
-   #+BEGIN_SRC emacs-lisp
-   (use-package telephone-line
-   :ensure t
-   :config (telephone-line-mode 1))
-   #+END_SRC
 ** org-bullets
  #+BEGIN_SRC emacs-lisp
  (use-package org-bullets
