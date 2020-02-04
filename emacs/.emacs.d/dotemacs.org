@@ -124,6 +124,12 @@ Welcome to my emacs config
    :ensure t
    :config )
    #+end_src
+** buffer
+   #+BEGIN_SRC emacs-lisp
+   (defadvice split-window (after move-point-to-new-window activate)
+   "Moves the point to the newly created window after splitting."
+   (other-window 1))
+   #+END_SRC
 * IDE stuff
 ** completion
 *** company
