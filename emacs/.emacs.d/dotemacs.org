@@ -269,3 +269,9 @@ Welcome to my emacs config
    (use-package evil-magit
    :ensure t)
    #+end_src
+* pdf
+  #+BEGIN_SRC emacs-lisp
+  (use-package pdf-tools
+  :ensure t
+  :config (pdf-tools-install))
+  #+END_SRC
