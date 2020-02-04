@@ -106,6 +106,12 @@ Welcome to my emacs config
     (use-package evil-avy
     :ensure t)
     #+end_src
+*** evil-escape
+   #+BEGIN_SRC emacs-lisp
+   (use-package evil-escape
+   :ensure t
+   :config (evil-escape-mode 1))
+   #+END_SRC 
 *** org-mode tab fix
     #+BEGIN_SRC emacs-lisp
     (add-hook 'org-mode-hook                                                                      
