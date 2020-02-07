@@ -155,8 +155,7 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (use-package smartparens
    :ensure t
-   :hook
-   ((c++-mode html-mode css-mode c-mode objc-mode emacs-lisp-mode org-mode scheme-mode) . smartparens-mode))
+   :config (smartparens-global-mode))
    #+END_SRC
 ** lisp REPL
    #+begin_src emacs-lisp
