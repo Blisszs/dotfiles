@@ -1,5 +1,0 @@
-sxhkd &
-feh --bg-fill -z ~/wallpapers/ &
-pulseaudio &
-tint2 &
-setxkbmap pt &
