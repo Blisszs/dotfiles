@@ -29,4 +29,4 @@ super + shift + f
 ## terminal
 
 super + Return
-      st
+      st -e tmux new -A -s st
