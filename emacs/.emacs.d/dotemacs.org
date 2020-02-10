@@ -152,9 +152,7 @@ Welcome to my emacs config
     :config 
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 2)
-    (setq company-require-match 'never)
-    :hook 
-    ((c++-mode c-mode objc-mode) . company-mode))
+    (setq company-require-match 'never))
     #+END_SRC
 ** error checking
 *** flycheck
