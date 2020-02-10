@@ -177,6 +177,13 @@ Welcome to my emacs config
    :ensure t
    :config (yas-global-mode 1))
    #+END_SRC
+** eglot / language server
+   #+BEGIN_SRC emacs-lisp
+   (use-package eglot
+   :ensure t)
+   #+END_SRC
+** lsp
+   
 ** multi-term
    #+BEGIN_SRC emacs-lisp
    (use-package multi-term
