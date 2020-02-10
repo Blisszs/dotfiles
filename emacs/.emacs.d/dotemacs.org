@@ -214,12 +214,6 @@ Welcome to my emacs config
     (use-package rust-mode
     :ensure t)
     #+end_src
-*** flycheck-rust
-    #+begin_src emacs-lisp 
-    (use-package flycheck-rust
-    :ensure t
-    :hook (flycheck-rust-setup . rust-mode))
-    #+end_src
 ** haskell
 *** haskell-mode
    #+BEGIN_SRC emacs-lisp
