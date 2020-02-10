@@ -202,43 +202,12 @@ Welcome to my emacs config
    #+END_SRC
 * programming
 ** c/c++
-*** irony
-   #+BEGIN_SRC emacs-lisp
-   (use-package irony
-   :ensure t
-   :hook
-   (((c++-mode c-mode objc-mode) . irony-mode)
-   (irony-mode . irony-cdb-autosetup-compile-options)))
-   #+END_SRC
-*** company-irony
- #+BEGIN_SRC emacs-lisp
- (use-package company-irony
- :ensure t
- :requires (company)
- :config 
- (add-to-list 'company-backends 'company-irony))
-#+END_SRC
-*** company-irony-c-headers
+*** clangd
     #+BEGIN_SRC emacs-lisp
-    (use-package company-irony-c-headers
-    :ensure t
-    :config 
-    (eval-after-load 'company '(add-to-list 'company-backends '(company-irony-c-headers company-irony))))
+    (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+    (add-hook 'c-mode-hook 'eglot-ensure)
+    (add-hook 'c++-mode-hook 'eglot-ensure)
     #+END_SRC
-*** flycheck-irony
-    #+BEGIN_SRC emacs-lisp
-    (use-package flycheck-irony
-    :ensure t
-    :hook
-    (flycheck-mode . flycheck-irony-setup))
-    #+END_SRC
-*** eldoc-irony
-    #+begin_src emacs-lisp
-    (use-package irony-eldoc
-    :ensure t
-    :hook
-    (irony-mode . irony-eldoc))
-    #+end_src
 ** rust
 *** rust-mode
     #+begin_src emacs-lisp 
