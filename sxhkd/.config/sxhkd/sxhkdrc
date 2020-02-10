@@ -24,8 +24,7 @@ super + shift + e
 ## browser
 
 super + shift + f
-      brave
-
+      tabbed -c surf -e
 ## terminal
 
 super + Return
