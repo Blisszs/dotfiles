@@ -86,8 +86,9 @@ Welcome to my emacs config
     #+begin_src emacs-lisp
     (use-package evil-leader
     :ensure t
-    :init (global-evil-leader-mode)
+    :after evil
     :config 
+    (global-evil-leader-mode)
     (evil-leader/set-leader "<SPC>") 
     (evil-leader/set-key
     "p s" 'persp-switch
@@ -103,15 +104,20 @@ Welcome to my emacs config
 *** evil-avy
     #+begin_src emacs-lisp
     (use-package evil-avy
+    :after avy
+    :defer t
     :ensure t)
     #+end_src
 *** evil-escape
    #+BEGIN_SRC emacs-lisp
    (use-package evil-escape
    :ensure t
+   :defer t
+   :after evil
    :config (evil-escape-mode 1))
    #+END_SRC 
 *** org-mode tab fix
+    Fixes org-mode cycling in the terminal
     #+BEGIN_SRC emacs-lisp
     (add-hook 'org-mode-hook                                                                      
           (lambda ()                                                                          
@@ -121,6 +127,7 @@ Welcome to my emacs config
    #+begin_src emacs-lisp
    (use-package avy
    :ensure t
+   :defer t
    :config )
    #+end_src
 ** buffer
@@ -162,6 +169,7 @@ Welcome to my emacs config
     #+begin_src emacs-lisp
     (use-package flycheck-popup-tip
     :ensure t
+    :after flycheck
     :hook
     (flycheck-mode . flycheck-popup-tip-mode))
     #+end_src
@@ -174,6 +182,7 @@ Welcome to my emacs config
 ** lisp REPL
    #+begin_src emacs-lisp
    (use-package geiser
+   :defer t
    :ensure t)
    #+end_src
 ** snippets
@@ -190,6 +199,7 @@ Welcome to my emacs config
 ** multi-term
    #+BEGIN_SRC emacs-lisp
    (use-package multi-term
+   :defer t
    :ensure t)
    #+END_SRC
 * programming
@@ -204,12 +214,14 @@ Welcome to my emacs config
 *** rust-mode
     #+begin_src emacs-lisp 
     (use-package rust-mode
+    :defer t
     :ensure t)
     #+end_src
 ** haskell
 *** haskell-mode
    #+BEGIN_SRC emacs-lisp
    (use-package haskell-mode
+   :defer t
    :ensure t)
    #+END_SRC
 * minibuffers tools
@@ -217,6 +229,7 @@ Welcome to my emacs config
  #+BEGIN_SRC emacs-lisp
  (use-package ivy
  :ensure t
+ :defer t
  :config 
  (ivy-mode 1))
  #+END_SRC
@@ -224,6 +237,8 @@ Welcome to my emacs config
  #+BEGIN_SRC emacs-lisp
  (use-package counsel
  :ensure t
+ :defer t
+ :after ivy
  :config 
  (counsel-mode 1))
  #+END_SRC
@@ -231,17 +246,21 @@ Welcome to my emacs config
    #+begin_src emacs-lisp
    (use-package swiper
    :ensure t
+   :after counsel
+   :defer t
    :bind ("C-s" . 'swiper))
    #+end_src
 * git integration
 ** magit 
   #+BEGIN_SRC emacs-lisp
   (use-package magit
+  :defer t
   :ensure t)
   #+END_SRC
 ** magit-evil
    #+begin_src emacs-lisp
    (use-package evil-magit
+   :after magit
    :ensure t)
    #+end_src
 * latex
@@ -275,5 +294,7 @@ Welcome to my emacs config
   #+BEGIN_SRC emacs-lisp
   (use-package pdf-tools
   :ensure t
+  :defer t
   :config (pdf-tools-install))
   #+END_SRC
+  
