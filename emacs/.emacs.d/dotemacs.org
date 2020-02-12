@@ -229,7 +229,6 @@ Welcome to my emacs config
  #+BEGIN_SRC emacs-lisp
  (use-package ivy
  :ensure t
- :defer t
  :config 
  (ivy-mode 1))
  #+END_SRC
