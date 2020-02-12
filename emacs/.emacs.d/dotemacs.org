@@ -15,10 +15,6 @@ Welcome to my emacs config
  :hook (org-mode . org-bullets-mode))
  ;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
  #+END_SRC
-** prettify symbols
-   #+BEGIN_SRC emacs-lisp
-   (global-prettify-symbols-mode t)
-   #+END_SRC
 ** interface clutter
 #+BEGIN_SRC emacs-lisp
 (menu-bar-mode -1)
@@ -47,8 +43,8 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (use-package which-key
    :ensure t
-   :init (which-key-mode)
    :config 
+   (which-key-mode)
    (which-key-setup-side-window-bottom)
    (setq which-key-idle-delay 0))
    #+END_SRC
