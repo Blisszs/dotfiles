@@ -294,7 +294,6 @@ Welcome to my emacs config
   #+BEGIN_SRC emacs-lisp
   (use-package pdf-tools
   :ensure t
-  :defer t
   :config (pdf-tools-install))
   #+END_SRC
   
