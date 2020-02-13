@@ -24,7 +24,8 @@ super + shift + e
 ## browser
 
 super + shift + f
-      tabbed -c surf -e
+      firefox
+
 ## terminal
 
 super + Return
