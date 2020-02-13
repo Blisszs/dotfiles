@@ -39,15 +39,6 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (show-paren-mode 1)
    #+END_SRC
-** which-key
-   #+BEGIN_SRC emacs-lisp
-   (use-package which-key
-   :ensure t
-   :config 
-   (which-key-mode)
-   (which-key-setup-side-window-bottom)
-   (setq which-key-idle-delay 0))
-   #+END_SRC
 ** disable start page
    #+BEGIN_SRC emacs-lisp
    (setq inhibit-startup-message t)
