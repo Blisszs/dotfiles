@@ -9,7 +9,7 @@ PS1='[%~] >> '
 
 #Variables
 PATH="$PATH:$HOME/.local/bin"
-export FZF_DEFAULT_COMMAND="rg --hidden --files"
+export FZF_DEFAULT_COMMAND="rg --hidden --files ~/"
 export EDITOR="emacs"
 export BROWSER="firefox"
 
