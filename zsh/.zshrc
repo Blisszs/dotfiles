@@ -12,6 +12,9 @@ PATH="$PATH:$HOME/.local/bin"
 export FZF_DEFAULT_COMMAND="rg --hidden --files ~/"
 export EDITOR="emacs"
 export BROWSER="firefox"
+export MPD_HOST="127.0.0.1"
+export MPD_PORT="6601"
+
 
 #Binds
 bindkey "^[[1;3C" forward-word
