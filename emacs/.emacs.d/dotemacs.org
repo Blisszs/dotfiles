@@ -29,7 +29,7 @@ Welcome to my emacs config
    #+END_SRC
 ** font
  #+BEGIN_SRC emacs-lisp
- (set-face-attribute 'default nil :font "hack-10")
+ (set-face-attribute 'default nil :font "DejaVuSansMono-10")
  #+END_SRC
 ** line wrapping 
    #+BEGIN_SRC emacs-lisp
