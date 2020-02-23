@@ -140,7 +140,7 @@ Welcome to my emacs config
               ("<backtab>" . company-select-previous)
               ("C-n" . company-select-next)
               ("C-p" . company-select-previous))
-    :hook ((c++-mode c-mode rust-mode haskell-mode) . company-mode)
+    :hook ((LaTeX-mode c++-mode c-mode rust-mode haskell-mode) . company-mode)
     :ensure t
     :config 
     (setq company-idle-delay 0)
@@ -179,7 +179,7 @@ Welcome to my emacs config
    #+BEGIN_SRC emacs-lisp
    (use-package yasnippet
    :ensure t
-   :hook ((c++-mode c-mode rust-mode haskell-mode). yas-minor-mode ))
+   :hook ((LaTeX-mode c++-mode c-mode rust-mode haskell-mode). yas-minor-mode ))
    #+END_SRC
 ** eglot / language server
    #+BEGIN_SRC emacs-lisp
@@ -278,6 +278,14 @@ Welcome to my emacs config
   :config
   (when (version< emacs-version "26")
     (add-hook LaTeX-mode-hook #'display-line-numbers-mode)))
+   #+END_SRC
+** eglot
+   #+BEGIN_SRC emacs-lisp
+   (require 'eglot)
+   (add-to-list 'eglot-server-programs '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode)
+                                      . ("digestif")))
+    (add-hook 'LaTeX-mode-hook 'eglot-ensure)
+
    #+END_SRC
 * pdf
   #+BEGIN_SRC emacs-lisp
