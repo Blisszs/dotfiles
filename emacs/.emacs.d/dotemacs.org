@@ -293,4 +293,64 @@ Welcome to my emacs config
   :ensure t
   :config (pdf-tools-install))
   #+END_SRC
+* exwm
+  #+BEGIN_SRC emacs-lisp
+;; (require 'exwm-config)
+;; 
+;; (setq exwm-workspace-number 4)
+;; 
+;; (add-hook 'exwm-update-class-hook
+;;           (lambda ()
+;;             (unless (or (string-prefix-p "sun-awt-X11-" exwm-instance-name)
+;;                         (string= "gimp" exwm-instance-name))
+;;               (exwm-workspace-rename-buffer exwm-class-name))))
+;; (add-hook 'exwm-update-title-hook
+;;           (lambda ()
+;;             (when (or (not exwm-instance-name)
+;;                       (string-prefix-p "sun-awt-X11-" exwm-instance-name)
+;;                       (string= "gimp" exwm-instance-name))
+;;               (exwm-workspace-rename-buffer exwm-title))))
+;; 
+;; (setq exwm-input-global-keys
+;;       `(
+;;         ;; Bind "s-r" to exit char-mode and fullscreen mode.
+;;         ([?\s-r] . exwm-reset)
+;;         ;; Bind "s-w" to switch workspace interactively.
+;;         ([?\s-w] . exwm-workspace-switch)
+;;         ;; Bind "s-0" to "s-9" to switch to a workspace by its index.
+;;         ,@(mapcar (lambda (i)
+;;                     `(,(kbd (format "s-%d" i)) .
+;;                       (lambda ()
+;;                         (interactive)
+;;                         (exwm-workspace-switch-create ,i))))
+;;                   (number-sequence 0 9))
+;;         ;; Bind "s-&" to launch applications ('M-&' also works if the output
+;;         ;; buffer does not bother you).
+;;         ([?\s-&] . (lambda (command)
+;; 		     (interactive (list (read-shell-command "$ ")))
+;; 		     (start-process-shell-command command nil command)))
+;;         ;; Bind "s-<f2>" to "slock", a simple X display locker.
+;;         ([s-f2] . (lambda ()
+;; 		    (interactive)
+;; 		    (start-process "" nil "/usr/bin/slock")))))
+;; (setq exwm-input-simulation-keys
+;;       '(
+;;         ;; cut/paste.
+;;         ([?\C-w] . [?\C-x])
+;;         ([?\M-w] . [?\C-c])
+;;         ([?\C-y] . [?\C-v])))
+;; 
+;; 
+;; ;; To add a key binding only available in line-mode, simply define it in
+;; ;; `exwm-mode-map'.  The following example shortens 'C-c q' to 'C-q'.
+;; (define-key exwm-mode-map [?\C-q] #'exwm-input-send-next-key)
+;; 
+;; ;; You can hide the minibuffer and echo area when they're not used, by
+;; ;; uncommenting the following line.
+;; (setq exwm-workspace-minibuffer-position 'bottom)
+;; 
+;; ;; Do not forget to enable EXWM. It will start by itself when things are
+;; ;; ready.  You can put it _anywhere_ in your configuration.
+;; (exwm-enable)
   
+  #+END_SRC
