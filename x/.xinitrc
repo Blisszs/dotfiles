@@ -1,3 +1,2 @@
-slstatus &
 sh .autostart.sh &
-exec dwm 
+exec spectrwm
