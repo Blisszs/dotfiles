@@ -2,6 +2,9 @@
 super + d
       rofi -show run
 
+super + shift + w
+      rofi -show window
+
 # keybinds
 
 ## close
