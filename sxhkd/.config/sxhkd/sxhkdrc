@@ -1,17 +1,3 @@
-# program launcher
-super + d
-      rofi -show run
-
-super + shift + w
-      rofi -show window
-
-# keybinds
-
-## close
-
-super + shift + q
-      xdotool getactivewindow windowclose
-
 #apps
 
 ## terminal apps
