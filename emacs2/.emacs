@@ -21,7 +21,7 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit magi counsel ace-jump-mode smartparens use-package))))
+    (company yasnippet flycheck magit magi counsel ace-jump-mode smartparens use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,11 +31,15 @@ There are two things you can do about this warning:
 
 ;; config
 
-;; Colortheme
+;; Colortheme & display
 
 (use-package darktooth-theme
   :ensure t
   :config (load-theme 'darktooth t))
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode 0)
 
 ;; Font
 
@@ -95,3 +99,36 @@ There are two things you can do about this warning:
 
 (use-package magit
   :ensure t)
+
+;; flycheck
+(use-package flycheck
+  :ensure t)
+
+;; snippets
+
+(use-package yasnippet
+  :ensure t)
+
+;; completion framework
+
+(use-package company
+  :ensure t
+  :bind (:map company-active-map
+	      ("<tab>" . company-complete-common-or-cycle)
+	      ("<backtab>" . company-select-previous))
+  :init
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 2)
+  (setq company-require-match 'never))
+
+;; eglot / language server
+
+(use-package eglot
+  :ensure t)
+
+;; c/c++
+
+(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+
