@@ -116,33 +116,36 @@ There are two things you can do about this warning:
 
 ;; flycheck
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :hook (lsp-mode . flycheck-mode))
+
 
 ;; snippets
 
 (use-package yasnippet
-  :ensure t)
+  :ensure t
+  :hook (lsp-mode . yas-minor-mode))
 
 ;; completion framework
 
 (use-package company
   :ensure t
   :bind (:map company-active-map
-	      ("<tab>" . company-complete-common-or-cycle)
-	      ("<backtab>" . company-select-previous))
+	      ("<tab>" . company-complete-selection))
+  :hook (lsp-mode . company-mode)
+  :custom
+  (company-backends '(company-capf))
   :init
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
   (setq company-require-match 'never))
 
+
 ;; eglot / language server
 
-(use-package eglot
-  :ensure t)
-
-;; c/c++
-
-(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
-(add-hook 'c-mode-hook 'eglot-ensure)
-(add-hook 'c++-mode-hook 'eglot-ensure)
+ (use-package lsp-mode
+   :ensure t
+   :hook ((c++-mode c-mode) . lsp)
+   :config
+   (setq lsp-prefer-capf t))
 
