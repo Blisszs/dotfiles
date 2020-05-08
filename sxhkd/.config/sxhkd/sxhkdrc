@@ -19,3 +19,7 @@ super + shift + f
 
 super + Return
       st -e tmux new -A -s st
+
+## dmenu
+super + d
+	dmenu_run
