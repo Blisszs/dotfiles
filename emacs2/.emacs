@@ -31,6 +31,10 @@ There are two things you can do about this warning:
 
 ;; config
 
+;; unused keybinds
+
+(global-unset-key "\C-z")
+
 ;; Colortheme & display
 
 (use-package darktooth-theme
