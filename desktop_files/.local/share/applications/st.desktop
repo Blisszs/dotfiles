@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=st -e tmux new -A -s st
+Name=Simple Terminal
+Icon=/usr/share/icons/Papirus-Dark/64x64/apps/terminal.svg
