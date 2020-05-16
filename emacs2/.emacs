@@ -84,9 +84,7 @@ There are two things you can do about this warning:
 
 ;; parentheses settings
 
-(use-package smartparens
-:ensure t
-:config (smartparens-global-mode))
+(electric-pair-mode 1)
 
 ;; multiple cursors
 
