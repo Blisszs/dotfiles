@@ -174,3 +174,11 @@ There are two things you can do about this warning:
 (use-package hydra
   :ensure t)
 
+;; mpd frontend
+
+(use-package simple-mpc
+  :ensure t
+  :config
+  (setenv "MPD_HOST" "127.0.0.1")
+  (setenv "MPD_PORT" "6601")
+  )
