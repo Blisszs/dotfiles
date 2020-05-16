@@ -45,13 +45,12 @@ There are two things you can do about this warning:
 
 ;; Colortheme & display
 
-(use-package darktooth-theme
+(use-package jazz-theme
   :ensure t
-  :config (load-theme 'darktooth t))
+  :config (load-theme 'jazz t))
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(fringe-mode 0)
 
 ;; Font
 
