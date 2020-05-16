@@ -33,6 +33,12 @@ There are two things you can do about this warning:
 
 ;;dired
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
+
+;; random variables
+(setq vc-follow-symlinks t)
+(setq gc-cons-threshold 100000000) ;; for lsp
+(setq read-process-output-max (* 1024 1024)) ;; for lsp
+
 ;; unused keybinds
 
 (global-unset-key "\C-z")
