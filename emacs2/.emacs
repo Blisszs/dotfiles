@@ -169,3 +169,8 @@ There are two things you can do about this warning:
    :config
    (setq lsp-prefer-capf t))
 
+;; hydra
+
+(use-package hydra
+  :ensure t)
+
