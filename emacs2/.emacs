@@ -31,6 +31,8 @@ There are two things you can do about this warning:
 
 ;; config
 
+;;dired
+(add-hook 'dired-mode-hook 'dired-hide-details-mode)
 ;; unused keybinds
 
 (global-unset-key "\C-z")
