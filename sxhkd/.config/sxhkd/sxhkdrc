@@ -10,11 +10,6 @@ super + shift + t; {f,c}
 super + shift + e
       emacs
 
-## browser
-
-super + shift + f
-      firefox
-
 ## terminal
 
 super + Return
