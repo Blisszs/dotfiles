@@ -5,5 +5,5 @@ done &
 pulseaudio &
 setxkbmap pt &
 sxhkd &
-feh --bg-fill -z wallpapers/
-exec dwm 
+feh --bg-fill -z wallpapers/ &
+exec dwm
