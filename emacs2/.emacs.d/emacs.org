@@ -1,0 +1,181 @@
+* Cosmetics
+** interface
+  Remove unused bars, highlight matching parentheses, word warping instead of being cut, and load my theme theme of choice.
+
+#+BEGIN_SRC emacs-lisp
+(use-package jazz-theme
+  :ensure t
+  :config (load-theme 'jazz t))
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(global-visual-line-mode 1)
+(show-paren-mode 1)
+#+END_SRC
+
+** font
+#+BEGIN_SRC emacs-lisp
+(set-face-attribute 'default nil :font "terminus-12")
+#+END_SRC
+* emacs variables
+  mainly for setting to do with emacs.
+
+#+BEGIN_SRC emacs-lisp
+(setq vc-follow-symlinks t) ;; follow symlinks with version control without warnings
+#+END_SRC
+* Bakcup Settings
+  save bakcup files to a directory instead of the current working directory so that it stays organized.
+
+#+BEGIN_SRC emacs-lisp
+(setq
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist
+  '(("." . "~/.backups/"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)       ; use versioned backups
+#+END_SRC
+
+* Text Modifing Tools
+** matching parenthese
+   automaticly create a matching parentheses.
+#+BEGIN_SRC emacs-lisp
+(electric-pair-mode 1)
+#+END_SRC
+** multiple cursors
+   edit multiple line at the same time.
+#+BEGIN_SRC emacs-lisp
+(use-package multiple-cursors
+  :ensure t)
+#+END_SRC
+** yasnippet
+   snippets for emacs.
+#+BEGIN_SRC emacs-lisp
+(use-package yasnippet
+  :ensure t
+  :hook (lsp-mode . yas-minor-mode))
+#+END_SRC
+* Movement Around Text and Windows
+** ace jump mode
+   jump around text.
+
+#+BEGIN_SRC emacs-lisp
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("C-c SPC" . ace-jump-mode))
+#+END_SRC
+** split window
+Moves the point to the newly created window after splitting.
+
+#+BEGIN_SRC emacs-lisp
+(defadvice split-window (after move-point-to-new-window activate)
+(other-window 1))
+#+END_SRC
+* Minibuffer Completion Tools
+** ivy
+  light completion framework for emacs.
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1))
+#+END_SRC
+
+** counsel
+   ivy utilities.
+#+BEGIN_SRC emacs-lisp
+(use-package counsel
+  :ensure t
+  :after ivy
+  :config
+  (counsel-mode 1))
+#+END_SRC 
+* Git
+** magit
+   the best git frontend. ever.
+#+BEGIN_SRC emacs-lisp
+(use-package magit
+  :ensure t)
+#+END_SRC
+
+* Syntax Checker
+  on-the-fly syntax checker.
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck
+  :ensure t
+  :hook (lsp-mode . flycheck-mode))
+#+END_SRC
+* Completion Framework
+  Modular completion framework.
+#+BEGIN_SRC emacs-lisp
+(use-package company
+  :ensure t
+  :bind (:map company-active-map
+	      ("<tab>" . company-complete-selection))
+  :hook (lsp-mode . company-mode)
+  :custom
+  (company-backends '(company-capf))
+  :init
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 2)
+  (setq company-require-match 'never))
+#+END_SRC
+* Programming
+** language server
+   an emacs client for the language server protocol. Currently using lsp mode due to a bug in eglot.
+
+#+BEGIN_SRC emacs-lisp
+ (use-package lsp-mode
+   :ensure t
+   :hook ((c++-mode c-mode) . lsp)
+   :config
+   (setq lsp-prefer-capf t)
+   (setq vc-follow-symlinks t)
+   (setq gc-cons-threshold 100000000))
+#+END_SRC
+* Hydras
+  Use multiple related commands with a common prefix.
+** hydra
+#+BEGIN_SRC emacs-lisp
+(use-package hydra
+  :ensure t)
+#+END_SRC
+** multiple cursors hydra
+   An hydra for multiple cursors commands.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c c")
+		(defhydra cqql-multiple-cursors-hydra (:hint nil)
+  "
+     ^Up^            ^Down^        ^Miscellaneous^
+----------------------------------------------
+[_p_]   Next    [_n_]   Next    [_l_] Edit lines
+[_P_]   Skip    [_N_]   Skip    [_a_] Mark all
+[_M-p_] Unmark  [_M-n_] Unmark  [_q_] Quit"
+  ("l" mc/edit-lines :exit t)
+  ("a" mc/mark-all-like-this :exit t)
+  ("n" mc/mark-next-like-this)
+  ("N" mc/skip-to-next-like-this)
+  ("M-n" mc/unmark-next-like-this)
+  ("p" mc/mark-previous-like-this)
+  ("P" mc/skip-to-previous-like-this)
+  ("M-p" mc/unmark-previous-like-this)
+  ("q" nil)))
+#+END_SRC
+* Music
+** mpd frontend
+   simple fronted for mpd that uses mpc commands for easy manipulation.
+#+BEGIN_SRC emacs-lisp
+(use-package simple-mpc
+  :ensure t
+  :bind ("C-c m" . simple-mpc)
+  :config
+  (setenv "MPD_HOST" "127.0.0.1")
+  (setenv "MPD_PORT" "6601"))
+#+END_SRC
+* Dired
+** misc dired settings
+#+BEGIN_SRC emacs-lisp
+(add-hook 'dired-mode-hook 'dired-hide-details-mode)
+#+END_SRC
