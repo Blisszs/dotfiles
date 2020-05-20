@@ -99,7 +99,8 @@ Moves the point to the newly created window after splitting.
    the best git frontend. ever.
 #+BEGIN_SRC emacs-lisp
 (use-package magit
-  :ensure t)
+  :ensure t
+  :bind ("C-c g" . magit))
 #+END_SRC
 
 * Syntax Checker
