@@ -1,5 +1,5 @@
 while true; do
-	xsetroot -name "$(date +%H\:%M\ \|\ %D)"
+	xsetroot -name "$(date +\[%H\:%M\]\ \[%D\]\ )"
 	sleep 60
 done &
 pulseaudio &
