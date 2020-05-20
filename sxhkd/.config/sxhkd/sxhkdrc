@@ -18,3 +18,7 @@ super + Return
 ## dmenu
 super + d
 	dmenu_run
+
+## screenshot
+Print
+	scrot -e 'mv $f ~/screenshots/'
