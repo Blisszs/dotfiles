@@ -15,6 +15,9 @@ There are two things you can do about this warning:
   )
 (package-initialize)
 
+;;follow symlinks managed by version control
+(setq vc-follow-symlinks t) ;; follow symlinks with version control without warnings
+
 (require 'org)
 (org-babel-load-file
  (expand-file-name "emacs.org"

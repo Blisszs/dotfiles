@@ -17,12 +17,6 @@
 #+BEGIN_SRC emacs-lisp
 (set-face-attribute 'default nil :font "terminus-12")
 #+END_SRC
-* emacs variables
-  mainly for setting to do with emacs.
-
-#+BEGIN_SRC emacs-lisp
-(setq vc-follow-symlinks t) ;; follow symlinks with version control without warnings
-#+END_SRC
 * Bakcup Settings
   save bakcup files to a directory instead of the current working directory so that it stays organized.
 
