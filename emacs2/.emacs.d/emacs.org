@@ -116,7 +116,9 @@ Moves the point to the newly created window after splitting.
 (use-package company
   :ensure t
   :bind (:map company-active-map
-	      ("<tab>" . company-complete-selection))
+	      ("<tab>" . company-complete-selection)
+	      ("C-n" . company-select-next)
+	      ("C-p" . company-select-previous))
   :hook (lsp-mode . company-mode)
   :custom
   (company-backends '(company-capf))
