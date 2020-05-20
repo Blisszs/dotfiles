@@ -1,3 +1,5 @@
+Welcome to my emacs config. Always improving trying to improve it. I think.
+
 * Cosmetics
 ** interface
   Remove unused bars, highlight matching parentheses, word warping instead of being cut, and load my theme theme of choice.
@@ -65,6 +67,13 @@ Moves the point to the newly created window after splitting.
 #+BEGIN_SRC emacs-lisp
 (defadvice split-window (after move-point-to-new-window activate)
 (other-window 1))
+#+END_SRC
+** expand region
+   mark words or within delimiters with less keystrokes.
+#+BEGIN_SRC emacs-lisp
+(use-package expand-region
+:ensure t
+:bind ("C-c e" . er/expand-region))
 #+END_SRC
 * Minibuffer Completion Tools
 ** ivy
