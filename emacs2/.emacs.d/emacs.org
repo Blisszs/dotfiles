@@ -244,3 +244,18 @@ hide dired details automaticly
 #+BEGIN_SRC emacs-lisp
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 #+END_SRC
+* org
+#+BEGIN_SRC emacs-lisp
+(setq org-src-tab-acts-natively t) ;; tabs inside org-mode blocks
+#+END_SRC
+* rss
+#+BEGIN_SRC emacs-lisp
+  (use-package elfeed
+    :ensure t
+    :custom (elfeed-feeds '("https://lukesmith.xyz/rss.xml" 
+			     "https://notrelated.xyz/rss"
+			     "https://lukesmith.xyz/youtube.xml"
+			     ))
+    :bind ("C-c r" . elfeed)
+    )
+#+END_SRC
