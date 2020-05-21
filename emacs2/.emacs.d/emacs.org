@@ -29,6 +29,10 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
     (dashboard-items '((recents . 5)
 		      (bookmarks . 5)))
     (dashboard-center-content t))
+
+(set-fontset-font "fontset-default"
+                  (cons page-break-lines-char page-break-lines-char)
+                  (face-attribute 'default :family))
 #+END_SRC
 * Bakcup Settings
   save bakcup files to a directory instead of the current working directory so that it stays organized.
