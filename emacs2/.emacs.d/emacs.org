@@ -19,6 +19,17 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 #+BEGIN_SRC emacs-lisp
 (set-face-attribute 'default nil :font "terminus-12")
 #+END_SRC
+** startup dashboard
+#+BEGIN_SRC emacs-lisp
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook)
+    :custom
+    (dashboard-items '((recents . 5)
+		      (bookmarks . 5)))
+    (dashboard-center-content t))
+#+END_SRC
 * Bakcup Settings
   save bakcup files to a directory instead of the current working directory so that it stays organized.
 
