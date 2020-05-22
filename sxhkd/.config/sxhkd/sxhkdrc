@@ -1,24 +1,17 @@
-#apps
-
-## terminal apps
-
-super + shift + t; {f,c}
-      st -e {ranger,calcurse}
-
-## text editor
+# text editor
 
 super + shift + e
       emacs
 
-## terminal
+# terminal
 
 super + Return
-      st -e tmux new -A -s st
+      $TERMINAL -e tmux new -A -s st
 
-## dmenu
+# dmenu
 super + d
 	dmenu_run
 
-## screenshot
+# screenshot
 Print
 	scrot -e 'mv $f ~/screenshots/'
