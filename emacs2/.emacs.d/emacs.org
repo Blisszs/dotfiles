@@ -300,3 +300,10 @@ hide dired details automaticly
     (define-key elfeed-show-mode-map (kbd "C-c o") 'ga/play-with-mpv))
 #+END_SRC
 
+* pdf
+  
+#+BEGIN_SRC emacs-lisp
+    (use-package pdf-tools
+      :ensure t
+      :config (pdf-tools-install))
+#+END_SRC
