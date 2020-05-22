@@ -2,3 +2,6 @@ dotemacs.el
 *.o
 dwm/dwm
 *.orig
+*~
+.rej
+*#
