@@ -13,6 +13,9 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 (scroll-bar-mode -1)
 (global-visual-line-mode 1)
 (show-paren-mode 1)
+;; line numbers
+(add-hook 'text-mode-hook 'linum-mode)
+(add-hook 'prog-mode-hook 'linum-mode)
 #+END_SRC
 
 ** font
