@@ -83,8 +83,8 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 Moves the point to the newly created window after splitting.
 
 #+BEGIN_SRC emacs-lisp
-(defadvice split-window (after move-point-to-new-window activate)
-(other-window 1))
+(global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
+(global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 #+END_SRC
 ** expand region
    mark words or within delimiters with less keystrokes.
