@@ -254,7 +254,7 @@ T - tag prefix
 	  (global-set-key (kbd "C-c w")
 			  (defhydra hydra-window (:hint nil)
 			  "
-  changes: _r_edo _u_ndo
+  changes: _r_edo-all _u_ndo
   view: _p_ush _s_witch
   quit: _q_
     "
