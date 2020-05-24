@@ -1,8 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=27.0.1
-Type=Application
-Terminal=false
-Exec=emacs
-Name=Emacs
-Icon=/usr/share/icons/Papirus-Dark/64x64/apps/emacs.svg
