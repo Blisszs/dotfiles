@@ -311,7 +311,7 @@ hide dired details automaticly
 
 			    ))
     :bind ("C-c r" . elfeed)
-
+    :hook (elfeed-search-mode . elfeed-update)
     :config
 
     ;; play highlighted link in mpv
