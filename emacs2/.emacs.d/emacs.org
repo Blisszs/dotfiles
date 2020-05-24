@@ -330,3 +330,10 @@ hide dired details automaticly
       :ensure t
       :config (pdf-tools-install))
 #+END_SRC
+* irc
+#+BEGIN_SRC emacs-lisp
+  (use-package erc
+    :ensure t
+    :custom
+    (erc-nick "blisszs"))
+#+END_SRC
