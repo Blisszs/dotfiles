@@ -310,6 +310,8 @@ hide dired details automaticly
 			    ;;				 ("https://www.youtube.com/feeds/videos.xml?channel_id=") ;; template
 
 			    ))
+    (elfeed-db-directory "~/.cache/elfeed")
+    (elfeed-search-filter "@6-months-ago")
     :bind ("C-c r" . elfeed)
     :hook (elfeed-search-mode . elfeed-update)
     :config
