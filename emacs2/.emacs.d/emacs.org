@@ -286,8 +286,11 @@ hide dired details automaticly
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 #+END_SRC
 * org
+** org-mode
+ Mainly org-mode variables for now.
 #+BEGIN_SRC emacs-lisp
-(setq org-src-tab-acts-natively t) ;; tabs inside org-mode blocks
+(setq org-src-tab-acts-natively t) ;; native indentation inside org-mode blocks
+#+END_SRC
 #+END_SRC
 * rss
   Elfeed - a simple rss feed to keep track of youtube videos and news.
