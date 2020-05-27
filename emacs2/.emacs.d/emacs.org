@@ -291,6 +291,16 @@ hide dired details automaticly
 #+BEGIN_SRC emacs-lisp
 (setq org-src-tab-acts-natively t) ;; native indentation inside org-mode blocks
 #+END_SRC
+** org-capture
+    Org-capture allows to add entries to a file from anywhere in emacs. Due to this it's very convinient to have it just in case I need to quickly write notes or schedule activities.
+#+BEGIN_SRC emacs-lisp
+    (use-package org-capture
+      :config 
+      (setq org-capture-templates 
+	    '(("t" "tasks" entry (file+headline "~/org/org-capture.org" "Todo") "* TODO %?\n  %i\n") ;; Creates a TODO headline in the entry "Todo". If there is a marked region, it will be copied over.
+	      ("s" "scheduled" entry (file+headline "~/org/org-capture.org" "Scheduled") "* %?\n %^t ") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
+	      ))
+      :bind ("C-c o c" . org-capture))
 #+END_SRC
 * rss
   Elfeed - a simple rss feed to keep track of youtube videos and news.
