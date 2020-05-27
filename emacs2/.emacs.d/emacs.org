@@ -333,7 +333,7 @@ hide dired details automaticly
     (defun ga/play-with-mpv (start end)
       "Play the link in the region with mpv"
       (interactive "r")
-      (shell-command (concat "mpv " (buffer-substring start end) "\&")))
+      (shell-command (concat "mpv " "'" (buffer-substring start end)"'" "\&")))
 
     (define-key elfeed-show-mode-map (kbd "C-c o") 'ga/play-with-mpv))
 #+END_SRC
