@@ -315,8 +315,12 @@ hide dired details automaticly
 	    ("bb" "book" entry (file+headline "~/org/book-list.org" "book") "* %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end:")
 	    ("bm" "manga" entry (file+headline "~/org/book-list.org" "manga") "* %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end:")
 
-	    ("t" "television, movies and anime")
-	    ("ts" "television series" entry (file+headline "~/org/tv-list.org" "series") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END:")
+	    ("c" "television, movies and anime")
+	    ("cs" "television series" entry (file+headline "~/org/tv-list.org" "series") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END:")
+	    ("cs" "television series" entry (file+headline "~/org/tv-list.org" "anime") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END:")
+	    ("cm" "movie" entry (file+headline "~/org/tv-list.org" "movies") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :DURATION: \n :END:")
+
+
 	    ))
     :bind ("C-c o c" . org-capture))
 #+END_SRC
