@@ -294,13 +294,31 @@ hide dired details automaticly
 ** org-capture
     Org-capture allows to add entries to a file from anywhere in emacs. Due to this it's very convinient to have it just in case I need to quickly write notes or schedule activities.
 #+BEGIN_SRC emacs-lisp
-    (use-package org-capture
-      :config 
-      (setq org-capture-templates 
-	    '(("t" "tasks" entry (file+headline "~/org/org-capture.org" "Todo") "* TODO %?\n  %i\n") ;; Creates a TODO headline in the entry "Todo". If there is a marked region, it will be copied over.
-	      ("s" "scheduled" entry (file+headline "~/org/org-capture.org" "Scheduled") "* %?\n %^t ") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
-	      ))
-      :bind ("C-c o c" . org-capture))
+  (use-package org-capture
+    :config 
+    (setq org-capture-templates 
+	  '(("t" "tasks" entry (file+headline "~/org/org-capture.org" "Todo") "* TODO %?\n  %i\n") ;; Creates a TODO headline in the entry "Todo". If there is a marked region, it will be copied over.
+
+	    ("a" "activity")
+	    ("as" "scheduled" entry (file+headline "~/org/org-capture.org" "Scheduled") "* %?\n SCHEDULED: %^T ") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
+	    ("ad" "deadline" entry (file+headline "~/org/org-capture.org" "Deadline") "* %?\n DEADLINE: %^T ") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
+
+	    ("i" "ideas and thoughts")
+	    ("ij" " journal" entry (file+headline "~/org/ideas.org" "journal") "* %T %?")
+	    ("ii" "idea" entry (file+headline "~/org/ideas.org" "idea") "* %?")
+
+	    ("c" "contacts")
+	    ("cf" "family contacts" entry (file+headline "~/org/contacts.org" "family") "* %^{} \n :properties: \n :telefone: %? \n :email: \n :end:")
+	    ("cw" "work/school contacts" entry (file+headline "~/org/contacts.org" "work/school") "* %^{} \n :properties: \n :telefone: %? \n :email: \n :end:")
+
+	    ("b" "book and manga")
+	    ("bb" "book" entry (file+headline "~/org/book-list.org" "book") "* %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end:")
+	    ("bm" "manga" entry (file+headline "~/org/book-list.org" "manga") "* %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end:")
+
+	    ("t" "television, movies and anime")
+	    ("ts" "television series" entry (file+headline "~/org/tv-list.org" "series") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END:")
+	    ))
+    :bind ("C-c o c" . org-capture))
 #+END_SRC
 * rss
   Elfeed - a simple rss feed to keep track of youtube videos and news.
