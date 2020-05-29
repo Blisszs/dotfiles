@@ -315,10 +315,10 @@ hide dired details automaticly
 	    ("bb" "book" entry (file+headline "~/org/book-list.org" "book") "* %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end: \n")
 	    ("bm" "manga" entry (file+headline "~/org/book-list.org" "manga") "* %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end: \n")
 
-	    ("c" "television, movies and anime")
-	    ("cs" "television series" entry (file+headline "~/org/tv-list.org" "series") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
-	    ("cs" "television series" entry (file+headline "~/org/tv-list.org" "anime") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
-	    ("cm" "movie" entry (file+headline "~/org/tv-list.org" "movies") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :DURATION: \n :END: \n")
+	    ("v" "television, movies and anime")
+	    ("vs" "television series" entry (file+headline "~/org/tv-list.org" "series") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
+	    ("va" "anime" entry (file+headline "~/org/tv-list.org" "anime") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
+	    ("vm" "movie" entry (file+headline "~/org/tv-list.org" "movies") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :DURATION: \n :END: \n")
 	    ))
     :bind ("C-c o c" . org-capture))
 #+END_SRC
