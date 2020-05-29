@@ -139,7 +139,6 @@ Moves the point to the newly created window after splitting.
   :ensure t
   :bind ("C-c g" . magit))
 #+END_SRC
-
 * Syntax Checker
   on-the-fly syntax checker.
 #+BEGIN_SRC emacs-lisp
@@ -261,24 +260,6 @@ T - tag prefix
   ("." nil :color blue))
 
 (define-key dired-mode-map "." 'hydra-dired/body)
-#+END_SRC
-** window hydra
-   This hydra allows for window editing. The winner commans allow to redo and undo changes to the window layout. the ivy commands serve as a way to save the current layout and comeback when needed.
-#+BEGIN_SRC emacs-lisp
-	  (global-set-key (kbd "C-c w")
-			  (defhydra hydra-window (:hint nil)
-			  "
-  changes: _r_edo-all _u_ndo
-  view: _p_ush _s_witch
-  quit: _q_
-    "
-	("r" winner-redo)
-	("u" winner-undo)
-
-	("p" ivy-push-view :exit t)
-	("s" ivy-switch-view :exit t)
-	("q" nil)
-	))
 #+END_SRC
 * Music
 ** mpd frontend
