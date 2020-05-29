@@ -1,3 +1,4 @@
+#+SEQ_TODO: TODO(t) IMPROVING(i) | DONE(d) CANCELLED(c)
 Welcome to my emacs config. Always improving trying to improve it. I think.
 
 * Cosmetics
