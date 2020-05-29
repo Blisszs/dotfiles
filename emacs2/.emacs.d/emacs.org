@@ -99,6 +99,19 @@ Moves the point to the newly created window after splitting.
 #+BEGIN_SRC emacs-lisp
 (winner-mode 1)
 #+END_SRC
+** IMPROVING projectile
+   basic configuration for now. Planning to improve it soon
+
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :config
+     (setq projectile-completion-system 'ivy)
+     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+     (setq projectile-project-search-path '("~"))
+     (projectile-mode 1)
+     )
+#+END_SRC
 * Minibuffer Completion Tools
 ** ivy
   light completion framework for emacs.
