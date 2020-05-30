@@ -108,7 +108,7 @@ Moves the point to the newly created window after splitting.
     :config
      (setq projectile-completion-system 'ivy)
      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-     (setq projectile-project-search-path '("~"))
+     (setq projectile-project-search-path '("~" "~/projects"))
      (projectile-mode 1)
      )
 #+END_SRC
