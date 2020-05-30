@@ -138,7 +138,7 @@ Moves the point to the newly created window after splitting.
   (use-package swiper
     :ensure t
     :bind
-    ("C-s" . swiper)
+    ("C-s" . swiper-isearch)
     )
 #+END_SRC
 * Git
@@ -327,6 +327,7 @@ hide dired details automaticly
 	    ))
     :bind ("C-c o c" . counsel-org-capture))
 #+END_SRC
+** TODO org-agenda
 * rss
   Elfeed - a simple rss feed to keep track of youtube videos and news.
 #+BEGIN_SRC emacs-lisp
