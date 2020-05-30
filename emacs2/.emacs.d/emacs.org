@@ -132,6 +132,15 @@ Moves the point to the newly created window after splitting.
   :config
   (counsel-mode 1))
 #+END_SRC 
+** swiper
+   isearch alternative that shows a preview of all the searches
+#+BEGIN_SRC emacs-lisp
+  (use-package swiper
+    :ensure t
+    :bind
+    ("C-s" . swiper)
+    )
+#+END_SRC
 * Git
 ** magit
    the best git frontend. ever.
