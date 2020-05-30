@@ -1,6 +1,7 @@
 dotemacs.el
 *.o
-dwm/dwm
+suckless/dwm/dwm
+suckless/dwm/dwmblocks/dwmblocks
 *.orig
 *~
 .rej
