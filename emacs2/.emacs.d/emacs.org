@@ -315,7 +315,7 @@ hide dired details automaticly
 	    ("va" "anime" entry (file+headline "~/org/tv-list.org" "anime") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
 	    ("vm" "movie" entry (file+headline "~/org/tv-list.org" "movies") "* %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :DURATION: \n :END: \n")
 	    ))
-    :bind ("C-c o c" . org-capture))
+    :bind ("C-c o c" . counsel-org-capture))
 #+END_SRC
 * rss
   Elfeed - a simple rss feed to keep track of youtube videos and news.
