@@ -1,0 +1,7 @@
+#!/bin/sh
+
+clock() {
+   date +%D\ %H\:%M\ 
+}
+
+clock
