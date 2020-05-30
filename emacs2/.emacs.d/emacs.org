@@ -78,8 +78,8 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
   (use-package avy
     :ensure t
     :bind
-    ("C-c SPC w" . avy-goto-word-1)
-    ("C-c SPC l" . avy-goto-line)
+    ("C-c j w" . avy-goto-word-1)
+    ("C-c j l" . avy-goto-line)
     )
 #+END_SRC
 ** split window
