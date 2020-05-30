@@ -123,9 +123,8 @@ Moves the point to the newly created window after splitting.
   :config
   (ivy-mode 1))
 #+END_SRC
-
 ** counsel
-   ivy utilities.
+   enforce the use of ivy.
 #+BEGIN_SRC emacs-lisp
 (use-package counsel
   :ensure t
