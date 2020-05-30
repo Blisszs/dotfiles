@@ -350,7 +350,7 @@ hide dired details automaticly
       (interactive "r")
       (shell-command (concat "mpv " "'" (buffer-substring start end)"'" "\&")))
 
-    (define-key elfeed-show-mode-map (kbd "C-c o") 'ga/play-with-mpv))
+    (define-key elfeed-show-mode-map (kbd "C-c C-o") 'ga/play-with-mpv))
 #+END_SRC
 
 * pdf
