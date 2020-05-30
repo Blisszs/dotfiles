@@ -328,6 +328,13 @@ hide dired details automaticly
     :bind ("C-c o c" . counsel-org-capture))
 #+END_SRC
 ** TODO org-agenda
+#+BEGIN_SRC emacs-lisp
+  (use-package org-agenda
+    :custom
+    (org-agenda-files '("~/org"))
+    :bind
+    ("C-c o a" . org-agenda))
+#+END_SRC
 * rss
   Elfeed - a simple rss feed to keep track of youtube videos and news.
 #+BEGIN_SRC emacs-lisp
