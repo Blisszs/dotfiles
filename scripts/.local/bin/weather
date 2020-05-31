@@ -1,9 +1,0 @@
-#!/bin/sh
-
-output=$(weather -m -q LPFR)
-
-weather(){
-    weather -m -q LPFR |awk 'NR==1 {print $2 "°C"} NR==2 {print "Humidity: " $3} NR==3 {print "Wind: " $8 " "}'
-}
-
-weather

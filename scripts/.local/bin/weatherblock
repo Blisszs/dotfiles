@@ -1,0 +1,12 @@
+#!/bin/sh
+
+weathera() {
+    if [ -e "$HOME/.cache/weatherlog" ]; then
+	rm ~/.cache/weatherlog
+    fi
+    echo $(weather -m -q "LPFR") > ~/.cache/weatherlog
+
+    awk '{print $2 "°C" " |" "Humidity: " $6 " |" "Wind: " $14 "km/h " $10}' ~/.cache/weatherlog
+}
+
+weathera
