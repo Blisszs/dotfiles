@@ -1,6 +1,13 @@
 #+SEQ_TODO: TODO(t) IMPROVING(i) | DONE(d) CANCELLED(c)
 Welcome to my emacs config. Always improving trying to improve it. I think.
 
+* bootstrap
+  Since I don't have the use-package package installed for the first time, this allows emacs to install it without any manual intervention.
+#+BEGIN_SRC emacs-lisp
+  (unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+#+END_SRC
 * Cosmetics
 ** interface
   Remove unused bars, highlight matching parentheses, word warping instead of being cut, and load my theme theme of choice.
