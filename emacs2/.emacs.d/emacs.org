@@ -342,6 +342,14 @@ hide dired details automaticly
     :bind
     ("C-c o a" . org-agenda))
 #+END_SRC
+** org-bullets
+   Show org-mode bullets as UTF-8 characters. 
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :hook
+    (org-mode . (lambda () (org-bullets-mode 1))))
+#+END_SRC
 * rss
   Elfeed - a simple rss feed to keep track of youtube videos and news.
 #+BEGIN_SRC emacs-lisp
