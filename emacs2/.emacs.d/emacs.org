@@ -421,3 +421,6 @@ T - tag prefix
 #+END_SRC
 ** TODO org-mode
    org-export maybe
+#+BEGIN_SRC emacs-lisp
+(setq org-latex-create-formula-image-program 'imagemagick) ;; create latex fragment 
+#+END_SRC
