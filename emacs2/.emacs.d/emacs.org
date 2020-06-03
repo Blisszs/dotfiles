@@ -365,8 +365,11 @@ T - tag prefix
     :bind ("C-c r" . elfeed)
     :hook (elfeed-search-mode . elfeed-update)
     :config
+#+END_SRC
 
-    ;; play highlighted link in mpv
+ play highlighted link in mpv
+
+#+BEGIN_SRC emacs-lisp
     (defun ga/play-with-mpv (start end)
       "Play the link in the region with mpv"
       (interactive "r")
