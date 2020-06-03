@@ -323,6 +323,7 @@ T - tag prefix
     :bind ("C-c o c" . counsel-org-capture))
 #+END_SRC
 ** org-agenda
+   Org-mode agenda allows to see all the headers of the org files inside a given directory. It's pretty good in conjunction with org-capture to quickly take notes or store ideas.
 #+BEGIN_SRC emacs-lisp
   (use-package org-agenda
     :custom
@@ -373,9 +374,8 @@ T - tag prefix
 
     (define-key elfeed-show-mode-map (kbd "C-c C-o") 'ga/play-with-mpv))
 #+END_SRC
-
 * pdf
-  
+  pdf-tools is a better pdf viewer than the emacs built-in one. Although it's not my preferred way of visualizing pdf, having it inside emacs allows for a quick view a pdf without leaving the comfort of emacs.
 #+BEGIN_SRC emacs-lisp
     (use-package pdf-tools
       :ensure t
