@@ -278,21 +278,9 @@ T - tag prefix
 
 (define-key dired-mode-map "." 'hydra-dired/body)
 #+END_SRC
-* Music
-** mpd frontend
-   simple fronted for mpd that uses mpc commands for easy manipulation.
-
-#+BEGIN_SRC emacs-lisp
-(use-package simple-mpc
-  :ensure t
-  :bind ("C-c m" . simple-mpc)
-  :config
-  (setenv "MPD_HOST" "127.0.0.1")
-  (setenv "MPD_PORT" "6601"))
-#+END_SRC
 * Dired
 ** misc dired settings
-hide dired details automaticly
+   hide dired details automaticly
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
