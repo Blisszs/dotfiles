@@ -6,7 +6,7 @@ weathera() {
     fi
     echo $(weather -m -q "LPFR") > ~/.cache/weatherlog
 
-    awk '{print " Temperature: " $2 "°C" " |" "Humidity: " $6 " |" "Wind: " $14 "km/h " $10 " "}' ~/.cache/weatherlog
+    awk '{print " Temperature: " $2 "°C" " | " "Humidity: " $6 " | " "Wind: " $14 "km/h " $10 " "}' ~/.cache/weatherlog
 }
 
 weathera
