@@ -121,6 +121,19 @@ Moves the point to the newly created window after splitting.
      (projectile-mode 1)
      )
 #+END_SRC
+** ivy premade views
+#+BEGIN_SRC emacs-lisp
+  ;;keybinding views
+  (global-set-key (kbd "C-c V") 'ivy-push-view)
+  (global-set-key (kbd "C-c v") 'ivy-switch-view)
+  ;; views in the buffer list
+  (setq ivy-use-virtual-buffers t)
+  ;; premade views
+  (setq ivy-views 
+	'(("{} emacs-config" (horz (file "/home/bliss/dotfiles/emacs2/.emacs.d/emacs.org") (buffer "*scratch*")))
+	  ("{} clean" (buffer "*scratch*"))
+	  ))
+#+END_SRC
 * Minibuffer Completion Tools
 ** ivy
   light completion framework for emacs.
