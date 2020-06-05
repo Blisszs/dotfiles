@@ -340,6 +340,7 @@ T - tag prefix
     (org-mode . (lambda () (org-bullets-mode 1))))
 #+END_SRC
 * rss
+** elfeed 
   Elfeed - a simple rss feed to keep track of youtube videos and news.
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed
@@ -376,6 +377,16 @@ T - tag prefix
       (shell-command (concat "mpv " "'" (buffer-substring start end)"'" "\&")))
 
     (define-key elfeed-show-mode-map (kbd "C-c C-o") 'ga/play-with-mpv))
+#+END_SRC
+** elfeed-goodies
+#+BEGIN_SRC emacs-lisp
+  (use-package elfeed-goodies
+    :ensure t
+    :after (elfeed)
+    :custom
+    (elfeed-goodies/powerline-default-separator (quote bar))
+    :config
+    (elfeed-goodies/setup))
 #+END_SRC
 * pdf
   pdf-tools is a better pdf viewer than the emacs built-in one. Although it's not my preferred way of visualizing pdf, having it inside emacs allows for a quick view a pdf without leaving the comfort of emacs.
