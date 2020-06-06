@@ -146,11 +146,13 @@ Moves the point to the newly created window after splitting.
 ** counsel
    enforce the use of ivy.
 #+BEGIN_SRC emacs-lisp
-(use-package counsel
-  :ensure t
-  :after ivy
-  :config
-  (counsel-mode 1))
+  (use-package counsel
+    :ensure t
+    :after ivy
+    :bind
+    ("C-c C-f" .  counsel-fzf)
+    :config
+    (counsel-mode 1))
 #+END_SRC 
 ** swiper
    isearch alternative that shows a preview of all the searches
