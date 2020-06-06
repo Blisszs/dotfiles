@@ -428,7 +428,14 @@ T - tag prefix
   (use-package erc
     :ensure t
     :custom
-    (erc-nick "blisszs"))
+    (erc-nick "blisszs")
+    :config
+  (defun start-irc ()
+   "Connect to IRC."
+   (interactive)
+   (erc-tls :server "irc.freenode.net" :port 6697
+	:nick "blisszs" :full-name "blisszs"))
+    )
 #+END_SRC
 * writting
 ** Latex
