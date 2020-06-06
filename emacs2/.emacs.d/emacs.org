@@ -208,6 +208,18 @@ Moves the point to the newly created window after splitting.
    (setq vc-follow-symlinks t)
    (setq gc-cons-threshold 100000000))
 #+END_SRC
+* Dired
+** misc dired settings
+   hide dired details automaticly
+
+#+BEGIN_SRC emacs-lisp
+  (use-package dired
+    :hook
+    (dired-mode . dired-hide-details-mode)
+    :bind (:map dired-mode-map
+    ("." . hydra-dired/body))
+    )
+#+END_SRC
 * Hydras
   Use multiple related commands with a common prefix.
 ** hydra
@@ -290,15 +302,6 @@ T - tag prefix
   ("Z" dired-do-compress)
   ("q" nil)
   ("." nil :color blue))
-
-(define-key dired-mode-map "." 'hydra-dired/body)
-#+END_SRC
-* Dired
-** misc dired settings
-   hide dired details automaticly
-
-#+BEGIN_SRC emacs-lisp
-(add-hook 'dired-mode-hook 'dired-hide-details-mode)
 #+END_SRC
 * org
 ** org-mode
