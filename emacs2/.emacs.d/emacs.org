@@ -81,9 +81,13 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 ** yasnippet
    snippets for emacs.
 #+BEGIN_SRC emacs-lisp
-(use-package yasnippet
-  :ensure t
-  :hook (lsp-mode . yas-minor-mode))
+  (use-package yasnippet
+    :ensure t
+    :hook (lsp-mode . yas-minor-mode))
+
+  (use-package yasnippet-snippets
+    :ensure t
+    :quelpa (abc-mode :fetcher git :repo "https://github.com/AndreaCrotti/yasnippet-snippets.git"))
 #+END_SRC
 * Movement Around Text and Windows
 ** avy
