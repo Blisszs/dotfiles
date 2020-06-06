@@ -318,12 +318,14 @@ T - tag prefix
 	  '(("t" "tasks" entry (file+headline "~/MEGA/org/life.org" "Todo") "* TODO %?\n  %i\n") ;; Creates a TODO headline in the entry "Todo". If there is a marked region, it will be copied over.
 
 	    ("a" "activity")
-	    ("as" "scheduled" entry (file+headline "~/MEGA/org/life.org" "Scheduled") "* TODO %?\n SCHEDULED: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
+	    ("as" "scheduled" entry (file+headline "~/MEGA/org/life.org" "Scheduled") "* NEXT %?\n SCHEDULED: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
 	    ("ad" "deadline" entry (file+headline "~/MEGA/org/life.org" "Deadline") "* TODO %?\n DEADLINE: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
+	    ("al" "learn" entry (file+headline "~/MEGA/org/life.org" "Learn") "* LEARN %? [/] \n - [ ] ")
+	    ("ar" "routine" entry (file+headline "~/MEGA/org/life.org" "Routine") "* REPEAT %? \n SCHEDULED: %^t")
 
 	    ("i" "ideas and thoughts")
 	    ("ij" " journal" entry (file+headline "~/MEGA/org/ideas.org" "journal") "* %T %? \n")
-	    ("ii" "idea" entry (file+headline "~/MEGA/org/ideas.org" "idea") "* %? \n")
+	    ("ii" "idea" entry (file+headline "~/MEGA/org/ideas.org" "idea") "* IDEA %?")
 
 	    ("c" "contacts")
 	    ("cf" "family contacts" entry (file+headline "~/MEGA/org/contacts.org" "family") "* %^{} \n :properties: \n :telefone: %? \n :email: \n :end: \n")
