@@ -1,19 +1,23 @@
 #+SEQ_TODO: TODO(t) IMPROVING(i) | DONE(d) CANCELLED(c)
 Welcome to my emacs config. Always improving trying to improve it. I think.
 
-* bootstrap
-  Since I don't have the use-package package installed for the first time, this allows emacs to install it without any manual intervention.
+* package manager bootstrap
+  Since I don't have the straight package installed for the first time, this allows emacs to install it without any manual intervention.
 #+BEGIN_SRC emacs-lisp
-  (unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-#+END_SRC
-* package managing
-#+BEGIN_SRC emacs-lisp
-  (use-package quelpa
-    :ensure t)
-  (use-package quelpa-use-package
-    :ensure t)
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+	 (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	(bootstrap-version 5))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+	  (url-retrieve-synchronously
+	   "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+	   'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+
+  (straight-use-package 'use-package)
 #+END_SRC
 * Cosmetics
 ** interface
@@ -21,7 +25,7 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 
 #+BEGIN_SRC emacs-lisp
 (use-package jazz-theme
-  :ensure t
+  :straight t
   :config (load-theme 'jazz t))
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -40,7 +44,7 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 ** startup dashboard
 #+BEGIN_SRC emacs-lisp
   (use-package dashboard
-    :ensure t
+    :straight t
     :config
     (dashboard-setup-startup-hook)
     :custom
@@ -76,25 +80,25 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
    edit multiple line at the same time.
 #+BEGIN_SRC emacs-lisp
 (use-package multiple-cursors
-  :ensure t)
+  :straight t)
 #+END_SRC
 ** yasnippet
    snippets for emacs.
 #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
-    :ensure t
+    :straight t
     :hook (lsp-mode . yas-minor-mode))
 
   (use-package yasnippet-snippets
-    :ensure t
-    :quelpa (abc-mode :fetcher git :repo "https://github.com/AndreaCrotti/yasnippet-snippets.git"))
+    :straight (yasnippet-snippets :type git :host github :repo "AndreaCrotti/yasnippet-snippets"))
+ ;;   :quelpa (abc-mode :fetcher git :repo "https://github.com/AndreaCrotti/yasnippet-snippets.git"))
 #+END_SRC
 * Movement Around Text and Windows
 ** avy
    Avy allows for the cursor to jump around characters on the screen to the point that you can also change buffers with it.
 #+BEGIN_SRC emacs-lisp
   (use-package avy
-    :ensure t
+    :straight t
     :bind
     ("C-c j w" . avy-goto-word-1)
     ("C-c j l" . avy-goto-line)
@@ -111,7 +115,7 @@ Moves the point to the newly created window after splitting.
    mark words or within delimiters with less keystrokes.
 #+BEGIN_SRC emacs-lisp
 (use-package expand-region
-:ensure t
+:straight t
 :bind ("C-c e" . er/expand-region))
 #+END_SRC
 ** winner mode
@@ -124,7 +128,7 @@ Moves the point to the newly created window after splitting.
 
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
-    :ensure t
+    :straight t
     :config
      (setq projectile-completion-system 'ivy)
      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -150,7 +154,7 @@ Moves the point to the newly created window after splitting.
   light completion framework for emacs.
 #+BEGIN_SRC emacs-lisp
 (use-package ivy
-  :ensure t
+  :straight t
   :config
   (ivy-mode 1))
 #+END_SRC
@@ -158,7 +162,7 @@ Moves the point to the newly created window after splitting.
    enforce the use of ivy.
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
-    :ensure t
+    :straight t
     :after ivy
     :bind
     ("C-c C-f" .  counsel-fzf)
@@ -169,7 +173,7 @@ Moves the point to the newly created window after splitting.
    isearch alternative that shows a preview of all the searches
 #+BEGIN_SRC emacs-lisp
   (use-package swiper
-    :ensure t
+    :straight t
     :bind
     ("C-s" . swiper-isearch)
     )
@@ -179,21 +183,21 @@ Moves the point to the newly created window after splitting.
    the best git frontend. ever.
 #+BEGIN_SRC emacs-lisp
 (use-package magit
-  :ensure t
+  :straight t
   :bind ("C-c g" . magit))
 #+END_SRC
 * Syntax Checker
   on-the-fly syntax checker.
 #+BEGIN_SRC emacs-lisp
 (use-package flycheck
-  :ensure t
+  :straight t
   :hook (lsp-mode . flycheck-mode))
 #+END_SRC
 * Completion Framework
   Modular completion framework.
 #+BEGIN_SRC emacs-lisp
 (use-package company
-  :ensure t
+  :straight t
   :bind (:map company-active-map
 	      ("<tab>" . company-complete-selection)
 	      ("C-n" . company-select-next)
@@ -212,7 +216,7 @@ Moves the point to the newly created window after splitting.
 
 #+BEGIN_SRC emacs-lisp
  (use-package lsp-mode
-   :ensure t
+   :straight t
    :hook ((c++-mode c-mode) . lsp)
    :config
    (setq lsp-prefer-capf t)
@@ -236,7 +240,7 @@ Moves the point to the newly created window after splitting.
 ** hydra
 #+BEGIN_SRC emacs-lisp
 (use-package hydra
-  :ensure t)
+  :straight t)
 #+END_SRC
 ** multiple cursors hydra
    An hydra for multiple cursors commands.
@@ -366,7 +370,7 @@ T - tag prefix
    Show org-mode bullets as UTF-8 characters. 
 #+BEGIN_SRC emacs-lisp
   (use-package org-bullets
-    :ensure t
+    :straight t
     :hook
     (org-mode . (lambda () (org-bullets-mode 1))))
 #+END_SRC
@@ -375,7 +379,7 @@ T - tag prefix
   Elfeed - a simple rss feed to keep track of youtube videos and news.
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed
-    :ensure t
+    :straight t
     :custom (elfeed-feeds '(
 			    ("https://lukesmith.xyz/rss.xml"                                                luke text)
 			    ("https://notrelated.xyz/rss"                                                   luke text podcast)
@@ -422,7 +426,7 @@ T - tag prefix
 * help tools
 #+BEGIN_SRC emacs-lisp
     (use-package which-key
-      :ensure t
+      :straight t
       :config
       (which-key-mode t)
       (setq which-key-idle-delay 1.0))
@@ -431,13 +435,13 @@ T - tag prefix
   pdf-tools is a better pdf viewer than the emacs built-in one. Although it's not my preferred way of visualizing pdf, having it inside emacs allows for a quick view a pdf without leaving the comfort of emacs.
 #+BEGIN_SRC emacs-lisp
     (use-package pdf-tools
-      :ensure t
+      :straight t
       :config (pdf-tools-install))
 #+END_SRC
 * irc
 #+BEGIN_SRC emacs-lisp
   (use-package erc
-    :ensure t
+    :straight t
     :custom
     (erc-nick "blisszs")
     :config
@@ -452,7 +456,7 @@ T - tag prefix
 ** Latex
 #+BEGIN_SRC emacs-lisp
   (use-package tex
-    :ensure auctex
+    :straight auctex
     :custom
     (TeX-auto-save t)
     (TeX-parse-self t)
