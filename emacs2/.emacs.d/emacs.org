@@ -202,7 +202,7 @@ Moves the point to the newly created window after splitting.
 	      ("<tab>" . company-complete-selection)
 	      ("C-n" . company-select-next)
 	      ("C-p" . company-select-previous))
-  :hook (lsp-mode . company-mode)
+;;  :hook (lsp-mode . company-mode)
   :custom
   (company-backends '(company-capf))
   :init
