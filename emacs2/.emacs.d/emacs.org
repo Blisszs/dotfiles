@@ -93,6 +93,13 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
     :straight (yasnippet-snippets :type git :host github :repo "AndreaCrotti/yasnippet-snippets"))
  ;;   :quelpa (abc-mode :fetcher git :repo "https://github.com/AndreaCrotti/yasnippet-snippets.git"))
 #+END_SRC
+** agressive indent
+#+BEGIN_SRC emacs-lisp
+  (use-package aggressive-indent
+    :straight t
+    :hook
+    (prog-mode . aggressive-indent-mode))
+#+END_SRC
 * Movement Around Text and Windows
 ** avy
    Avy allows for the cursor to jump around characters on the screen to the point that you can also change buffers with it.
