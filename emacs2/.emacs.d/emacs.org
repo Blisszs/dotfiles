@@ -332,7 +332,7 @@ T - tag prefix
 	    ("as" "scheduled" entry (file+headline "~/MEGA/org/life.org" "Scheduled") "* NEXT %?\n SCHEDULED: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
 	    ("ad" "deadline" entry (file+headline "~/MEGA/org/life.org" "Deadline") "* TODO %?\n DEADLINE: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
 	    ("al" "learn" entry (file+headline "~/MEGA/org/life.org" "Learn") "* LEARN %? [/] \n - [ ] ")
-	    ("ar" "routine" entry (file+headline "~/MEGA/org/life.org" "Routine") "* REPEAT %? \n DEADLINE: %^t")
+	    ("ar" "routine" entry (file+headline "~/MEGA/org/life.org" "Routine") "* REPEAT %? \n  DEADLINE: %^t \n:PROPERTIES:\n:STYLE: habit\n:END: ")
 
 	    ("i" "ideas and thoughts")
 	    ("ij" " journal" entry (file+headline "~/MEGA/org/ideas.org" "journal") "* %T %? \n")
