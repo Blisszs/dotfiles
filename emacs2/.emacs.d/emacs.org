@@ -413,16 +413,6 @@ T - tag prefix
 
     (define-key elfeed-show-mode-map (kbd "C-c C-o") 'ga/play-with-mpv))
 #+END_SRC
-** elfeed-goodies
-#+BEGIN_SRC emacs-lisp
-  (use-package elfeed-goodies
-    :ensure t
-    :after (elfeed)
-    :custom
-    (elfeed-goodies/powerline-default-separator (quote bar))
-    :config
-    (elfeed-goodies/setup))
-#+END_SRC
 * help tools
 #+BEGIN_SRC emacs-lisp
     (use-package which-key
