@@ -3,19 +3,19 @@ env:
   
 font:
   normal:
-    family: terminus
+    family: iosevka
     style: Regular
 
   bold:
-    family: terminus
+    family: iosevka
     style: Bold
 
   italic:
-    family: terminus
+    family: iosevka
     style: Italic
 
   bold_italic:
-    family: terminus
+    family: iosevka
     style: Bold Italic
 
   size: 10.0
