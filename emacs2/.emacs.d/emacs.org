@@ -420,6 +420,35 @@ T - tag prefix
 
     (define-key elfeed-show-mode-map (kbd "C-c C-o") 'ga/play-with-mpv))
 #+END_SRC
+* multimedia
+** emms
+
+#+BEGIN_SRC emacs-lisp
+  (use-package emms
+    :straight (emms :type git :host github :repo "emacsmirror/emms")
+    :custom
+    (emms-source-file-default-directory  "~/Music")
+    (emms-source-file-directory-tree-function 'emms-source-file-directory-tree-find)
+    ;; Cover thumbnails.
+    (emms-browser-covers 'emms-browser-cache-thumbnail)
+
+    :config
+    (emms-all)
+    (emms-history-load)
+    (require 'emms-setup)
+    (require 'emms-info)
+    (require 'emms-player-mpv)
+    (require 'emms-info-tinytag)
+    (setq emms-player-list (list emms-player-mpv))
+    (setq emms-info-functions '(emms-info-tinytag))
+    :bind
+    ("<f7>" . emms-smart-browse)
+    )
+#+END_SRC
+** TODO gnus
+#+BEGIN_SRC emacs-lisp
+
+#+END_SRC
 * help tools
 #+BEGIN_SRC emacs-lisp
     (use-package which-key
