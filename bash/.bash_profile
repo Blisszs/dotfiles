@@ -27,4 +27,5 @@ export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 
 PATH="$PATH:$HOME/.local/bin"
-source "$HOME/.guix-profile/etc/profile"
+export GUIX_PROFILE="/home/bliss/.config/guix/current"
+. "$GUIX_PROFILE/etc/profile"
