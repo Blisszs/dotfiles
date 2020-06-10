@@ -461,7 +461,6 @@ T - tag prefix
     (emms-source-file-directory-tree-function 'emms-source-file-directory-tree-find)
     ;; Cover thumbnails.
     (emms-browser-covers 'emms-browser-cache-thumbnail)
-
     :config
     (emms-all)
     (emms-history-load)
@@ -471,8 +470,10 @@ T - tag prefix
     (require 'emms-info-tinytag)
     (setq emms-player-list (list emms-player-mpv))
     (setq emms-info-functions '(emms-info-tinytag))
+    (add-to-list 'emms-player-mpv-parameters "--volume=35")
     :bind
     ("<f7>" . emms-smart-browse)
+    ("C-c m" . bliss/emms-hydra/body)
     )
 #+END_SRC
 ** TODO gnus
