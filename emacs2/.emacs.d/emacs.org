@@ -336,6 +336,25 @@ T - tag prefix
   ("q" nil)
   ("." nil :color blue))
 #+END_SRC
+** emms hydra
+#+BEGIN_SRC emacs-lisp
+  (defhydra bliss/emms-hydra (:hint nil)
+    "
+    _+_ raise volume  _-_ lower volume  _s_ stop     _SPC_ pause
+    _n_ next          _p_ previous      _f_ forward  _b_ backward
+    _q_ quit
+    "
+    ("+" emms-volume-raise)
+    ("-" emms-volume-lower)
+    ("s" emms-stop)
+    ("SPC" emms-pause)
+    ("n" emms-next)
+    ("p" emms-previous)
+    ("f" emms-seek-forward)
+    ("b" emms-seek-backward)
+    ("q" nil)
+    )
+#+END_SRC
 * org
 ** org-mode
  Mainly org-mode variables for now.
