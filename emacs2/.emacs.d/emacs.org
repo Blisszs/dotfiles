@@ -1,6 +1,17 @@
 #+SEQ_TODO: REMOVE(r) TODO(t) IMPROVING(i) | DONE(d) CANCELLED(c)
 Welcome to my emacs config. Always improving trying to improve it. I think.
 
+* startup speed tweaks
+  mainly borrowed from doom emacs.
+#+BEGIN_SRC emacs-lisp
+(setq gc-cons-threshold most-positive-fixnum ; 2^61 bytes
+      gc-cons-percentage 0.6)
+
+(add-hook 'emacs-startup-hook
+  (lambda ()
+    (setq gc-cons-threshold 16777216 ; 16mb
+          gc-cons-percentage 0.1)))
+#+END_SRC
 * package manager bootstrap
   Since I don't have the straight package installed for the first time, this allows emacs to install it without any manual intervention.
 #+BEGIN_SRC emacs-lisp
