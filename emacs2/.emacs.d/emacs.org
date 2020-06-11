@@ -204,23 +204,6 @@ Moves the point to the newly created window after splitting.
   :straight t
   :bind ("C-c g" . magit))
 #+END_SRC
-* Completion Framework
-  Modular completion framework.
-#+BEGIN_SRC emacs-lisp
-(use-package company
-  :straight t
-  :bind (:map company-active-map
-	      ("<tab>" . company-complete-selection)
-	      ("C-n" . company-select-next)
-	      ("C-p" . company-select-previous))
-;;  :hook (lsp-mode . company-mode)
-  :custom
-  (company-backends '(company-capf))
-  :init
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 2)
-  (setq company-require-match 'never))
-#+END_SRC
 * Programming
 ** language server
    an emacs client for the language server protocol. Currently using lsp mode due to a bug in eglot.
@@ -239,6 +222,23 @@ Moves the point to the newly created window after splitting.
  #+BEGIN_SRC emacs-lisp
  (use-package flymake
    :hook (lsp-mode . flymake-mode))
+ #+END_SRC
+** Completion Framework
+   Modular completion framework.
+ #+BEGIN_SRC emacs-lisp
+ (use-package company
+   :straight t
+   :bind (:map company-active-map
+	       ("<tab>" . company-complete-selection)
+	       ("C-n" . company-select-next)
+	       ("C-p" . company-select-previous))
+ ;;  :hook (lsp-mode . company-mode)
+   :custom
+   (company-backends '(company-capf))
+   :init
+   (setq company-idle-delay 0)
+   (setq company-minimum-prefix-length 2)
+   (setq company-require-match 'never))
  #+END_SRC
 * Dired
 ** misc dired settings
