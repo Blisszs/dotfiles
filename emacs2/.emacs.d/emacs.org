@@ -477,9 +477,10 @@ T - tag prefix
 * pdf
   pdf-tools is a better pdf viewer than the emacs built-in one. Although it's not my preferred way of visualizing pdf, having it inside emacs allows for a quick view a pdf without leaving the comfort of emacs.
 #+BEGIN_SRC emacs-lisp
-    (use-package pdf-tools
-      :straight t
-      :config (pdf-tools-install))
+  (use-package pdf-tools
+    :straight t
+    :defer t
+    :hook (doc-view-mode . pdf-tools-install))
 #+END_SRC
 * irc
 #+BEGIN_SRC emacs-lisp
