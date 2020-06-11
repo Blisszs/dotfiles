@@ -400,7 +400,7 @@ T - tag prefix
   (use-package org-bullets
     :straight t
     :hook
-    (org-mode . (lambda () (org-bullets-mode 1))))
+    (org-mode . org-bullets-mode))
 #+END_SRC
 * rss
 ** elfeed 
