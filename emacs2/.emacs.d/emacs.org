@@ -466,10 +466,6 @@ T - tag prefix
     ("C-c m" . bliss/emms-hydra/body)
     )
 #+END_SRC
-** TODO gnus
-#+BEGIN_SRC emacs-lisp
-
-#+END_SRC
 * help tools
 #+BEGIN_SRC emacs-lisp
     (use-package which-key
