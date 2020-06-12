@@ -75,13 +75,15 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
     :straight t
     :config
     (require 'exwm-config)
-					  ;  (server-start)
+    (server-start)
     (setq exwm-workspace-number 1)
 
     ;; exwm binds
     (exwm-input-set-key (kbd "s-r") #'exwm-reset)
     (exwm-input-set-key (kbd "s-x") #'exwm-workspace-delete)
     (exwm-input-set-key (kbd "s-w") #'exwm-workspace-swap)
+    (exwm-input-set-key (kbd "s-Q") 'kill-current-buffer)
+    (exwm-input-set-key (kbd "s-b") 'exwm-workspace-switch-to-buffer)
 
     ;; simulation keys the emacs way inside X programs 
     (exwm-input-set-simulation-keys
@@ -116,6 +118,27 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 			     (interactive)
 			     (exwm-workspace-switch-create (1- ,i)))))
 
+    (dotimes (i 10)
+      (exwm-input-set-key (kbd (format "C-s-%d" i))
+			  `(lambda ()
+			     (interactive)
+			     (exwm-workspace-move-window (1- ,i)))))
+
+    ;; update the X11 window and class name
+    (add-hook 'exwm-update-class-hook
+	      (lambda ()
+		(unless (or (string-prefix-p "sun-awt-X11-" exwm-instance-name)
+			    (string= "gimp" exwm-instance-name))
+		  (exwm-workspace-rename-buffer exwm-class-name))))
+
+    (add-hook 'exwm-update-title-hook
+	      (lambda ()
+		(when (or (not exwm-instance-name)
+			  (string-prefix-p "sun-awt-X11-" exwm-instance-name)
+			  (string= "gimp" exwm-instance-name))
+		  (exwm-workspace-rename-buffer exwm-title))))
+
+
     ;; program launcher (in the event of dmenu not working)
     (exwm-input-set-key (kbd "s-&")
 			(lambda (command)
@@ -124,12 +147,12 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 
     )
 
-     (use-package dmenu
-       :straight t
-       :bind
-       ("s-SPC" . 'dmenu))
+       (use-package dmenu
+	 :straight t
+	 :config
+	 (exwm-input-set-key (kbd "s-SPC") 'dmenu))
 
-       (exwm-enable)
+	 (exwm-enable)
 #+END_SRC
 * Bakcup Settings
   save bakcup files to a directory instead of the current working directory so that it stays organized.
@@ -175,6 +198,23 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
     (prog-mode . aggressive-indent-mode))
 #+END_SRC
 * Movement Around Text and Windows
+** emacs keybinds
+Moves the point to the newly created window after splitting.
+
+#+BEGIN_SRC emacs-lisp
+  ;; automaticly switch to new windows on splits
+  (global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
+  (global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
+
+  ;; switch to previous buffer
+  (defun er-switch-to-previous-buffer ()
+    "Switch to previously open buffer.
+  Repeated invocations toggle between the two most recently open buffers."
+    (interactive)
+    (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+  (exwm-input-set-key (kbd "s-<tab>") #'er-switch-to-previous-buffer)
+#+END_SRC
 ** avy
    Avy allows for the cursor to jump around characters on the screen to the point that you can also change buffers with it.
 #+BEGIN_SRC emacs-lisp
