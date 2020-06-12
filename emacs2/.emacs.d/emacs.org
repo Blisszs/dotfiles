@@ -77,6 +77,12 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
                   (cons page-break-lines-char page-break-lines-char)
                   (face-attribute 'default :family))
 #+END_SRC
+** all the icons
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons-ivy
+    :straight (all-the-icons-ivy :type git :host github :repo "asok/all-the-icons-ivy")
+    :hook (after-init . all-the-icons-ivy-setup))
+#+END_SRC
 * exwm
 
 #+BEGIN_SRC emacs-lisp
