@@ -3,8 +3,9 @@ setxkbmap pt &&
 #	xsetroot -name "[$(xkblayout-state print "%s")] $(date +\[%H\:%M\]\ \[%D\]) "
 #	sleep 60
 #done &
-dwmblocks &
+#dwmblocks &
 pulseaudio &
 sxhkd &
-feh --bg-fill -z wallpapers/wallpapers &
-exec dwm
+#feh --bg-fill -z wallpapers/wallpapers &
+#exec dwm
+exec emacs

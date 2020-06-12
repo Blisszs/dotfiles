@@ -9,8 +9,8 @@ super + Return
       $TERMINAL -e tmux new -A -s st
 
 # dmenu
-super + d
-      dmenu_run
+#super + d
+#      dmenu_run
 
 # screenshot
 Print
