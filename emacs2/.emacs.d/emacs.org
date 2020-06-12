@@ -197,6 +197,13 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
     :hook
     (prog-mode . aggressive-indent-mode))
 #+END_SRC
+** expand region
+    mark words or within delimiters with less keystrokes.
+ #+BEGIN_SRC emacs-lisp
+ (use-package expand-region
+ :straight t
+ :bind ("C-c e" . er/expand-region))
+ #+END_SRC
 * Movement Around Text and Windows
 ** emacs keybinds
 Moves the point to the newly created window after splitting.
@@ -224,20 +231,6 @@ Moves the point to the newly created window after splitting.
     ("C-c j w" . avy-goto-word-1)
     ("C-c j l" . avy-goto-line)
     )
-#+END_SRC
-** split window
-Moves the point to the newly created window after splitting.
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
-(global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
-#+END_SRC
-** expand region
-   mark words or within delimiters with less keystrokes.
-#+BEGIN_SRC emacs-lisp
-(use-package expand-region
-:straight t
-:bind ("C-c e" . er/expand-region))
 #+END_SRC
 ** winner mode
    winner mode allow to undo and redo changes to window layouts
