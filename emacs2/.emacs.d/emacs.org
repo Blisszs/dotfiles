@@ -35,23 +35,32 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
   Remove unused bars, highlight matching parentheses, word warping instead of being cut, and load my theme theme of choice.
 
 #+BEGIN_SRC emacs-lisp
-(use-package jazz-theme
-  :straight t
-  :config (load-theme 'jazz t))
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(global-visual-line-mode 1)
-(show-paren-mode 1)
-(display-time-mode t)
-;; line numbers
-(add-hook 'text-mode-hook 'linum-mode)
-(add-hook 'prog-mode-hook 'linum-mode)
+  (use-package doom-themes
+    :straight t
+    :config (load-theme 'doom-tomorrow-night t))
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (global-visual-line-mode 1)
+  (show-paren-mode 1)
+  ;; line numbers
+  (add-hook 'text-mode-hook 'linum-mode)
+  (add-hook 'prog-mode-hook 'linum-mode)
 #+END_SRC
 
 ** font
 #+BEGIN_SRC emacs-lisp
 (set-face-attribute 'default nil :font "iosevka-11")
+#+END_SRC
+** modeline
+#+BEGIN_SRC emacs-lisp
+   (use-package doom-modeline
+     :straight t
+     :custom
+     (doom-modeline-height 18)
+     :init (doom-modeline-mode 1))
+
+   (display-time-mode t)
 #+END_SRC
 ** startup dashboard
 #+BEGIN_SRC emacs-lisp
