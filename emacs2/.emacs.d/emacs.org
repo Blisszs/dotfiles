@@ -93,6 +93,10 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
     (server-start)
     (setq exwm-workspace-number 1)
 
+    ;;tray
+    (require 'exwm-systemtray)
+    (exwm-systemtray-enable)
+
     ;; exwm binds
     (exwm-input-set-key (kbd "s-r") #'exwm-reset)
     (exwm-input-set-key (kbd "s-x") #'exwm-workspace-delete)
