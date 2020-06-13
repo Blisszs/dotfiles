@@ -517,45 +517,6 @@ T - tag prefix
     :hook
     (org-mode . org-bullets-mode))
 #+END_SRC
-* rss
-** elfeed 
-  Elfeed - a simple rss feed to keep track of youtube videos and news.
-#+BEGIN_SRC emacs-lisp
-  (use-package elfeed
-    :straight t
-    :custom (elfeed-feeds '(
-			    ("https://lukesmith.xyz/rss.xml"                                                luke text)
-			    ("https://notrelated.xyz/rss"                                                   luke text podcast)
-			    ("https://lukesmith.xyz/youtube.xml"                                            luke yt youtube)
-			    ("https://suckless.org/atom.xml"                                                suckless)
-			    ("https://voidlinux.org/atom.xml"                                               void linux)
-			    ("https://guix.gnu.org/feeds/blog.atom"                                         guix linux)
-			    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg" youtube yt) ;; exurbia
-			    ("https://www.youtube.com/feeds/videos.xml?channel_id=UC8Q7XEy86Q7T-3kNpNjYgwA" youtube yt) ;; Internet Historian Incognito
-			    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw" youtube yt) ;; Internet Historian
-			    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q" youtube yt) ;; Lemmino
-			    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q" youtube yt) ;; Kurzgesast
-			    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCeeFfhMcJa1kjtfZAGskOCA" youtube yt) ;; Techlinked
-			    ;;				 ("https://www.youtube.com/feeds/videos.xml?channel_id=") ;; template
-
-			    ))
-    (elfeed-db-directory "~/.cache/elfeed")
-    (elfeed-search-filter "@6-months-ago")
-    :bind ("C-c r" . elfeed)
-    :hook (elfeed-search-mode . elfeed-update)
-    :config
-#+END_SRC
-
- play highlighted link in mpv
-
-#+BEGIN_SRC emacs-lisp
-    (defun ga/play-with-mpv (start end)
-      "Play the link in the region with mpv"
-      (interactive "r")
-      (shell-command (concat "mpv " "'" (buffer-substring start end)"'" "\&")))
-
-    (define-key elfeed-show-mode-map (kbd "C-c C-o") 'ga/play-with-mpv))
-#+END_SRC
 * multimedia
 ** emms
 #+BEGIN_SRC emacs-lisp
@@ -581,6 +542,53 @@ T - tag prefix
     ("C-c m" . bliss/emms-hydra/body)
     )
 #+END_SRC
+** elfeed 
+   Elfeed - a simple rss feed to keep track of youtube videos and news.
+ #+BEGIN_SRC emacs-lisp
+      (use-package elfeed
+	:straight t
+	:custom (elfeed-feeds '(
+				("https://lukesmith.xyz/rss.xml"                                                luke text)
+				("https://notrelated.xyz/rss"                                                   luke text podcast)
+				("https://lukesmith.xyz/youtube.xml"                                            luke yt youtube)
+				("https://suckless.org/atom.xml"                                                suckless)
+				("https://voidlinux.org/atom.xml"                                               void linux)
+				("https://guix.gnu.org/feeds/blog.atom"                                         guix linux)
+				("https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg" youtube yt) ;; exurbia
+				("https://www.youtube.com/feeds/videos.xml?channel_id=UC8Q7XEy86Q7T-3kNpNjYgwA" youtube yt) ;; Internet Historian Incognito
+				("https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw" youtube yt) ;; Internet Historian
+				("https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q" youtube yt) ;; Lemmino
+				("https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q" youtube yt) ;; Kurzgesast
+				("https://www.youtube.com/feeds/videos.xml?channel_id=UCeeFfhMcJa1kjtfZAGskOCA" youtube yt) ;; Techlinked
+				;;				 ("https://www.youtube.com/feeds/videos.xml?channel_id=") ;; template
+
+				))
+
+	:bind
+	("C-c r" . elfeed)
+	(:map elfeed-search-mode-map
+	("g" . elfeed-update)
+	("v" . elfeed-play-with-mpv))
+
+	:config
+	(setq elfeed-use-curl t)
+	(setq elfeed-curl-max-connections 10)
+	(setq elfeed-db-directory "~/.cache/elfeed")
+	(setq elfeed-search-filter "@6-months-ago")
+
+
+(defun elfeed-play-with-mpv ()
+  "Play entry link with mpv."
+  (interactive)
+  (let ((entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single)))
+        (quality-arg "")
+        (quality-val (completing-read "Max height resolution (0 for unlimited): " '("0" "480" "720") nil nil)))
+    (setq quality-val (string-to-number quality-val))
+    (message "Opening %s with height≤%s with mpv..." (elfeed-entry-link entry) quality-val)
+    (when (< 0 quality-val)
+      (setq quality-arg (format "--ytdl-format=[height<=?%s]" quality-val)))
+    (start-process "elfeed-mpv" nil "mpv" quality-arg (elfeed-entry-link entry))))
+ #+END_SRC
 * help tools
 #+BEGIN_SRC emacs-lisp
     (use-package which-key
