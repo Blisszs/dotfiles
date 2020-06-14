@@ -247,8 +247,7 @@ Moves the point to the newly created window after splitting.
   (use-package avy
     :straight t
     :bind
-    ("C-c j w" . avy-goto-word-1)
-    ("C-c j l" . avy-goto-line)
+    ("S-<SPC>" . avy-goto-word-1)
     )
 #+END_SRC
 ** winner mode
@@ -290,7 +289,7 @@ Moves the point to the newly created window after splitting.
     :straight t
     :after ivy
     :bind
-    ("C-c C-f" .  counsel-fzf)
+    ("C-c f" .  counsel-fzf)
     :config
     (counsel-mode 1))
 #+END_SRC 
