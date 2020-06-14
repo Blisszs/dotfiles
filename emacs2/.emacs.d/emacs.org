@@ -651,7 +651,11 @@ T - tag prefix
 #+BEGIN_SRC emacs-lisp
 (setq org-latex-create-formula-image-program 'imagemagick) ;; create latex fragment
 #+END_SRC
-** TODO flyspell
+** TODO spell checker
+#+BEGIN_SRC emacs-lisp
+  (use-package flyspell)
+  (use-package ispell)
+#+END_SRC
 * misc
 ** IMPROVING pamparam
    falshcards
