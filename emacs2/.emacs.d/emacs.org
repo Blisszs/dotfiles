@@ -215,7 +215,7 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
   (use-package aggressive-indent
     :straight t
     :hook
-    (prog-mode . aggressive-indent-mode))
+    ((emacs-lisp-mode ) . aggressive-indent-mode))
 #+END_SRC
 ** expand region
     mark words or within delimiters with less keystrokes.
