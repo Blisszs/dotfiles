@@ -198,17 +198,18 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 (use-package multiple-cursors
   :straight t)
 #+END_SRC
-** yasnippet
-   snippets for emacs.
-#+BEGIN_SRC emacs-lisp
-  (use-package yasnippet
-    :straight t
-    :hook (lsp-mode . yas-minor-mode))
+** snippets
+*** yasnippet
+    snippets for emacs.
+ #+BEGIN_SRC emacs-lisp
+   (use-package yasnippet
+     :straight t
+     :hook (lsp-mode . yas-minor-mode))
 
-  (use-package yasnippet-snippets
-    :straight (yasnippet-snippets :type git :host github :repo "AndreaCrotti/yasnippet-snippets"))
- ;;   :quelpa (abc-mode :fetcher git :repo "https://github.com/AndreaCrotti/yasnippet-snippets.git"))
-#+END_SRC
+   (use-package yasnippet-snippets
+;     :straight (yasnippet-snippets :type git :host github :repo "AndreaCrotti/yasnippet-snippets"))
+     :straight t)
+ #+END_SRC
 ** agressive indent
 #+BEGIN_SRC emacs-lisp
   (use-package aggressive-indent
