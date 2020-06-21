@@ -466,6 +466,7 @@ T - tag prefix
  Mainly org-mode variables for now.
 #+BEGIN_SRC emacs-lisp
 (setq org-src-tab-acts-natively t) ;; native indentation inside org-mode blocks
+(add-to-list 'org-modules 'org-habit)
 #+END_SRC
 ** org-capture
     Org-capture allows to add entries to a file from anywhere in emacs. Due to this it's very convinient to have it just in case I need to quickly write notes or schedule activities.
