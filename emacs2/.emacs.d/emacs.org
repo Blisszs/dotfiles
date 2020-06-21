@@ -660,16 +660,3 @@ T - tag prefix
   (use-package flyspell)
   (use-package ispell)
 #+END_SRC
-* misc
-** IMPROVING pamparam
-   falshcards
-#+BEGIN_SRC emacs-lisp
-  (use-package pamparam
-    :straight t
-    :config
-    (setq pamparam-alist
-	  '(("/home/bliss/MEGA/org/japanese.org"
-	     . "/home/bliss/MEGA/pamparam/japanese.pam")))
-    (setq pamparam-path "/home/bliss/MEGA/pamparam/japanese.pam")
-    )
-#+END_SRC
