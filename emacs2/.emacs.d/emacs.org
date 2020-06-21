@@ -508,7 +508,7 @@ T - tag prefix
 #+BEGIN_SRC emacs-lisp
   (use-package org-agenda
     :custom
-    (org-agenda-files '("~/MEGA/org"))
+    (org-agenda-files '("~/MEGA/org/agenda"))
     :bind
     ("C-c o a" . org-agenda))
 #+END_SRC
