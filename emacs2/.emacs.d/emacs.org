@@ -52,16 +52,6 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 #+BEGIN_SRC emacs-lisp
 (set-face-attribute 'default nil :font "iosevka-11")
 #+END_SRC
-** modeline
-#+BEGIN_SRC emacs-lisp
-   (use-package doom-modeline
-     :straight t
-     :custom
-     (doom-modeline-height 18)
-     :init (doom-modeline-mode 1))
-
-   (display-time-mode t)
-#+END_SRC
 ** startup dashboard
 #+BEGIN_SRC emacs-lisp
   (use-package dashboard
@@ -76,12 +66,6 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 (set-fontset-font "fontset-default"
                   (cons page-break-lines-char page-break-lines-char)
                   (face-attribute 'default :family))
-#+END_SRC
-** all the icons
-#+BEGIN_SRC emacs-lisp
-  (use-package all-the-icons-ivy
-    :straight (all-the-icons-ivy :type git :host github :repo "asok/all-the-icons-ivy")
-    :hook (after-init . all-the-icons-ivy-setup))
 #+END_SRC
 * exwm
 #+BEGIN_SRC emacs-lisp
@@ -192,7 +176,7 @@ Moves the point to the newly created window after splitting.
     ("C-c V" . ivy-pop-view)
     :custom
     (ivy-use-virtual-buffers t)
-    :config
+    :init
     (ivy-mode 1))
 #+END_SRC
 ** counsel
