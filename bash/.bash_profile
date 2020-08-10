@@ -8,10 +8,10 @@ export READER="zathura"
 export TERMINAL="alacritty"
 
 #xdg dir variables
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_DIRS="/usr/share:$HOME/.guix-profile/share"
+#export XDG_CONFIG_HOME="$HOME/.config"
+#export XDG_DATA_HOME="$HOME/.local/share"
+#export XDG_CACHE_HOME="$HOME/.cache"
+#export XDG_DATA_DIRS="/usr/share:$HOME/.guix-profile/share"
 
 #Variables
 export FZF_DEFAULT_COMMAND="rg --hidden --files ~/"
@@ -27,6 +27,6 @@ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 
-PATH="$PATH:$HOME/.local/bin:$HOME/.config/guix/current/bin"
-GUIX_PROFILE="/home/bliss/.guix-profile"
-source "$GUIX_PROFILE/etc/profile"
+#PATH="$PATH:$HOME/.local/bin:$HOME/.config/guix/current/bin"
+#GUIX_PROFILE="/home/bliss/.guix-profile"
+#source "$GUIX_PROFILE/etc/profile"
