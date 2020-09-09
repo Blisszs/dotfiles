@@ -370,32 +370,32 @@ T - tag prefix
   (use-package org-capture
     :config 
     (setq org-capture-templates 
-	  '(("t" "tasks" entry (file+headline "~/org/agenda/life.org" "Todo") "* TODO %?\n  %i\n") ;; Creates a TODO headline in the entry "Todo". If there is a marked region, it will be copied over.
+	  '(("t" "tasks" entry (file+headline "~/Sync/org/agenda/life.org" "Todo") "* TODO %?\n  %i\n") ;; Creates a TODO headline in the entry "Todo". If there is a marked region, it will be copied over.
 	  
 	    ("a" "activity")
-	    ("as" "scheduled" entry (file+headline "~/org/agenda/life.org" "Scheduled") "* TODO %?\n SCHEDULED: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
-	    ("ad" "deadline" entry (file+headline "~/org/agenda/life.org" "Deadline") "* TODO %?\n DEADLINE: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
-	    ("al" "learn" entry (file+headline "~/org/agenda/life.org" "Learn") "* LEARN %? [/] \n - [ ] ")
-	    ("ar" "routine" entry (file+headline "~/org/agenda/life.org" "Routine") "* REPEAT %? \n  SCHEDULED: %^t \n:PROPERTIES:\n:STYLE: habit\n:END: ")
+	    ("as" "scheduled" entry (file+headline "~/Sync/org/agenda/life.org" "Scheduled") "* TODO %?\n SCHEDULED: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
+	    ("ad" "deadline" entry (file+headline "~/Sync/org/agenda/life.org" "Deadline") "* TODO %?\n DEADLINE: %^T \n") ;; Creates an headline under the entry "Scheduled" and it will ask for a date.
+	    ("al" "learn" entry (file+headline "~/Sync/org/agenda/life.org" "Learn") "* LEARN %? [/] \n - [ ] ")
+	    ("ar" "routine" entry (file+headline "~/Sync/org/agenda/life.org" "Routine") "* REPEAT %? \n  SCHEDULED: %^t \n:PROPERTIES:\n:STYLE: habit\n:END: ")
 	  
 	    ("i" "ideas and thoughts")
-	    ("ij" " journal" entry (file+headline "~/org/journal.org" "journal") "* %T %? \n")
-	    ("ii" "idea" entry (file+headline "~/org/agenda/ideas.org" "idea") "* IDEA %?")
+	    ("ij" " journal" entry (file+headline "~/Sync/org/journal.org" "journal") "* %T %? \n")
+	    ("ii" "idea" entry (file+headline "~/Sync/org/agenda/ideas.org" "idea") "* IDEA %?")
 	  
 	    ("c" "contacts")
-	    ("cf" "family contacts" entry (file+headline "~/org/contacts.org" "family") "* %^{} \n :properties: \n :telefone: %? \n :email: \n :end: \n")
-	    ("cw" "work/school contacts" entry (file+headline "~/org/contacts.org" "work/school") "* %^{} \n :properties: \n :telefone: %? \n :email: \n :end:\n")
+	    ("cf" "family contacts" entry (file+headline "~/Sync/org/contacts.org" "family") "* %^{} \n :properties: \n :telefone: %? \n :email: \n :end: \n")
+	    ("cw" "work/school contacts" entry (file+headline "~/Sync/org/contacts.org" "work/school") "* %^{} \n :properties: \n :telefone: %? \n :email: \n :end:\n")
 	  
 	    ("b" "book and manga")
-	    ("bb" "book" entry (file+headline "~/org/lists/book-list.org" "book") "* %^{PROMPT|READING|READ|COMPLETED|DROPPED} %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end: \n")
-	    ("bm" "manga" entry (file+headline "~/org/lists/book-list.org" "manga") "* %^{PROMPT|READING|READ|COMPLETED|DROPPED} %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end: \n")
+	    ("bb" "book" entry (file+headline "~/Sync/org/lists/book-list.org" "book") "* %^{PROMPT|READING|READ|COMPLETED|DROPPED} %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end: \n")
+	    ("bm" "manga" entry (file+headline "~/Sync/org/lists/book-list.org" "manga") "* %^{PROMPT|READING|READ|COMPLETED|DROPPED} %? \n :properties: \n :author: \n :release_date: \n :page_count: \n :chapters_count: \n :end: \n")
 	  
 	    ("v" "television, movies and anime")
-	    ("vs" "television series" entry (file+headline "~/org/lists/tv-list.org" "series") "* %^{PROMPT|PLAN_TO_WATCH|WATCHING|COMPLETED|DROPPED} %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
-	    ("va" "anime" entry (file+headline "~/org/lists/tv-list.org" "anime") "* %^{PROMPT|PLAN_TO_WATCH|WATCHING|COMPLETED|DROPPED} %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
-	    ("vm" "movie" entry (file+headline "~/org/lists/tv-list.org" "movies") "* %^{PROMPT|PLAN_TO_WATCH|WATCHING|COMPLETED|DROPPED} %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :DURATION: \n :END: \n")
+	    ("vs" "television series" entry (file+headline "~/Sync/org/lists/tv-list.org" "series") "* %^{PROMPT|PLAN_TO_WATCH|WATCHING|COMPLETED|DROPPED} %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
+	    ("va" "anime" entry (file+headline "~/Sync/org/lists/tv-list.org" "anime") "* %^{PROMPT|PLAN_TO_WATCH|WATCHING|COMPLETED|DROPPED} %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :EPISODE_COUNT: \n :END: \n")
+	    ("vm" "movie" entry (file+headline "~/Sync/org/lists/tv-list.org" "movies") "* %^{PROMPT|PLAN_TO_WATCH|WATCHING|COMPLETED|DROPPED} %? \n :PROPERTIES: \n :DIRECTOR: \n :RELEASE_DATE: \n :DURATION: \n :END: \n")
 	  
-	    ("d" "duvidas" entry (file+headline "~/org/agenda/life.org" "duvidas") "* TODO %?")
+	    ("d" "duvidas" entry (file+headline "~/Sync/org/agenda/life.org" "duvidas") "* TODO %?")
 	    ))
     :bind ("C-c o c" . counsel-org-capture))
 #+END_SRC
@@ -404,7 +404,7 @@ T - tag prefix
 #+BEGIN_SRC emacs-lisp
   (use-package org-agenda
     :custom
-    (org-agenda-files '("~/org/agenda"))
+    (org-agenda-files '("~/Sync/org/agenda"))
     :bind
     ("C-c o a" . org-agenda))
 #+END_SRC
