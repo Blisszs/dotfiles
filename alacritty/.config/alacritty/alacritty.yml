@@ -3,22 +3,22 @@ env:
   
 font:
   normal:
-    family: xos4terminus
+    family: terminus
     style: Regular
 
   bold:
-    family: xos4terminus
+    family: terminus
     style: Bold
 
   italic:
-    family: xos4terminus
+    family: terminus
     style: Italic
 
   bold_italic:
-    family: xos4terminus
+    family: terminus
     style: Bold Italic
 
-  size: 8.0
+  size: 10.0
 
 # XTerm's default colors
 colors:

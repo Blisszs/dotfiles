@@ -50,7 +50,7 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 
 ** font
 #+BEGIN_SRC emacs-lisp
-(set-face-attribute 'default nil :font "iosevka-11")
+(set-face-attribute 'default nil :font "terminus-11")
 #+END_SRC
 ** startup dashboard
 #+BEGIN_SRC emacs-lisp
