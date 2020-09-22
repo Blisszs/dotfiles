@@ -138,20 +138,6 @@ Moves the point to the newly created window after splitting.
     (interactive)
     (switch-to-buffer (other-buffer (current-buffer) 1)))
 #+END_SRC
-** avy
-   Avy allows for the cursor to jump around characters on the screen to the point that you can also change buffers with it.
-#+BEGIN_SRC emacs-lisp
-  (use-package avy
-    :straight t
-    :bind
-    ("C-c <SPC>" . avy-goto-word-1)
-    )
-#+END_SRC
-** winner mode
-   winner mode allow to undo and redo changes to window layouts
-#+BEGIN_SRC emacs-lisp
-(winner-mode 1)
-#+END_SRC
 ** projectile
    basic configuration for now. Planning to improve it soon
 
