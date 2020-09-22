@@ -433,7 +433,12 @@ T - tag prefix
       (setq which-key-idle-delay 1.0))
 #+END_SRC
 * pdf
-  pdf-tools is a better pdf viewer than the emacs built-in one. Although it's not my preferred way of visualizing pdf, having it inside emacs allows for a quick view a pdf without leaving the comfort of emacs.
+  pdf-tools is a better pdf viewer than the emacs built-in one. Although it's not my preferred way of visualizing pdf, having it inside emacs allows for a quick view of a pdf without leaving the comfort of emacs.
+
+if you are using void like me you might have to use the following command to install the dependencies:
+
+sudo xbps-install libpng-devel poppler-glib-devel zlib-devel ImageMagick make autoconf gcc automake pkg-config cairo-devel
+
 #+BEGIN_SRC emacs-lisp
   (use-package pdf-tools
     :straight t
