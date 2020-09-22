@@ -198,7 +198,9 @@ Moves the point to the newly created window after splitting.
    an emacs client for the language server protocol.
 #+BEGIN_SRC emacs-lisp
   (use-package eglot
-    :straight t)
+    :straight t
+    :config (add-to-list 'eglot-server-programs '(c++-mode . ("clangd")))
+    )
 #+END_SRC
 ** Syntax Checker
    the built-in emacs syntax checker - flymake.
