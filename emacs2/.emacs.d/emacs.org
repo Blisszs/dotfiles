@@ -102,7 +102,7 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
  #+BEGIN_SRC emacs-lisp
    (use-package yasnippet
      :straight t
-     :hook (lsp-mode . yas-minor-mode))
+     :hook (eglot-server-initialized . yas-minor-mode))
 
    (use-package yasnippet-snippets
 ;     :straight (yasnippet-snippets :type git :host github :repo "AndreaCrotti/yasnippet-snippets"))
@@ -209,22 +209,16 @@ Moves the point to the newly created window after splitting.
 #+END_SRC
 * Programming
 ** language server
-   an emacs client for the language server protocol. Currently using lsp mode due to a bug in eglot.
-
+   an emacs client for the language server protocol.
 #+BEGIN_SRC emacs-lisp
- (use-package lsp-mode
-   :straight t
-   :hook ((c++-mode c-mode) . lsp)
-   :config
-   (setq lsp-prefer-capf t)
-   (setq vc-follow-symlinks t)
-   (setq gc-cons-threshold 100000000))
+  (use-package eglot
+    :straight t)
 #+END_SRC
 ** Syntax Checker
    the built-in emacs syntax checker - flymake.
  #+BEGIN_SRC emacs-lisp
- (use-package flymake
-   :hook (lsp-mode . flymake-mode))
+   (use-package flymake
+     :straight t)
  #+END_SRC
 ** Completion Framework
    Modular completion framework.
@@ -235,7 +229,6 @@ Moves the point to the newly created window after splitting.
 	       ("<tab>" . company-complete-selection)
 	       ("C-n" . company-select-next)
 	       ("C-p" . company-select-previous))
- ;;  :hook (lsp-mode . company-mode)
    :custom
    (company-backends '(company-capf))
    :init
