@@ -331,25 +331,6 @@ T - tag prefix
   ("q" nil)
   ("." nil :color blue))
 #+END_SRC
-** emms hydra
-#+BEGIN_SRC emacs-lisp
-  (defhydra bliss/emms-hydra (:hint nil)
-    "
-    _+_ raise volume  _-_ lower volume  _s_ stop     _SPC_ pause
-    _n_ next          _p_ previous      _f_ forward  _b_ backward
-    _q_ quit
-    "
-    ("+" emms-volume-raise)
-    ("-" emms-volume-lower)
-    ("s" emms-stop)
-    ("SPC" emms-pause)
-    ("n" emms-next)
-    ("p" emms-previous)
-    ("f" emms-seek-forward)
-    ("b" emms-seek-backward)
-    ("q" nil)
-    )
-#+END_SRC
 * org
 ** org-mode
  Mainly org-mode variables for now.
@@ -410,30 +391,6 @@ T - tag prefix
     (org-mode . org-bullets-mode))
 #+END_SRC
 * multimedia
-** emms
-#+BEGIN_SRC emacs-lisp
-  (use-package emms
-    :straight (emms :type git :host github :repo "emacsmirror/emms")
-    :custom
-    (emms-source-file-default-directory  "~/Music")
-    (emms-source-file-directory-tree-function 'emms-source-file-directory-tree-find)
-    ;; Cover thumbnails.
-    (emms-browser-covers 'emms-browser-cache-thumbnail)
-    :config
-    (emms-all)
-    (emms-history-load)
-    (require 'emms-setup)
-    (require 'emms-info)
-    (require 'emms-player-mpv)
-    (require 'emms-info-tinytag)
-    (setq emms-player-list (list emms-player-mpv))
-    (setq emms-info-functions '(emms-info-tinytag))
-    (add-to-list 'emms-player-mpv-parameters "--volume=35")
-    :bind
-    ("<f7>" . emms-smart-browse)
-    ("C-c m" . bliss/emms-hydra/body)
-    )
-#+END_SRC
 ** elfeed 
    Elfeed - a simple rss feed to keep track of youtube videos and news.
  #+BEGIN_SRC emacs-lisp
