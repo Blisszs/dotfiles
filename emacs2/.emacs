@@ -20,6 +20,6 @@ There are two things you can do about this warning:
 
 (require 'org)
 (org-babel-load-file
- (expand-file-name "emacs.org"
+ (expand-file-name "init.org"
                    user-emacs-directory))
 
