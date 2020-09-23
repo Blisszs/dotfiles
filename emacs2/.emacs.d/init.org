@@ -138,18 +138,13 @@ Moves the point to the newly created window after splitting.
     (interactive)
     (switch-to-buffer (other-buffer (current-buffer) 1)))
 #+END_SRC
-** projectile
-   basic configuration for now. Planning to improve it soon
+** project.el
+built-in way to manage projects. It has less features than projectile but I it should be enough.
 
 #+BEGIN_SRC emacs-lisp
-  (use-package projectile
-    :straight t
-    :config
-     (setq projectile-completion-system 'ivy)
-     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-     (setq projectile-project-search-path '("~" "~/projects"))
-     (projectile-mode 1)
-     )
+  (use-package project
+    :bind
+    ("C-c p f" . project-find-file))
 #+END_SRC
 * Minibuffer Completion Tools
 ** ivy
@@ -214,7 +209,6 @@ Moves the point to the newly created window after splitting.
  (use-package company
    :straight t
    :bind (:map company-active-map
-	       ("<tab>" . company-complete-selection)
 	       ("C-n" . company-select-next)
 	       ("C-p" . company-select-previous))
    :custom
