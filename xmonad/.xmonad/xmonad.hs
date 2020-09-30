@@ -18,10 +18,8 @@ import qualified Data.Map        as M
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks (avoidStruts, docksEventHook, manageDocks, ToggleStruts(..))
-import XMonad.Hooks.DynamicLog (dynamicLogWithPP, xmobarPP, xmobarColor, shorten, PP(..))
-
-
-
+import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, shorten, PP(..))
+import XMonad.Util.SpawnOnce
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -251,8 +249,10 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = mempty
-
+myStartupHook = do
+  spawnOnce "feh --bg-fill -z ~/Pictures/wallpapers"
+  spawnOnce "pulseaudio --start"
+  spawnOnce "setxkbmap -option 'ctrl:swapcaps' pt"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -280,6 +280,10 @@ main = do
     , focusedBorderColor = myFocusedBorderColor
     , logHook = myLogHook <+> dynamicLogWithPP xmobarPP
                 { ppOutput = hPutStrLn xmproc0,
-                  ppTitle = xmobarColor "white" "" . shorten 50
+                  ppTitle = xmobarColor "white" "" . shorten 50,
+                  ppCurrent = xmobarColor "#ffffff" "" . wrap "[" "]",
+                  ppVisible = xmobarColor "#dddddd" "",
+                  ppHidden = xmobarColor "#aaaaaa" "",
+                  ppUrgent = xmobarColor "#cc0000" "" . wrap "!" "!"
                 }
     }
