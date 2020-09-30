@@ -218,6 +218,14 @@ built-in way to manage projects. It has less features than projectile but I it s
    (setq company-minimum-prefix-length 2)
    (setq company-require-match 'never))
  #+END_SRC
+** Haskell
+#+BEGIN_SRC emacs-lisp
+  (use-package haskell-mode
+    :straight t
+    :hook
+    (haskell-mode . interactive-haskell-mode)
+    )
+#+END_SRC
 * Dired
 ** misc dired settings
    hide dired details automaticly
