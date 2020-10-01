@@ -218,6 +218,7 @@ myStartupHook = do
   spawnOnce "feh --bg-fill -z ~/Pictures/wallpapers"
   spawnOnce "pulseaudio --start"
   spawnOnce "setxkbmap -option 'ctrl:swapcaps' pt"
+  spawnOnce "emacs --daemon"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
