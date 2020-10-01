@@ -70,71 +70,36 @@ myFocusedBorderColor = "#ff0000"
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
-    -- launch a terminal
-    [ ((modm,               xK_Return), spawn myTerminal)
-
-    -- launch dmenu
-    , ((modm,               xK_d     ), spawn "dmenu_run")
-
-    -- close focused window
-    , ((modm .|. shiftMask, xK_q     ), kill)
-
-     -- Rotate through the available layout algorithms
-    , ((modm,               xK_space ), sendMessage NextLayout)
-
-    --  Reset the layouts on the current workspace to default
-    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
-
-    -- Resize viewed windows to the correct size
-    , ((modm,               xK_r     ), refresh)
-
-    -- Move focus to the next window
-    , ((modm,               xK_Tab   ), windows W.focusDown)
-
-    -- Move focus to the next window
-    , ((modm,               xK_n     ), windows W.focusDown)
-
-    -- Move focus to the previous window
-    , ((modm,               xK_p     ), windows W.focusUp  )
-
-    -- Move focus to the master window
-    , ((modm,               xK_m     ), windows W.focusMaster  )
-
-    -- Swap the focused window and the master window
-    , ((modm .|. shiftMask, xK_Return), windows W.swapMaster)
-
-    -- Swap the focused window with the next window
+    [ ((modm,               xK_Return), spawn myTerminal)     -- launch a terminal
+    , ((modm,               xK_d     ), spawn "dmenu_run")     -- launch dmenu
+    , ((modm .|. shiftMask, xK_q     ), kill)     -- close focused window
+    , ((modm,               xK_space ), sendMessage NextLayout)      -- Rotate through the available layout algorithms
+    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)     --  Reset the layouts on the current workspace to default
+    , ((modm,               xK_r     ), refresh)     -- Resize viewed windows to the correct size
+    , ((modm,               xK_Tab   ), windows W.focusDown)    -- Move focus to the next window
+    , ((modm,               xK_n     ), windows W.focusDown)     -- Move focus to the next window
+    , ((modm,               xK_p     ), windows W.focusUp  )    -- Move focus to the previous window
+    , ((modm,               xK_m     ), windows W.focusMaster  )     -- Move focus to the master window
+    , ((modm .|. shiftMask, xK_Return), windows W.swapMaster)     -- Swap the focused window and the master window
     , ((modm .|. shiftMask, xK_n     ), windows W.swapDown  )
-
-    -- Swap the focused window with the previous window
-    , ((modm .|. shiftMask, xK_p     ), windows W.swapUp    )
-
-    -- Shrink the master area
-    , ((modm,               xK_b     ), sendMessage Shrink)
-
-    -- Expand the master area
-    , ((modm,               xK_f     ), sendMessage Expand)
-
-    -- Push window back into tiling
-    , ((modm,               xK_t     ), withFocused $ windows . W.sink)
-
-    -- Increment the number of windows in the master area
-    , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
-
-    -- Deincrement the number of windows in the master area
-    , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
-
+    , ((modm .|. shiftMask, xK_p     ), windows W.swapUp    )     -- Swap the focused window with the previous window
+    , ((modm,               xK_b     ), sendMessage Shrink)     -- Shrink the master area
+    , ((modm,               xK_f     ), sendMessage Expand)     -- Expand the master area
+    , ((modm,               xK_t     ), withFocused $ windows . W.sink)     -- Push window back into tiling
+    , ((modm              , xK_comma ), sendMessage (IncMasterN 1))     -- Increment the number of windows in the master area
+    , ((modm              , xK_period), sendMessage (IncMasterN (-1)))     -- Deincrement the number of windows in the master area
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
-    --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm .|. shiftMask, xK_c     ), io (exitWith ExitSuccess))     -- Quit xmonad
+    , ((modm              , xK_c     ), spawn "xmonad --recompile; xmonad --restart")     -- Restart xmonad
 
-    -- Quit xmonad
-    , ((modm .|. shiftMask, xK_c     ), io (exitWith ExitSuccess))
-
-    -- Restart xmonad
-    , ((modm              , xK_c     ), spawn "xmonad --recompile; xmonad --restart")
+    -- program keybinds
+    , ((modm .|. shiftMask, xK_e     ), spawn "emacsclient -c -a 'emacs'") -- Start emacsclient
+    , ((modm             , xK_Print ), spawn "maim ~/Pictures/screenshot-$(date '+%y%m%d-%H%M-%S').png")
+    , ((modm .|. shiftMask, xK_Print ), spawn "maim -s ~/Pictures/screenshot-$(date '+%y%m%d-%H%M-%S').png")
+    , ((modm .|. shiftMask, xK_d ), spawn "emacsclient -c -e \'(dired \"~/\")\'")
     ]
     ++
 
@@ -261,12 +226,9 @@ myStartupHook = do
 --
 main = do
   xmproc0 <- spawnPipe "xmobar ~/.xmobarrc"
-  xmonad $ ewmh def
+  xmonad $ ewmh
+    def
     { manageHook = myManageHook <+> manageDocks 
-        -- Run xmonad commands from command line with "xmonadctl command". Commands include:
-      -- shrink, expand, next-layout, default-layout, restart-wm, xterm, kill, refresh, run,
-      -- focus-up, focus-down, swap-up, swap-down, swap-master, sink, quit-wm. You can run
-      -- "xmonadctl 0" to generate full list of commands written to ~/.xsession-errors.
     , handleEventHook    = docksEventHook 
     , modMask            = myModMask
     , terminal           = myTerminal
