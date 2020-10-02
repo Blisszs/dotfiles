@@ -204,6 +204,11 @@ built-in way to manage projects. It has less features than projectile but I it s
  #+BEGIN_SRC emacs-lisp
    (use-package flymake
      :straight t)
+
+   (use-package flymake-diagnostic-at-point
+     :straight t
+     :after flymake
+     :hook (flymake-mode . flymake-diagnostic-at-point-mode))
  #+END_SRC
 ** Completion Framework
    Modular completion framework.
