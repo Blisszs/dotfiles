@@ -181,7 +181,7 @@ bar {
 }
 
 # autostart
-exec pulseaudio --start
+exec start-pulseaudio-x11
 exec feh --bg-fill -z ~/Pictures/wallpapers
 exec emacs --daemon
 exec setxkbmap -option "ctrl:swapcaps" pt
@@ -193,6 +193,7 @@ bindsym $mod+Return exec kitty
 
 # emacs
 bindsym $mod+Shift+e exec emacsclient -c -a 'emacs'
+bindsym $mod+Shift+d exec emacsclient -c -a 'emacs' -e '(dired "~/")'
 
 # screenshot
 bindsym Print exec maim ~/screenshots/screenshot-$(date '+%y%m%d-%H%M-%S').png
