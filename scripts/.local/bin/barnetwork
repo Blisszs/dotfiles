@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf " Wifi: %s Ethernet: %s " "$(cat /sys/class/net/w*/operstate 2>/dev/null)" "$(cat /sys/class/net/e*/operstate 2>/dev/null)"
