@@ -247,6 +247,13 @@ built-in way to manage projects. It has less features than projectile but I it s
     (dired-dwim-target t)
     )
 #+END_SRC
+** dired recent folders
+#+BEGIN_SRC emacs-lisp
+  (use-package dired-recent
+    :straight t
+    :config
+    (dired-recent-mode 1))
+#+END_SRC
 * Hydras
   Use multiple related commands with a common prefix.
 ** hydra
