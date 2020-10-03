@@ -448,7 +448,14 @@ sudo xbps-install libpng-devel poppler-glib-devel zlib-devel ImageMagick make au
   (use-package pdf-tools
     :straight t
     :defer t
-    :hook (doc-view-mode . pdf-tools-install))
+    :hook 
+    (doc-view-mode . pdf-tools-install))
+
+  (use-package pdf-view-restore
+    :straight t
+    :after pdf-tools
+    :hook
+    (pdf-view-mode-hook . pdf-view-restore-mode))
 #+END_SRC
 * irc
 #+BEGIN_SRC emacs-lisp
