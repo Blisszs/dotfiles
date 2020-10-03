@@ -242,7 +242,9 @@ built-in way to manage projects. It has less features than projectile but I it s
     :hook
     (dired-mode . dired-hide-details-mode)
     :bind (:map dired-mode-map
-    ("." . hydra-dired/body))
+		("." . hydra-dired/body))
+    :custom
+    (dired-dwim-target t)
     )
 #+END_SRC
 * Hydras
