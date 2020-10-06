@@ -392,15 +392,12 @@ T - tag prefix
 				("https://notrelated.xyz/rss"                                                   luke text podcast)
 				("https://lukesmith.xyz/youtube.xml"                                            luke yt youtube)
 				("https://suckless.org/atom.xml"                                                suckless)
-				("https://voidlinux.org/atom.xml"                                               void linux)
-				("https://guix.gnu.org/feeds/blog.atom"                                         guix linux)
 				("https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg" youtube yt) ;; exurbia
 				("https://www.youtube.com/feeds/videos.xml?channel_id=UC8Q7XEy86Q7T-3kNpNjYgwA" youtube yt) ;; Internet Historian Incognito
 				("https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw" youtube yt) ;; Internet Historian
 				("https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q" youtube yt) ;; Lemmino
 				("https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q" youtube yt) ;; Kurzgesast
-				("https://www.youtube.com/feeds/videos.xml?channel_id=UCeeFfhMcJa1kjtfZAGskOCA" youtube yt) ;; Techlinked
-				;;				 ("https://www.youtube.com/feeds/videos.xml?channel_id=") ;; template
+;              			("https://www.youtube.com/feeds/videos.xml?channel_id=") ;; template
 
 				))
 
