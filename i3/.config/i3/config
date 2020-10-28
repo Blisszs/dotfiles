@@ -182,7 +182,7 @@ bar {
 }
 
 # autostart
-exec pulseaudio
+exec start-pulseaudio-x11
 exec feh --bg-fill -z ~/Pictures/wallpapers
 exec emacs --daemon
 exec setxkbmap -option "ctrl:swapcaps" pt
