@@ -1,3 +1,5 @@
 #!/bin/sh
+BAT="$(cat /sys/class/power_supply/BAT0/capacity)"
+STATUS="$(cat /sys/class/power_supply/BAT0/status)"
 
-printf "Battery: %s%% %s" "$(cat /sys/class/power_supply/BAT0/capacity)" "$(cat /sys/class/power_supply/BAT0/status)"
+echo "Battery: $BAT% $STATUS"
