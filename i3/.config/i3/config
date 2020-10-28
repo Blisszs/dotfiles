@@ -190,11 +190,12 @@ exec setxkbmap -option "ctrl:swapcaps" pt
 # My Keybinds
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # emacs
-bindsym $mod+Shift+e exec emacsclient -c -a 'emacs'
-bindsym $mod+Shift+d exec emacsclient -c -a 'emacs' -e '(dired "~/")'
+bindsym $mod+Shift+e exec emacsclient -nc -a 'emacs'
+# emacs dired
+bindsym $mod+Shift+d exec emacsclient -nc -a 'emacs' -e '(dired "~/")'
 
 # screenshot
 bindsym Print exec maim ~/Pictures/screenshot-$(date '+%y%m%d-%H%M-%S').png
