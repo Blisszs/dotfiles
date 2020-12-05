@@ -35,9 +35,10 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
   Remove unused bars, highlight matching parentheses, word warping instead of being cut, and load my theme theme of choice.
 
 #+BEGIN_SRC emacs-lisp
-  (use-package jazz-theme
-    :straight t
-    :config (load-theme 'jazz t))
+;  (use-package tango-theme
+;    :straight t
+;    :config (load-theme 'tango t))
+  (load-theme 'tango t)
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
@@ -50,7 +51,8 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 
 ** font
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'default-frame-alist '(font . "Terminus (TTF)-12"))
+(add-to-list 'default-frame-alist '(font . "inconsolata-12:antialias=none"))
+;(add-to-list 'default-frame-alist '(font . "xos4 terminus-10"))
 #+END_SRC
 ** startup dashboard
 #+BEGIN_SRC emacs-lisp
