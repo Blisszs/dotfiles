@@ -10,25 +10,10 @@ HISTFILE=~/.cache/zsh/history
 alias ls='ls --color=auto'
 
 #Prompt
-PS1='[%~] >> '
+PS1='[%n@%m] [%~] >> '
 
-# zplug - zsh plugin manager
-#source /usr/share/zplug/init.zsh
-#zplug "zsh-users/zsh-syntax-highlighting"
-#zplug "zsh-users/zsh-completions"
+# functions
 
-
-# zplug - install/load new plugins when zsh is started or reloaded
-#if ! zplug check --verbose; then
-#    printf "Install? [y/N]: "
-#    if read -q; then
-#        echo; zplug install
-#    fi
-#fi
-#zplug load
-
-#tmux
-## If not running interactively, do not do anything
-#[[ $- != *i* ]] && return
-## Otherwise start tmux
-#[[ -z "$TMUX" ]] && exec tmux new -A -s main
+gen_html() {
+	pandoc -f markdown -t html $1 | cat _header.html - _footer.html > "$(echo "$1" | sed 's/.md/.html/')"
+}
