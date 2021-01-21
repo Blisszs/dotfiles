@@ -171,21 +171,32 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Colors
+#eye candy
+gaps inner 0
+gaps outer 10
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #285577 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #5f676a #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #222222 #222222 #888888 #292d2e   #222222
-client.urgent           #900000 #900000 #ffffff #900000   #900000
-client.placeholder      #0c0c0c #0c0c0c #ffffff #000000   #0c0c0c
+#wallpaper
+output "*" bg ~/Pictures/wallpapers/1597625574354.jpg fill
+
+# Colors
+set $black #222222
+set $white #ffffff
+set $black_2 #5f676a
+set $white_2 #888888
+set $red #900000
+set $dark #0c0c0c
+set $blue #285577
+
+# class                 border   backgr.    text          indicator    child_border
+client.focused          $white   $white     $black        $white       $white  
+client.focused_inactive $black_2 $black_2   $white        $black       $black_2
+client.unfocused        $black   $black     $white_2      $black       $black 
+client.urgent           $red     $red       $white        $red         $red   
+client.placeholder      $dark    $dark      $white        $black       $dark  
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-gaps inner 0
-gaps outer 10
-output "*" bg ~/Pictures/wallpapers/1597625574354.jpg fill
 bar {
         status_command i3blocks
 	position top
@@ -194,19 +205,19 @@ bar {
 	status_edge_padding 10
 	gaps 10
 	colors {
-	        background #222222
-       		statusline #ffffff
+	        background $black 
+       		statusline $white 
 
-	        focused_workspace  #285577 #285577 #ffffff
-        	active_workspace   #333333 #333333 #ffffff 
-        	inactive_workspace #222222 #222222 #888888
-        	urgent_workspace   #900000 #900000 #ffffff
-    }
+	        focused_workspace  $white    $white    $dark
+        	active_workspace   $black_2  $black_2  $white  
+        	inactive_workspace $black    $black    $white_2
+        	urgent_workspace   $red      $red      $white 
+    }  
 }
 
 # autostart
 exec pulseaudio --start
-exec feh --bg-fill -z ~/Pictures/wallpapers
+#exec swaybg -i ~/Pictures/wallpapers/*
 exec emacs --daemon
 exec setxkbmap -option "ctrl:swapcaps" pt
 
