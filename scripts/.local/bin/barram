@@ -1,5 +1,4 @@
 #!/bin/sh
 FREERAM="$(free -h | awk 'NR==2 {print $3}')"
-ALLRAM="$(free -h | awk 'NR==2 {print $2}')"
-echo "Used: $FREERAM Total: $ALLRAM"  
+echo "  $FREERAM "  
 

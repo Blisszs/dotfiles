@@ -1,5 +1,8 @@
 #!/bin/sh
-BAT="$(cat /sys/class/power_supply/BAT0/capacity)"
-STATUS="$(cat /sys/class/power_supply/BAT0/status)"
+BAT="/sys/class/power_supply/BAT0"
+STATUS="$(sed "s/[Dd]ischarging//;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown//;s/[Ff]ull//" "$BAT"/status)"
+PERC="$(cat /sys/class/power_supply/BAT0/capacity)"
 
-echo "Battery: $BAT% $STATUS"
+
+
+echo " $STATUS $PERC%"

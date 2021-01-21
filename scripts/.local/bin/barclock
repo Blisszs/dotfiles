@@ -1,7 +1,5 @@
 #!/bin/sh
 
-clock() {
-   date +\ %D\ %H\:%M\ 
-}
+DATE="$(date +\ %H\:%M\ )"
 
-clock
+echo " $DATE"
