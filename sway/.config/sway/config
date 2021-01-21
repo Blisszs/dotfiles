@@ -38,6 +38,13 @@ input "type:keyboard" {
     xkb_options ctrl:nocaps
 }
 
+#touchpad settings
+input type:touchpad {
+    tap enabled
+    natural_scroll disabled
+}
+
+
 
 # change focus
 bindsym $mod+b focus left
