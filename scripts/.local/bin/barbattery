@@ -5,4 +5,4 @@ PERC="$(cat /sys/class/power_supply/BAT0/capacity)"
 
 
 
-echo " $STATUS $PERC%"
+echo " $STATUS $PERC% "
