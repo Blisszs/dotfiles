@@ -51,8 +51,11 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
 
 ** font
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'default-frame-alist '(font . "inconsolata-13:antialias=none"))
-;(add-to-list 'default-frame-alist '(font . "xos4 terminus-10"))
+
+  (set-face-font 'default "inconsolata-12")
+  (setq default-frame-alist '((font . "inconsolata-12"))) ;;; set default font for emacs --daemon / emacsclient
+
+  ;(add-to-list 'default-frame-alist '(font . "xos4 terminus-10"))
 #+END_SRC
 ** startup dashboard
 #+BEGIN_SRC emacs-lisp
