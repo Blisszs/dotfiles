@@ -27,6 +27,6 @@ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 
-#PATH="$PATH:$HOME/.local/bin:$HOME/.config/guix/current/bin"
+PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 #GUIX_PROFILE="/home/bliss/.guix-profile"
 #source "$GUIX_PROFILE/etc/profile"
