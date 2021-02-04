@@ -42,6 +42,12 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
+  ;disable scrollbar on emacsclient
+  (defun my/disable-scroll-bars (frame)
+    (modify-frame-parameters frame
+			     '((vertical-scroll-bars . nil)
+			       (horizontal-scroll-bars . nil))))
+  (add-hook 'after-make-frame-functions 'my/disable-scroll-bars) 
   (global-visual-line-mode 1)
   (show-paren-mode 1)
   ;; line numbers
