@@ -134,10 +134,10 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
  #+END_SRC
 ** agressive indent
 #+BEGIN_SRC emacs-lisp
-  (use-package aggressive-indent
-    :straight t
-    :hook
-    ((emacs-lisp-mode ) . aggressive-indent-mode))
+;  (use-package aggressive-indent
+;    :straight t
+;    :hook
+;    ((emacs-lisp-mode ) . aggressive-indent-mode))
 #+END_SRC
 ** expand region
     mark words or within delimiters with less keystrokes.
