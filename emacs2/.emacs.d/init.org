@@ -278,6 +278,13 @@ built-in way to manage projects. It has less features than projectile but I it s
     :config
     (dired-recent-mode 1))
 #+END_SRC
+** dired icons
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons-dired
+    :straight t
+    :hook (dired-mode . all-the-icons-dired-mode)
+    )
+#+END_SRC
 * Hydras
   Use multiple related commands with a common prefix.
 ** hydra
