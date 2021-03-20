@@ -35,10 +35,23 @@ Welcome to my emacs config. Always improving trying to improve it. I think.
   Remove unused bars, highlight matching parentheses, word warping instead of being cut, and load my theme theme of choice.
 
 #+BEGIN_SRC emacs-lisp
+  ;; Treat all themes as safe
+  (setq custom-safe-themes t)
+  ;theme
   (use-package modus-operandi-theme
     :straight t
     :config   (load-theme 'modus-operandi t))
+  ;modeline
+  (use-package smart-mode-line
+    :straight t
+    :custom
+    (sml/theme 'respectful)
+    :config
+    (sml/setup)
 
+    )
+
+  ;disable annoying toolbar 
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
