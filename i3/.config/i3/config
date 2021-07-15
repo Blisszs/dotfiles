@@ -18,9 +18,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-#hide borders adjecent to the screen edges
-hide_edge_borders both
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -156,10 +153,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # gaps
-gaps inner 0
+gaps inner 10
 gaps outer 10
 hide_edge_borders smart_no_gaps
 smart_borders on
+title_align center
+#for_window [class=".*"] border pixel 1
 
 # Colors
 set $black #222222
@@ -184,6 +183,7 @@ client.placeholder      $dark    $dark      $white        $black       $dark
 bar {
         status_command i3blocks
 	position top
+	workspace_min_width 20
 	font pango:DejaVuSans Mono,Font Awesome 5 Free 10
 	colors {
 	        background $black 
@@ -214,6 +214,6 @@ bindsym $mod+Shift+e exec emacsclient -nc -a 'emacs'
 bindsym $mod+Shift+d exec emacsclient -nc -a 'emacs' -e '(dired "~/")'
 
 # screenshot
-bindsym Print exec maim ~/Pictures/screenshot-$(date '+%y%m%d-%H%M-%S').png
-bindsym Shift+Print exec maim -s ~/Pictures/screenshot-cropped$(date '+%y%m%d-%H%M-%S').png
+bindsym Print exec maim ~/Pictures/prints/screenshot-$(date '+%y%m%d-%H%M-%S').png
+bindsym Shift+Print exec maim -s ~/Pictures/prints/screenshot-cropped$(date '+%y%m%d-%H%M-%S').png
 
